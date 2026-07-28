@@ -5,7 +5,7 @@ import { getShippingFreeThresholdDisplay } from "@/lib/store/storefront-config";
 export function PromoBar() {
   const threshold = getShippingFreeThresholdDisplay();
   return (
-    <div className="bg-brand-600 text-center text-sm font-medium text-white">
+    <div className="bg-brand-500 text-center text-sm font-medium text-white">
       <p className="px-4 py-2">
         Free shipping on orders above{" "}
         <span className="font-semibold">₹{threshold}</span>

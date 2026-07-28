@@ -53,12 +53,12 @@ export async function SiteHeader() {
     <>
       <DeployConfigBanner />
       <PromoBar />
-      <header className="sticky top-0 z-30 border-b border-zinc-200 bg-white/95 backdrop-blur">
+      <header className="sticky top-0 z-30 border-b border-neutral-border bg-neutral-surface/95 backdrop-blur">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <div className="flex min-w-0 flex-1 items-center gap-6 lg:gap-8">
           <Link
             href="/"
-            className="shrink-0 text-xl font-bold tracking-tight text-brand-700"
+            className="shrink-0 font-display text-xl font-bold tracking-tight text-brand-600"
           >
             WrapItUp
           </Link>
@@ -114,7 +114,7 @@ export async function SiteHeader() {
               </Link>
               <Link
                 href="/signup"
-                className="rounded-full bg-brand-600 px-3 py-1.5 font-medium text-white hover:bg-brand-700"
+                className="rounded-full bg-brand-500 px-3 py-1.5 font-medium text-white hover:bg-brand-600"
               >
                 Sign up
               </Link>

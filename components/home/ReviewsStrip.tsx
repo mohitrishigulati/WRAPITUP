@@ -10,15 +10,17 @@ export function ReviewsStrip({ reviews }: ReviewsStripProps) {
   if (reviews.length === 0) return null;
 
   return (
-    <section className="border-t border-zinc-100 bg-white py-10">
+    <section className="border-t border-neutral-border bg-neutral-surface py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="mb-2 text-2xl font-bold text-zinc-900">Let customers speak for us</h2>
-        <p className="mb-6 text-sm text-zinc-600">Verified purchase reviews from the WrapItUp community.</p>
+        <h2 className="mb-2 font-display text-xl font-semibold text-neutral-text sm:text-2xl">
+          Let customers speak for us
+        </h2>
+        <p className="mb-6 text-sm text-neutral-muted">Verified purchase reviews from the WrapItUp community.</p>
         <ul className="-mx-2 flex gap-4 overflow-x-auto pb-2 scroll-smooth snap-x snap-mandatory [scrollbar-width:thin]">
           {reviews.map((review) => (
             <li
               key={review.id}
-              className="w-[18rem] shrink-0 snap-start rounded-xl border border-zinc-200 bg-zinc-50 p-4"
+              className="w-[18rem] shrink-0 snap-start rounded-2xl border border-neutral-border bg-neutral-bg p-4"
             >
               <StarRating rating={review.rating} size="sm" />
               <p className="mt-2 line-clamp-4 text-sm text-zinc-700">

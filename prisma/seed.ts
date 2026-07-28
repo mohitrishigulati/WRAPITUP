@@ -127,7 +127,7 @@ const PRODUCTS: ProductSeed[] = [
       "A mid-weight organic cotton tee with a relaxed fit. Pre-washed for softness.",
     basePrice: 28,
     images: [UNSPLASH("photo-1521572163474-6864f9cf17ab")],
-    tagSlugs: ["new-arrival", "eco-friendly"],
+    tagSlugs: ["new-arrival", "eco-friendly", "for-boys", "age-6-8"],
     variants: [
       { sku: "TEE-BLK-S", name: "Black / S", attributes: { color: "Black", size: "S" }, stock: 12 },
       { sku: "TEE-BLK-M", name: "Black / M", attributes: { color: "Black", size: "M" }, stock: 18 },
@@ -155,7 +155,7 @@ const PRODUCTS: ProductSeed[] = [
     description: "350ml stoneware mug with a matte glaze. Dishwasher safe.",
     basePrice: 24,
     images: [UNSPLASH("photo-1514228742587-6b1558fcca3d")],
-    tagSlugs: ["gift-idea", "best-seller"],
+    tagSlugs: ["gift-idea", "best-seller", "for-girls", "age-3-5"],
     variants: [
       { sku: "MUG-SAND", name: "Sand", attributes: { color: "Sand" }, stock: 30 },
       { sku: "MUG-SAGE", name: "Sage", attributes: { color: "Sage" }, stock: 22 },
@@ -232,7 +232,7 @@ const PRODUCTS: ProductSeed[] = [
     description: "Brushed fleece interior, double-layer hood, kangaroo pocket.",
     basePrice: 68,
     images: [UNSPLASH("photo-1556821840-3a63f95609a7")],
-    tagSlugs: ["new-arrival", "best-seller"],
+    tagSlugs: ["new-arrival", "best-seller", "for-boys", "age-9-12"],
     variants: [
       { sku: "HD-GRY-M", name: "Heather grey / M", attributes: { color: "Grey", size: "M" }, stock: 10 },
       { sku: "HD-GRY-L", name: "Heather grey / L", attributes: { color: "Grey", size: "L" }, stock: 14 },

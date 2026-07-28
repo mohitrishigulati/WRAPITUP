@@ -31,7 +31,7 @@ export default async function Home() {
   }
 
   return (
-    <div className="min-h-screen bg-zinc-50">
+    <div className="min-h-screen bg-neutral-bg">
       <SiteHeader />
       <HeroBanner />
       {data ? (
@@ -43,7 +43,6 @@ export default async function Home() {
               <CollectionCarousel
                 key={col.slug}
                 title={col.title}
-                emoji={col.slug.includes("return") ? "🎉" : undefined}
                 products={products}
                 viewAllHref={`/collections/${col.slug}`}
               />
@@ -59,8 +58,7 @@ export default async function Home() {
           ) : null}
           {data.newArrivals.length > 0 ? (
             <CollectionCarousel
-              title="New arrivals"
-              emoji="🎉"
+              title="New arrivals 🎉"
               products={data.newArrivals}
               viewAllHref="/products?tags=new-arrival"
             />
@@ -77,7 +75,7 @@ export default async function Home() {
           </p>
           <Link
             href="/products"
-            className="mt-6 inline-flex rounded-full bg-brand-600 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-700"
+            className="mt-6 inline-flex rounded-full bg-brand-500 px-6 py-3 text-sm font-semibold text-white hover:bg-brand-600"
           >
             Browse catalog
           </Link>

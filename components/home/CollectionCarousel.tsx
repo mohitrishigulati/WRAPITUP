@@ -22,13 +22,14 @@ export function CollectionCarousel({
 }: CollectionCarouselProps) {
   if (products.length === 0) return null;
 
+  const heading = emoji ? `${title} ${emoji}` : title;
+
   return (
-    <section className="border-t border-zinc-100 bg-white py-10">
+    <section className="border-t border-neutral-border bg-neutral-bg py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-6 flex items-end justify-between gap-4">
-          <h2 className="text-2xl font-bold text-zinc-900">
-            {title}
-            {emoji ? <span className="ml-2">{emoji}</span> : null}
+          <h2 className="font-display text-xl font-semibold text-neutral-text sm:text-2xl">
+            {heading}
           </h2>
           <Link
             href={viewAllHref}
@@ -37,11 +38,11 @@ export function CollectionCarousel({
             View all
           </Link>
         </div>
-        <ul className="-mx-2 flex gap-4 overflow-x-auto pb-2 scroll-smooth snap-x snap-mandatory [scrollbar-width:thin]">
+        <ul className="-mx-2 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:thin]">
           {products.map((product, index) => (
             <li
               key={product.id}
-              className="w-[11.5rem] shrink-0 snap-start sm:w-[14rem]"
+              className="min-w-[160px] shrink-0 snap-start sm:min-w-[200px]"
             >
               {variant === "video" && product.videoUrl ? (
                 <VideoProductCard product={product} videoUrl={product.videoUrl} priority={index < 4} />

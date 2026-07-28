@@ -1,20 +1,22 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
+import { Baloo_2, Inter } from "next/font/google";
 import { AuthSessionProvider } from "@/components/providers/AuthSessionProvider";
 import { CartDrawer } from "@/components/cart/CartDrawer";
 import { CartProvider } from "@/components/cart/CartProvider";
 import { getSiteUrl } from "@/lib/seo/site-url";
 import "./globals.css";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-sans",
+  display: "swap",
 });
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
+
+const baloo2 = Baloo_2({
+  subsets: ["latin"],
+  variable: "--font-display",
+  weight: ["500", "600", "700", "800"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -38,9 +40,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${inter.variable} ${baloo2.variable} font-sans antialiased text-neutral-text`}>
         <AuthSessionProvider>
           <CartProvider>
             {children}

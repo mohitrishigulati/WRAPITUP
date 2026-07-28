@@ -63,16 +63,18 @@ function addEnv(name, value) {
     console.log(`skip ${name} (empty)`);
     return;
   }
-  const result = spawnSync("npx", ["vercel", "env", "add", name, "production", "--force"], {
-    input: value,
-    encoding: "utf8",
-    cwd: root,
-    shell: true,
-  });
-  if (result.status !== 0) {
-    console.error(`failed ${name}:`, result.stderr || result.stdout);
-  } else {
-    console.log(`ok ${name}`);
+  for (const target of ["production", "preview", "development"]) {
+    const result = spawnSync("npx", ["vercel", "env", "add", name, target, "--force"], {
+      input: value,
+      encoding: "utf8",
+      cwd: root,
+      shell: true,
+    });
+    if (result.status !== 0) {
+      console.error(`failed ${name} (${target}):`, result.stderr || result.stdout);
+    } else {
+      console.log(`ok ${name} → ${target}`);
+    }
   }
 }
 

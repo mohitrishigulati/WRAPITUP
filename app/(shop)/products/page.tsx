@@ -8,6 +8,7 @@ import { ProductGrid } from "@/components/catalog/ProductGrid";
 import { getCategoryBySlug, getFilterCategories, getCategoryDescendantIds } from "@/lib/catalog/categories";
 import { parseCatalogParams } from "@/lib/catalog/params";
 import { getAllTagSlugs, listProducts } from "@/lib/catalog/products";
+import { CatalogUnavailable } from "@/components/catalog/CatalogUnavailable";
 
 export const metadata: Metadata = {
   title: "All products",
@@ -22,26 +23,39 @@ type ProductsPageProps = {
 
 export default async function ProductsPage({ searchParams }: ProductsPageProps) {
   const parsed = parseCatalogParams(searchParams);
-  const [tags, categories] = await Promise.all([getAllTagSlugs(), getFilterCategories()]);
 
-  let categoryIds: string[] | undefined;
-  if (parsed.categorySlug) {
-    const category = await getCategoryBySlug(parsed.categorySlug);
-    if (category) {
-      categoryIds = await getCategoryDescendantIds(category.id);
+  let tags: Awaited<ReturnType<typeof getAllTagSlugs>>;
+  let categories: Awaited<ReturnType<typeof getFilterCategories>>;
+  let listing: Awaited<ReturnType<typeof listProducts>>;
+
+  try {
+    [tags, categories] = await Promise.all([getAllTagSlugs(), getFilterCategories()]);
+
+    let categoryIds: string[] | undefined;
+    if (parsed.categorySlug) {
+      const category = await getCategoryBySlug(parsed.categorySlug);
+      if (category) {
+        categoryIds = await getCategoryDescendantIds(category.id);
+      }
     }
-  }
 
-  const listing = await listProducts({
-    q: parsed.q,
-    page: parsed.page,
-    sort: parsed.sort,
-    categoryIds,
-    tagSlugs: parsed.tagSlugs,
-    minPrice: parsed.minPrice,
-    maxPrice: parsed.maxPrice,
-    inStockOnly: parsed.inStockOnly,
-  });
+    listing = await listProducts({
+      q: parsed.q,
+      page: parsed.page,
+      sort: parsed.sort,
+      categoryIds,
+      tagSlugs: parsed.tagSlugs,
+      minPrice: parsed.minPrice,
+      maxPrice: parsed.maxPrice,
+      inStockOnly: parsed.inStockOnly,
+    });
+  } catch {
+    return (
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <CatalogUnavailable />
+      </div>
+    );
+  }
 
   const queryForPagination = {
     q: parsed.q,

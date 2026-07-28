@@ -1,0 +1,10 @@
+# Local asset library (served via junction at public/catalog in dev only)
+images
+public/catalog
+
+# Large / local-only
+_files_zip_extract
+files.zip
+.agents
+.claude
+.windsurf

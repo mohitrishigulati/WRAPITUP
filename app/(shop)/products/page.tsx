@@ -9,6 +9,7 @@ import { getCategoryBySlug, getFilterCategories, getCategoryDescendantIds } from
 import { parseCatalogParams } from "@/lib/catalog/params";
 import { getAllTagSlugs, listProducts } from "@/lib/catalog/products";
 import { CatalogUnavailable } from "@/components/catalog/CatalogUnavailable";
+import { getDatabaseConfigStatus } from "@/lib/db/database-status";
 
 export const metadata: Metadata = {
   title: "All products",
@@ -50,9 +51,13 @@ export default async function ProductsPage({ searchParams }: ProductsPageProps) 
       inStockOnly: parsed.inStockOnly,
     });
   } catch {
+    const dbStatus = await getDatabaseConfigStatus();
     return (
       <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
-        <CatalogUnavailable />
+        <CatalogUnavailable
+          hint={dbStatus.hint}
+          looksLikeLocalDevUrl={dbStatus.looksLikeLocalDevUrl}
+        />
       </div>
     );
   }

@@ -22,7 +22,7 @@ From the project folder, paste your Neon URL:
 node scripts/setup-production-catalog.mjs "postgresql://USER:PASS@ep-....neon.tech/neondb?sslmode=require"
 ```
 
-This runs `prisma db push`, `catalog:seed` (10 products, 7 categories, 6 themes, 3 homepage collections, 11 tags), and updates `DATABASE_URL` on Vercel for Production, Preview, and Development.
+This runs `prisma db push`, `catalog:seed` (24 products, 8+26 categories, 7 themes, 4 homepage collections, 11 tags), and updates `DATABASE_URL` on Vercel for Production, Preview, and Development.
 
 ### 3. Redeploy
 
@@ -50,9 +50,9 @@ Admin after seed: `admin@wrapitup.local` / `Admin12345`
 | Health | `/api/health` | `database.reachable: true`, `looksLikeLocalDevUrl: false` |
 | Home | `/` | Hero + collection carousels (Return Gifts, Trending, Mini fans), Shop by video (gift box), category + theme grids |
 | Mega-menu | Header (desktop) | **By price** → filtered `/products`; **By theme** → `/themes/unicorn` etc.; **By gender/age** → tagged products |
-| Collections | `/collections/birthday-return-gifts` | 4 products |
+| Collections | `/collections/return-gifts` | Carousel products |
 | Themes | `/themes` then `/themes/dino` | Themed product list |
-| Personalization | `/products/minimal-gift-wrap-roll` | Name field → add to cart → cart shows `name: …` |
+| Personalization | `/products/personalized-name-keychain-round` | Name field → add to cart → cart shows `name: …` |
 | Corporate | `/corporate-gifts` | WhatsApp CTA (if `NEXT_PUBLIC_WHATSAPP_NUMBER` set on Vercel) |
 | Catalog | `/products?tags=gift-idea` | Gift-tagged items |
 | PDP + cart | Any in-stock product | Add to cart, drawer updates |

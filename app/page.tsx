@@ -50,7 +50,7 @@ export default async function Home() {
           })}
           {data.videoProducts.length > 0 ? (
             <CollectionCarousel
-              title="Shop by video"
+              title="Shop by video 🎬"
               products={data.videoProducts}
               viewAllHref="/products"
               variant="video"
@@ -68,7 +68,7 @@ export default async function Home() {
         </>
       ) : (
         <section className="mx-auto max-w-2xl px-4 py-16 text-center">
-          <p className="text-lg text-zinc-700">
+          <p className="text-lg text-neutral-muted">
             Connect a database and run{" "}
             <code className="rounded bg-zinc-200 px-1.5 py-0.5 text-sm">npm run catalog:seed</code>{" "}
             to load products, themes, and collections.

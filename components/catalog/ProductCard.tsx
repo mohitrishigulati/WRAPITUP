@@ -54,12 +54,10 @@ export function ProductCard({ product, priority, compact }: ProductCardProps) {
           </span>
         ) : null}
       </Link>
-      <div className={`flex flex-1 flex-col gap-2 pt-3 ${compact ? "" : ""}`}>
-        {!compact ? (
-          <Badge variant="theme" className="w-fit normal-case tracking-normal">
-            {product.categoryName}
-          </Badge>
-        ) : null}
+      <div className={`flex flex-1 flex-col gap-2 pt-3`}>
+        <Badge variant="theme" className="w-fit max-w-full truncate normal-case tracking-normal">
+          {product.categoryName}
+        </Badge>
         <Link href={`/products/${product.slug}`}>
           <h2
             className={`line-clamp-2 font-sans font-medium text-neutral-text group-hover:text-brand-600 ${

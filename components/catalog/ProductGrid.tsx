@@ -8,9 +8,9 @@ type ProductGridProps = {
 export function ProductGrid({ products }: ProductGridProps) {
   if (products.length === 0) {
     return (
-      <div className="rounded-xl border border-dashed border-zinc-300 bg-zinc-50 px-6 py-16 text-center">
-        <p className="text-lg font-medium text-zinc-900">No products found</p>
-        <p className="mt-2 text-sm text-zinc-600">Try adjusting filters or search terms.</p>
+      <div className="rounded-2xl border border-dashed border-neutral-border bg-neutral-surface px-6 py-16 text-center">
+        <p className="text-lg font-medium text-neutral-text">No products found</p>
+        <p className="mt-2 text-sm text-neutral-muted">Try adjusting filters or search terms.</p>
       </div>
     );
   }

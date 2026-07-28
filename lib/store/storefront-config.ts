@@ -85,5 +85,5 @@ export function whatsAppUrl(text: string) {
   return `https://wa.me/${number}?text=${encodeURIComponent(text)}`;
 }
 
-export const GENDER_TAG_SLUGS = ["for-boys", "for-girls"] as const;
-export const AGE_TAG_SLUGS = ["age-3-5", "age-6-8", "age-9-12"] as const;
+export const GENDER_TAG_SLUGS = ["gender-boys", "gender-girls", "gender-unisex"] as const;
+export const AGE_TAG_SLUGS = ["age-0-3", "age-3-6", "age-6-9", "age-9-plus"] as const;

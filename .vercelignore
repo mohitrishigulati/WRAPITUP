@@ -1,6 +1,5 @@
-# Local asset library (served via junction at public/catalog in dev only)
+# Local full library (use public/catalog staged subset for Vercel — npm run catalog:stage-vercel)
 images
-public/catalog
 
 # Large / local-only
 _files_zip_extract

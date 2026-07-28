@@ -38,6 +38,8 @@ next-env.d.ts
 .env
 /public/uploads
 .env.vercel.*
+.env.provisioned
+.env.vercel.pull
 
 # local scratch / attachments
 /_files_zip_extract/

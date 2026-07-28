@@ -17,6 +17,8 @@
     "catalog:link-images": "node scripts/link-catalog-images.mjs",
     "catalog:attach-images": "node scripts/attach-local-images.mjs",
     "catalog:images": "node scripts/link-catalog-images.mjs && node scripts/attach-local-images.mjs",
+    "catalog:stage-vercel": "node scripts/stage-catalog-for-vercel.mjs",
+    "catalog:deploy-prep": "node scripts/link-catalog-images.mjs && node scripts/attach-local-images.mjs && node scripts/stage-catalog-for-vercel.mjs",
     "catalog:upload-s3": "node scripts/upload-catalog-images.mjs",
     "production:catalog": "node scripts/setup-production-catalog.mjs",
     "vercel:env": "node scripts/sync-env-to-vercel.mjs",

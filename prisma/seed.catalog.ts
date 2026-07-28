@@ -322,7 +322,7 @@ export async function seedCatalog(dbClient: PrismaClient) {
         ...(p.videoUrl ? { videoUrl: p.videoUrl } : {}),
         variants: {
           create: {
-            sku: p.sku ?? `${p.slug}-default`,
+            sku: `WUI-${p.slug}`,
             name: "Default",
             attributes: {},
             stock: p.stock,

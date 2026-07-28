@@ -104,6 +104,11 @@ model Product {
   images      String[] @default([])
   basePrice   Decimal  @db.Decimal(10, 2)
   isPublished Boolean  @default(false)
+  isPersonalizable Boolean @default(false)
+  personalizationFields Json?
+  videoUrl    String?
+  minOrderQty Int      @default(1)
+  isBulkOnly  Boolean  @default(false)
   createdAt   DateTime @default(now())
   updatedAt   DateTime @updatedAt
 
@@ -111,7 +116,57 @@ model Product {
   variants ProductVariant[]
   reviews  Review[]
   tags     ProductTag[]
+  themes   ProductTheme[]
+  collections CollectionProduct[]
   wishlistItems WishlistItem[]
+}
+
+model Theme {
+  id       String @id @default(cuid())
+  name     String
+  slug     String @unique
+
+  products ProductTheme[]
+}
+
+model ProductTheme {
+  productId String
+  themeId   String
+
+  product Product @relation(fields: [productId], references: [id], onDelete: Cascade)
+  theme   Theme   @relation(fields: [themeId], references: [id], onDelete: Cascade)
+
+  @@id([productId, themeId])
+}
+
+model Collection {
+  id          String   @id @default(cuid())
+  slug        String   @unique
+  title       String
+  displayType String   @default("carousel")
+  sortOrder   Int      @default(0)
+  isActive    Boolean  @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  products CollectionProduct[]
+}
+
+model CollectionProduct {
+  collectionId String
+  productId    String
+  position     Int      @default(0)
+
+  collection Collection @relation(fields: [collectionId], references: [id], onDelete: Cascade)
+  product    Product    @relation(fields: [productId], references: [id], onDelete: Cascade)
+
+  @@id([collectionId, productId])
+}
+
+model NewsletterSubscriber {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  createdAt DateTime @default(now())
 }
 
 model Tag {
@@ -166,11 +221,12 @@ model CartItem {
   cartId           String
   productVariantId String
   quantity         Int    @default(1)
+  personalization  Json?
 
   cart           Cart           @relation(fields: [cartId], references: [id], onDelete: Cascade)
   productVariant ProductVariant @relation(fields: [productVariantId], references: [id], onDelete: Cascade)
 
-  @@unique([cartId, productVariantId])
+  @@index([cartId])
 }
 
 model CheckoutPending {
@@ -223,6 +279,7 @@ model OrderItem {
   productName      String
   variantName      String
   sku              String
+  personalization  Json?
 
   order          Order          @relation(fields: [orderId], references: [id], onDelete: Cascade)
   productVariant ProductVariant @relation(fields: [productVariantId], references: [id], onDelete: Restrict)

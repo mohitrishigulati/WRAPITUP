@@ -35,6 +35,42 @@ const TAGS = [
   { name: "Eco-friendly", slug: "eco-friendly" },
   { name: "Gift idea", slug: "gift-idea" },
   { name: "Limited", slug: "limited" },
+  { name: "Personalization", slug: "personalization" },
+  { name: "For boys", slug: "for-boys" },
+  { name: "For girls", slug: "for-girls" },
+  { name: "Ages 3–5", slug: "age-3-5" },
+  { name: "Ages 6–8", slug: "age-6-8" },
+  { name: "Ages 9–12", slug: "age-9-12" },
+];
+
+const THEMES = [
+  { name: "Unicorn", slug: "unicorn" },
+  { name: "Dino", slug: "dino" },
+  { name: "Space", slug: "space" },
+  { name: "Mermaid", slug: "mermaid" },
+  { name: "Jungle", slug: "jungle" },
+  { name: "Panda", slug: "panda" },
+];
+
+const COLLECTIONS = [
+  {
+    slug: "birthday-return-gifts",
+    title: "Return Gifts 🎉",
+    sortOrder: 10,
+    productSlugs: ["cozy-night-gift-box", "minimal-gift-wrap-roll", "stoneware-morning-mug", "cedarwood-soy-candle"],
+  },
+  {
+    slug: "trending-on-reels",
+    title: "Trending on Reels",
+    sortOrder: 20,
+    productSlugs: ["organic-hoodie", "essential-cotton-tee", "ripple-glass-tumbler"],
+  },
+  {
+    slug: "mini-fans",
+    title: "Mini fans",
+    sortOrder: 30,
+    productSlugs: ["ripple-glass-tumbler", "essential-cotton-tee"],
+  },
 ];
 
 const CATEGORIES = [
@@ -222,6 +258,11 @@ export async function seedCatalog(dbClient: PrismaClient = db) {
   await dbClient.orderItem.deleteMany();
   await dbClient.order.deleteMany();
   await dbClient.review.deleteMany();
+  await dbClient.collectionProduct.deleteMany();
+  await dbClient.collection.deleteMany();
+  await dbClient.productTheme.deleteMany();
+  await dbClient.theme.deleteMany();
+  await dbClient.newsletterSubscriber.deleteMany();
   await dbClient.productTag.deleteMany();
   await dbClient.productVariant.deleteMany();
   await dbClient.product.deleteMany();
@@ -251,6 +292,14 @@ export async function seedCatalog(dbClient: PrismaClient = db) {
   for (const tag of TAGS) {
     await dbClient.tag.create({ data: tag });
   }
+
+  for (const theme of THEMES) {
+    await dbClient.theme.create({ data: theme });
+  }
+
+  const themeIdBySlug = new Map(
+    (await dbClient.theme.findMany({ select: { id: true, slug: true } })).map((t) => [t.slug, t.id]),
+  );
 
   const categoryIdBySlug = new Map<string, string>();
   for (const cat of CATEGORIES.filter((c) => !c.parentSlug)) {
@@ -314,8 +363,73 @@ export async function seedCatalog(dbClient: PrismaClient = db) {
     });
   }
 
+  const productIdBySlug = new Map(
+    (await dbClient.product.findMany({ select: { id: true, slug: true } })).map((p) => [p.slug, p.id]),
+  );
+
+  for (const col of COLLECTIONS) {
+    const collection = await dbClient.collection.create({
+      data: {
+        slug: col.slug,
+        title: col.title,
+        sortOrder: col.sortOrder,
+        isActive: true,
+        displayType: "carousel",
+      },
+    });
+    let position = 0;
+    for (const slug of col.productSlugs) {
+      const productId = productIdBySlug.get(slug);
+      if (!productId) continue;
+      await dbClient.collectionProduct.create({
+        data: { collectionId: collection.id, productId, position: position++ },
+      });
+    }
+  }
+
+  const themeAssignments: Record<string, string[]> = {
+    "cozy-night-gift-box": ["unicorn", "panda"],
+    "essential-cotton-tee": ["space", "dino"],
+    "organic-hoodie": ["jungle", "dino"],
+    "minimal-gift-wrap-roll": ["mermaid", "unicorn"],
+  };
+
+  for (const [productSlug, themeSlugs] of Object.entries(themeAssignments)) {
+    const productId = productIdBySlug.get(productSlug);
+    if (!productId) continue;
+    for (const themeSlug of themeSlugs) {
+      const themeId = themeIdBySlug.get(themeSlug);
+      if (!themeId) continue;
+      await dbClient.productTheme.create({
+        data: { productId, themeId },
+      });
+    }
+  }
+
+  await dbClient.product.update({
+    where: { slug: "minimal-gift-wrap-roll" },
+    data: {
+      isPersonalizable: true,
+      personalizationFields: [
+        { key: "name", label: "Child's name", maxLength: 20 },
+      ],
+      tags: {
+        create: [{ tag: { connect: { slug: "personalization" } } }],
+      },
+    },
+  });
+
+  await dbClient.product.update({
+    where: { slug: "cozy-night-gift-box" },
+    data: {
+      videoUrl: "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+    },
+  });
+
   return {
     tags: TAGS.length,
+    themes: THEMES.length,
+    collections: COLLECTIONS.length,
     categories: CATEGORIES.length,
     products: PRODUCTS.length,
   };

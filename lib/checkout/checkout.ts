@@ -183,6 +183,7 @@ export async function fulfillPaidOrder(paymentIntentId: string) {
             productName: line.productName,
             variantName: line.variantName,
             sku: line.sku,
+            personalization: line.personalization ?? undefined,
           })),
         },
       },

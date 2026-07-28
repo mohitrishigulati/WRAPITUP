@@ -1,6 +1,10 @@
 import { db } from "@/lib/db";
-import { HOME_SECTION_SIZE } from "@/lib/catalog/params";
+import { getActiveHomeCollections, getCollectionProducts } from "@/lib/catalog/collections";
+import { listProductsWithVideo } from "@/lib/catalog/collections";
 import { listProducts } from "@/lib/catalog/products";
+import { HOME_SECTION_SIZE } from "@/lib/catalog/params";
+import type { CatalogProductListItem } from "@/types/catalog";
+import type { CarouselProduct } from "@/components/home/CollectionCarousel";
 
 export type HomeCategoryTile = {
   id: string;
@@ -10,65 +14,12 @@ export type HomeCategoryTile = {
 };
 
 export type HomePageData = {
-  giftPicks: Awaited<ReturnType<typeof listProducts>>["products"];
-  newArrivals: Awaited<ReturnType<typeof listProducts>>["products"];
-  trending: Awaited<ReturnType<typeof listProducts>>["products"];
+  collections: Awaited<ReturnType<typeof getActiveHomeCollections>>;
+  collectionProducts: Record<string, CarouselProduct[]>;
+  videoProducts: CarouselProduct[];
+  newArrivals: CatalogProductListItem[];
   categories: HomeCategoryTile[];
 };
-
-export async function getHomePageData(): Promise<HomePageData | null> {
-  if (!process.env.DATABASE_URL?.trim()) return null;
-
-  try {
-    const [giftPicks, newArrivals, trending, categories] = await Promise.all([
-      listProducts({
-        page: 1,
-        sort: "popularity",
-        tagSlugs: ["gift-idea"],
-        pageSize: HOME_SECTION_SIZE,
-      }),
-      listProducts({
-        page: 1,
-        sort: "newest",
-        tagSlugs: ["new-arrival"],
-        pageSize: HOME_SECTION_SIZE,
-      }),
-      listProducts({
-        page: 1,
-        sort: "popularity",
-        tagSlugs: ["best-seller"],
-        pageSize: HOME_SECTION_SIZE,
-      }),
-      loadCategoryTiles(),
-    ]);
-
-    const fallback =
-      giftPicks.products.length === 0
-        ? (
-            await listProducts({
-              page: 1,
-              sort: "newest",
-              pageSize: HOME_SECTION_SIZE,
-            })
-          ).products
-        : giftPicks.products;
-
-    return {
-      giftPicks: fallback,
-      newArrivals:
-        newArrivals.products.length > 0
-          ? newArrivals.products
-          : fallback.slice(0, HOME_SECTION_SIZE),
-      trending:
-        trending.products.length > 0
-          ? trending.products
-          : fallback.slice(0, HOME_SECTION_SIZE),
-      categories,
-    };
-  } catch {
-    return null;
-  }
-}
 
 async function loadCategoryTiles(): Promise<HomeCategoryTile[]> {
   const rows = await db.category.findMany({
@@ -91,4 +42,37 @@ async function loadCategoryTiles(): Promise<HomeCategoryTile[]> {
     slug: c.slug,
     imageUrl: c.products[0]?.images[0] ?? null,
   }));
+}
+
+export async function getHomePageData(): Promise<HomePageData | null> {
+  if (!process.env.DATABASE_URL?.trim()) return null;
+
+  try {
+    const [collections, videoProducts, newArrivals, categories] = await Promise.all([
+      getActiveHomeCollections(),
+      listProductsWithVideo(HOME_SECTION_SIZE),
+      listProducts({ page: 1, sort: "newest", pageSize: HOME_SECTION_SIZE }),
+      loadCategoryTiles(),
+    ]);
+
+    const collectionProducts: HomePageData["collectionProducts"] = {};
+    await Promise.all(
+      collections.map(async (col) => {
+        const result = await getCollectionProducts(col.slug, HOME_SECTION_SIZE);
+        if (result) {
+          collectionProducts[col.slug] = result.products;
+        }
+      }),
+    );
+
+    return {
+      collections,
+      collectionProducts,
+      videoProducts,
+      newArrivals: newArrivals.products,
+      categories,
+    };
+  } catch {
+    return null;
+  }
 }

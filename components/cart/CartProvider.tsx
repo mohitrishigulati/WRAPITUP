@@ -10,7 +10,7 @@ import {
   type ReactNode,
 } from "react";
 import { useSession } from "next-auth/react";
-import { CART_STORAGE_KEY, type CartLine, type PricedCart } from "@/types/cart";
+import { CART_STORAGE_KEY, type CartLine, type PricedCart, cartLineKey } from "@/types/cart";
 
 type CartContextValue = {
   lines: CartLine[];
@@ -20,9 +20,13 @@ type CartContextValue = {
   openCart: () => void;
   closeCart: () => void;
   toggleCart: () => void;
-  addItem: (variantId: string, quantity?: number) => Promise<void>;
-  updateQuantity: (variantId: string, quantity: number) => Promise<void>;
-  removeItem: (variantId: string) => Promise<void>;
+  addItem: (
+    variantId: string,
+    quantity?: number,
+    personalization?: Record<string, string>,
+  ) => Promise<void>;
+  updateQuantity: (lineKey: string, quantity: number) => Promise<void>;
+  removeItem: (lineKey: string) => Promise<void>;
   clearCart: () => Promise<void>;
   refreshQuote: (couponCode?: string) => Promise<void>;
   itemCount: number;
@@ -147,13 +151,14 @@ export function CartProvider({ children }: { children: ReactNode }) {
   }, [hydrated, lines, refreshQuote]);
 
   const addItem = useCallback(
-    async (variantId: string, quantity = 1) => {
+    async (variantId: string, quantity = 1, personalization?: Record<string, string>) => {
       const next = [...lines];
-      const existing = next.find((line) => line.variantId === variantId);
+      const key = cartLineKey({ variantId, personalization });
+      const existing = next.find((line) => cartLineKey(line) === key);
       if (existing) {
         existing.quantity = Math.min(99, existing.quantity + quantity);
       } else {
-        next.push({ variantId, quantity });
+        next.push({ variantId, quantity, personalization });
       }
       await persistLines(next);
       setIsOpen(true);
@@ -162,10 +167,10 @@ export function CartProvider({ children }: { children: ReactNode }) {
   );
 
   const updateQuantity = useCallback(
-    async (variantId: string, quantity: number) => {
+    async (lineKey: string, quantity: number) => {
       const next = lines
         .map((line) =>
-          line.variantId === variantId
+          cartLineKey(line) === lineKey
             ? { ...line, quantity: Math.max(1, Math.min(99, quantity)) }
             : line,
         )
@@ -176,8 +181,8 @@ export function CartProvider({ children }: { children: ReactNode }) {
   );
 
   const removeItem = useCallback(
-    async (variantId: string) => {
-      const next = lines.filter((line) => line.variantId !== variantId);
+    async (lineKey: string) => {
+      const next = lines.filter((line) => cartLineKey(line) !== lineKey);
       await persistLines(next);
     },
     [lines, persistLines],

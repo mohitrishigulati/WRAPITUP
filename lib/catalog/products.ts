@@ -4,6 +4,7 @@ import { PAGE_SIZE } from "@/lib/catalog/params";
 import { getCategoryDescendantIds } from "@/lib/catalog/categories";
 import { decimalToNumber } from "@/lib/catalog/money";
 import type { CatalogProductListItem, CatalogSort, ProductDetailView } from "@/types/catalog";
+import { parsePersonalizationFields } from "@/lib/store/storefront-config";
 
 type ListProductsInput = {
   q?: string;
@@ -15,6 +16,7 @@ type ListProductsInput = {
   maxPrice?: number;
   inStockOnly?: boolean;
   pageSize?: number;
+  productIds?: string[];
 };
 
 type ListRow = {
@@ -70,6 +72,10 @@ function buildListQuery(input: ListProductsInput, countOnly: boolean) {
       WHERE pt."productId" = p."id"
       AND t."slug" IN (${Prisma.join(input.tagSlugs)})
     )`);
+  }
+
+  if (input.productIds?.length) {
+    conditions.push(Prisma.sql`p."id" IN (${Prisma.join(input.productIds)})`);
   }
 
   if (input.inStockOnly) {
@@ -171,7 +177,7 @@ function buildListQuery(input: ListProductsInput, countOnly: boolean) {
   `;
 }
 
-function mapListRow(row: ListRow): CatalogProductListItem {
+export function mapListRow(row: ListRow): CatalogProductListItem {
   const minPrice = decimalToNumber(row.min_price);
   const maxPrice = decimalToNumber(row.max_price);
   const maxCompareAt = row.max_compare_at ? decimalToNumber(row.max_compare_at) : null;
@@ -280,6 +286,11 @@ export async function getProductBySlug(slug: string): Promise<ProductDetailView 
     averageRating,
     reviewCount,
     inStock: totalStock > 0,
+    isPersonalizable: product.isPersonalizable,
+    personalizationFields: parsePersonalizationFields(product.personalizationFields),
+    videoUrl: product.videoUrl,
+    minOrderQty: product.minOrderQty,
+    isBulkOnly: product.isBulkOnly,
   };
 }
 

@@ -127,6 +127,10 @@ export default async function ProductPage({ params }: ProductPageProps) {
             productName={product.name}
             variants={product.variants}
             inStock={product.inStock}
+            isPersonalizable={product.isPersonalizable}
+            personalizationFields={product.personalizationFields}
+            minOrderQty={product.minOrderQty}
+            isBulkOnly={product.isBulkOnly}
           />
         </div>
       </div>

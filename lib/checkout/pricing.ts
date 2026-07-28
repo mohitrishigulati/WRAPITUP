@@ -6,6 +6,7 @@ import { productImageUrl } from "@/lib/catalog/images";
 import { validateCoupon } from "@/lib/checkout/coupons";
 import { calculateShipping } from "@/lib/checkout/shipping";
 import type { CartLine, CartTotals, PricedCart } from "@/types/cart";
+import { cartLineKey } from "@/types/cart";
 
 export class CheckoutValidationError extends Error {
   constructor(message: string) {
@@ -56,6 +57,8 @@ export async function priceCartLines(
     pricedLines.push({
       variantId: variant.id,
       quantity: line.quantity,
+      personalization: line.personalization,
+      lineKey: cartLineKey(line),
       productName: variant.product.name,
       variantName: variant.name,
       sku: variant.sku,

@@ -43,6 +43,8 @@ export type ProductVariantView = {
   stock: number;
 };
 
+import type { PersonalizationFieldDef } from "@/lib/store/storefront-config";
+
 export type ProductDetailView = {
   id: string;
   name: string;
@@ -63,4 +65,9 @@ export type ProductDetailView = {
   averageRating: number | null;
   reviewCount: number;
   inStock: boolean;
+  isPersonalizable: boolean;
+  personalizationFields: PersonalizationFieldDef[];
+  videoUrl: string | null;
+  minOrderQty: number;
+  isBulkOnly: boolean;
 };

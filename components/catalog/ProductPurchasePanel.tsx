@@ -1,5 +1,6 @@
 "use client";
 
+import type { PersonalizationFieldDef } from "@/lib/store/storefront-config";
 import { useMemo, useState } from "react";
 import type { ProductVariantView } from "@/types/catalog";
 import { formatUsd } from "@/lib/catalog/money";
@@ -9,15 +10,25 @@ type ProductPurchasePanelProps = {
   productName: string;
   variants: ProductVariantView[];
   inStock: boolean;
+  isPersonalizable?: boolean;
+  personalizationFields?: PersonalizationFieldDef[];
+  minOrderQty?: number;
+  isBulkOnly?: boolean;
 };
 
 export function ProductPurchasePanel({
   productName,
   variants,
   inStock,
+  isPersonalizable = false,
+  personalizationFields = [],
+  minOrderQty = 1,
+  isBulkOnly = false,
 }: ProductPurchasePanelProps) {
   const { addItem } = useCart();
   const [isAdding, setIsAdding] = useState(false);
+
+  const [personalization, setPersonalization] = useState<Record<string, string>>({});
 
   const attributeKeys = useMemo(() => {
     const keys = new Set<string>();
@@ -99,6 +110,36 @@ export function ProductPurchasePanel({
         </div>
       ))}
 
+      {isPersonalizable && personalizationFields.length > 0 ? (
+        <div className="space-y-3 rounded-lg border border-brand-200 bg-brand-50/50 p-4">
+          <p className="text-sm font-semibold text-zinc-900">Personalization</p>
+          {personalizationFields.map((field) => (
+            <label key={field.key} className="block text-sm">
+              {field.label}
+              <input
+                type="text"
+                maxLength={field.maxLength}
+                value={personalization[field.key] ?? ""}
+                onChange={(e) =>
+                  setPersonalization((prev) => ({ ...prev, [field.key]: e.target.value }))
+                }
+                className="mt-1 block w-full rounded-lg border border-zinc-300 px-3 py-2 text-sm"
+                required
+              />
+            </label>
+          ))}
+        </div>
+      ) : null}
+
+      {isBulkOnly ? (
+        <p className="text-sm text-zinc-600">
+          Bulk / corporate SKU — minimum order qty: {minOrderQty}.{" "}
+          <a href="/corporate-gifts" className="font-medium text-brand-600 hover:underline">
+            Contact us for bulk pricing
+          </a>
+        </p>
+      ) : null}
+
       <div className="rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm">
         <p className="font-medium text-zinc-900">{selectedVariant.name}</p>
         <p className="text-zinc-600">SKU: {selectedVariant.sku}</p>
@@ -113,8 +154,19 @@ export function ProductPurchasePanel({
         type="button"
         disabled={!inStock || selectedVariant.stock <= 0 || isAdding}
         onClick={() => {
+          if (isPersonalizable) {
+            for (const field of personalizationFields) {
+              if (!personalization[field.key]?.trim()) return;
+            }
+          }
           setIsAdding(true);
-          void addItem(selectedVariant.id, 1).finally(() => setIsAdding(false));
+          const pers =
+            isPersonalizable && Object.keys(personalization).length
+              ? personalization
+              : undefined;
+          void addItem(selectedVariant.id, Math.max(minOrderQty, 1), pers).finally(() =>
+            setIsAdding(false),
+          );
         }}
         className="w-full rounded-lg bg-zinc-900 px-4 py-3 text-sm font-medium text-white hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-50"
         aria-label={`Add ${productName} to cart`}

@@ -26,6 +26,7 @@ const securityHeaders = [
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.stripe.com",
       "style-src 'self' 'unsafe-inline'",
       "img-src 'self' data: blob: https:",
+      "media-src 'self' https: blob:",
       "font-src 'self' data:",
       "connect-src 'self' https://api.stripe.com https://*.stripe.com",
       "frame-src https://js.stripe.com https://hooks.stripe.com",

@@ -1,7 +1,9 @@
+import { getShippingFreeThresholdDisplay } from "@/lib/store/storefront-config";
+
 const ITEMS = [
   {
     title: "Free shipping",
-    body: "On orders above ₹500",
+    body: `On orders above ₹${getShippingFreeThresholdDisplay()}`,
     icon: "🚚",
   },
   {

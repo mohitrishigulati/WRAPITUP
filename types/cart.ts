@@ -1,11 +1,17 @@
-export const CART_STORAGE_KEY = "wrapitup-cart-v1";
+export const CART_STORAGE_KEY = "wrapitup-cart-v2";
+
+export function cartLineKey(line: Pick<CartLine, "variantId" | "personalization">) {
+  return `${line.variantId}:${JSON.stringify(line.personalization ?? {})}`;
+}
 
 export type CartLine = {
   variantId: string;
   quantity: number;
+  personalization?: Record<string, string>;
 };
 
 export type CartLineView = CartLine & {
+  lineKey: string;
   productName: string;
   variantName: string;
   sku: string;

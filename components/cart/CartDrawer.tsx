@@ -51,13 +51,20 @@ export function CartDrawer() {
           ) : (
             <ul className="space-y-4">
               {priced.lines.map((line) => (
-                <li key={line.variantId} className="flex gap-3">
+                <li key={line.lineKey} className="flex gap-3">
                   <div className="relative h-20 w-20 shrink-0 overflow-hidden rounded-lg bg-zinc-100">
                     <ProductImage src={line.imageUrl} alt={line.productName} sizes="80px" />
                   </div>
                   <div className="min-w-0 flex-1">
                     <p className="truncate font-medium text-zinc-900">{line.productName}</p>
                     <p className="text-sm text-zinc-600">{line.variantName}</p>
+                    {line.personalization && Object.keys(line.personalization).length > 0 ? (
+                      <p className="text-xs text-zinc-500">
+                        {Object.entries(line.personalization)
+                          .map(([k, v]) => `${k}: ${v}`)
+                          .join(" · ")}
+                      </p>
+                    ) : null}
                     <p className="text-sm font-medium text-zinc-900">
                       {formatUsd(line.unitPrice)}
                     </p>
@@ -68,14 +75,14 @@ export function CartDrawer() {
                         max={line.maxQuantity}
                         value={line.quantity}
                         onChange={(e) =>
-                          void updateQuantity(line.variantId, Number(e.target.value))
+                          void updateQuantity(line.lineKey, Number(e.target.value))
                         }
                         className="w-16 rounded border border-zinc-300 px-2 py-1 text-sm"
                         aria-label={`Quantity for ${line.productName}`}
                       />
                       <button
                         type="button"
-                        onClick={() => void removeItem(line.variantId)}
+                        onClick={() => void removeItem(line.lineKey)}
                         className="text-sm text-red-600 hover:underline"
                       >
                         Remove

@@ -33,6 +33,7 @@ export const checkoutSchema = z
 export const cartLineSchema = z.object({
   variantId: z.string().min(1),
   quantity: z.number().int().min(1).max(99),
+  personalization: z.record(z.string(), z.string()).optional(),
 });
 
 export const cartLinesSchema = z.array(cartLineSchema).min(1);
@@ -41,7 +42,7 @@ export type AddressInput = z.infer<typeof addressSchema>;
 export type CheckoutInput = z.infer<typeof checkoutSchema>;
 
 export type CheckoutPendingPayload = {
-  items: { variantId: string; quantity: number }[];
+  items: { variantId: string; quantity: number; personalization?: Record<string, string> }[];
   couponCode?: string;
   guestEmail?: string;
   shipping: AddressInput;

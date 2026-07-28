@@ -5,7 +5,32 @@ import { logoutAction } from "@/actions/auth";
 import { CartButton } from "@/components/cart/CartButton";
 import { DeployConfigBanner } from "@/components/layout/DeployConfigBanner";
 import { PromoBar } from "@/components/layout/PromoBar";
+import { MegaMenu } from "@/components/layout/MegaMenu";
+import { listThemesForNav } from "@/lib/catalog/themes";
+import { db } from "@/lib/db";
+import { AGE_TAG_SLUGS, GENDER_TAG_SLUGS } from "@/lib/store/storefront-config";
 
+async function loadNavTags(slugs: readonly string[]) {
+  if (!process.env.DATABASE_URL?.trim()) return [];
+  try {
+    return await db.tag.findMany({
+      where: { slug: { in: [...slugs] } },
+      orderBy: { name: "asc" },
+      select: { slug: true, name: true },
+    });
+  } catch {
+    return [];
+  }
+}
+
+async function loadNavThemes() {
+  if (!process.env.DATABASE_URL?.trim()) return [];
+  try {
+    return await listThemesForNav();
+  } catch {
+    return [];
+  }
+}
 async function loadNavCategories() {
   if (!process.env.DATABASE_URL?.trim()) return [];
   try {
@@ -16,7 +41,13 @@ async function loadNavCategories() {
 }
 
 export async function SiteHeader() {
-  const [session, categories] = await Promise.all([safeAuth(), loadNavCategories()]);
+  const [session, categories, themes, genderTags, ageTags] = await Promise.all([
+    safeAuth(),
+    loadNavCategories(),
+    loadNavThemes(),
+    loadNavTags(GENDER_TAG_SLUGS),
+    loadNavTags(AGE_TAG_SLUGS),
+  ]);
 
   return (
     <>
@@ -31,45 +62,22 @@ export async function SiteHeader() {
           >
             WrapItUp
           </Link>
-          <nav className="hidden max-w-3xl flex-1 flex-wrap items-center gap-x-4 gap-y-1 text-sm text-zinc-700 lg:flex">
-            <Link href="/" className="font-medium hover:text-brand-600">
-              Home
-            </Link>
+          <MegaMenu
+            categories={categories}
+            themes={themes}
+            genderTags={genderTags}
+            ageTags={ageTags}
+          />
+          <nav className="flex flex-wrap items-center gap-2 text-sm text-zinc-700 xl:hidden">
             <Link href="/products?tags=gift-idea" className="hover:text-brand-600">
-              Return gifts
-            </Link>
-            <Link href="/products?tags=new-arrival" className="hover:text-brand-600">
-              New arrivals
-            </Link>
-            <Link href="/products?tags=best-seller" className="hover:text-brand-600">
-              #Trending
+              Gifts
             </Link>
             <Link href="/products" className="hover:text-brand-600">
-              View all
+              Shop
             </Link>
-            {categories.slice(0, 4).map((category) => (
-              <div key={category.id} className="group relative">
-                <Link
-                  href={`/categories/${category.slug}`}
-                  className="hover:text-brand-600"
-                >
-                  {category.name}
-                </Link>
-                {category.children.length > 0 ? (
-                  <div className="absolute left-0 top-full z-20 hidden min-w-[12rem] rounded-lg border border-zinc-200 bg-white py-2 shadow-lg group-hover:block">
-                    {category.children.map((child) => (
-                      <Link
-                        key={child.id}
-                        href={`/categories/${child.slug}`}
-                        className="block px-4 py-2 hover:bg-brand-50"
-                      >
-                        {child.name}
-                      </Link>
-                    ))}
-                  </div>
-                ) : null}
-              </div>
-            ))}
+            <Link href="/corporate-gifts" className="hover:text-brand-600">
+              Corporate
+            </Link>
           </nav>
         </div>
         <div className="flex items-center gap-3 text-sm">

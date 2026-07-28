@@ -2,6 +2,7 @@ import "server-only";
 
 import { db } from "@/lib/db";
 import type { CartLine } from "@/types/cart";
+import { cartLineKey } from "@/types/cart";
 
 export async function getOrCreateCart(userId: string) {
   return db.cart.upsert({
@@ -21,7 +22,15 @@ export async function getCartLinesForUser(userId: string): Promise<CartLine[]> {
   return cart.items.map((item) => ({
     variantId: item.productVariantId,
     quantity: item.quantity,
+    personalization:
+      item.personalization && typeof item.personalization === "object"
+        ? (item.personalization as Record<string, string>)
+        : undefined,
   }));
+}
+
+function lineIdentity(line: CartLine) {
+  return cartLineKey(line);
 }
 
 export async function replaceUserCart(userId: string, lines: CartLine[]) {
@@ -34,6 +43,7 @@ export async function replaceUserCart(userId: string, lines: CartLine[]) {
           cartId: cart.id,
           productVariantId: line.variantId,
           quantity: line.quantity,
+          personalization: line.personalization ?? undefined,
         })),
       });
     }
@@ -42,20 +52,27 @@ export async function replaceUserCart(userId: string, lines: CartLine[]) {
 
 export async function mergeGuestCartIntoUser(userId: string, guestLines: CartLine[]) {
   const cart = await getOrCreateCart(userId);
-  const existing = new Map(
-    cart.items.map((item) => [item.productVariantId, item.quantity]),
-  );
-
-  for (const line of guestLines) {
-    const current = existing.get(line.variantId) ?? 0;
-    existing.set(line.variantId, Math.min(99, current + line.quantity));
-  }
-
-  const merged = Array.from(existing.entries()).map(([variantId, quantity]) => ({
-    variantId,
-    quantity,
+  const existingLines: CartLine[] = cart.items.map((item) => ({
+    variantId: item.productVariantId,
+    quantity: item.quantity,
+    personalization:
+      item.personalization && typeof item.personalization === "object"
+        ? (item.personalization as Record<string, string>)
+        : undefined,
   }));
 
+  const mergedMap = new Map<string, CartLine>();
+  for (const line of [...existingLines, ...guestLines]) {
+    const key = lineIdentity(line);
+    const current = mergedMap.get(key);
+    if (current) {
+      current.quantity = Math.min(99, current.quantity + line.quantity);
+    } else {
+      mergedMap.set(key, { ...line });
+    }
+  }
+
+  const merged = Array.from(mergedMap.values());
   await replaceUserCart(userId, merged);
   return merged;
 }

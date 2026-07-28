@@ -7,17 +7,21 @@ export type CarouselProduct = CatalogProductListItem & { videoUrl?: string | nul
 
 type CollectionCarouselProps = {
   title: string;
+  subtitle?: string;
   emoji?: string;
   products: CarouselProduct[];
   viewAllHref: string;
+  viewAllLabel?: string;
   variant?: "default" | "video";
 };
 
 export function CollectionCarousel({
   title,
+  subtitle,
   emoji,
   products,
   viewAllHref,
+  viewAllLabel = "View all",
   variant = "default",
 }: CollectionCarouselProps) {
   if (products.length === 0) return null;
@@ -28,14 +32,19 @@ export function CollectionCarousel({
     <section className="border-t border-neutral-border bg-neutral-bg py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
         <div className="mb-6 flex items-end justify-between gap-4">
-          <h2 className="font-display text-xl font-semibold text-neutral-text sm:text-2xl">
-            {heading}
-          </h2>
+          <div>
+            <h2 className="font-display text-xl font-semibold text-neutral-text sm:text-2xl">
+              {heading}
+            </h2>
+            {subtitle ? (
+              <p className="mt-1 text-sm font-medium text-brand-700">{subtitle}</p>
+            ) : null}
+          </div>
           <Link
             href={viewAllHref}
             className="shrink-0 text-sm font-semibold text-brand-600 hover:text-brand-700 hover:underline"
           >
-            View all
+            {viewAllLabel}
           </Link>
         </div>
         <ul className="-mx-2 flex snap-x snap-mandatory gap-4 overflow-x-auto scroll-smooth pb-2 [scrollbar-width:thin]">

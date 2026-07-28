@@ -10,10 +10,13 @@
  *   node scripts/setup-production-catalog.mjs
  */
 import { spawnSync } from "child_process";
+import { config as loadEnv } from "dotenv";
 import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 
 const root = join(dirname(fileURLToPath(import.meta.url)), "..");
+loadEnv({ path: join(root, ".env") });
+
 const databaseUrl = process.argv[2]?.trim() || process.env.DATABASE_URL?.trim();
 
 if (!databaseUrl) {

@@ -1,0 +1,4336 @@
+{
+  "generatedAt": "2026-07-28T10:56:08.735Z",
+  "count": 205,
+  "products": [
+    {
+      "name": "Personalized Kids Insulated Custom Name Lunch Bag",
+      "slug": "personalized-kids-insulated-custom-name-lunch-bag",
+      "sku": "WUI-personalized-kids-insulated-custom-name-lunch-bag",
+      "categorySlug": "lunch-boxes",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "personalization",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 399,
+      "compareAtRupees": 499,
+      "stock": 22,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Sling It & Go! Vibrant Sling/Chest Shoulder Bag",
+      "slug": "sling-it-go-vibrant-sling-chest-shoulder-bag",
+      "sku": "WUI-sling-it-go-vibrant-sling-chest-shoulder-bag",
+      "categorySlug": "sling-waist-bags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 199,
+      "compareAtRupees": 299,
+      "stock": 179,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Adorable Kids Cartoon Handbag | Vibrant Colors | Perfect for Birthday Return Gifts",
+      "slug": "adorable-kids-cartoon-handbag-vibrant-colors-perfect-for-birthday-return-gifts",
+      "sku": "WUI-adorable-kids-cartoon-handbag-vibrant-colors-perfect-for-bir",
+      "categorySlug": "sling-waist-bags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 199,
+      "compareAtRupees": 299,
+      "stock": 20,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Personalized with Name Sling/Chest Shoulder Bag for kids",
+      "slug": "personalized-with-name-sling-chest-shoulder-bag-for-kids",
+      "sku": "WUI-personalized-with-name-sling-chest-shoulder-bag-for-kids",
+      "categorySlug": "sling-waist-bags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "personalization",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 299,
+      "compareAtRupees": 499,
+      "stock": 69,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute Fruit & Flower Series USB Handheld Fan | Portable USB Rechargeable Fan",
+      "slug": "cute-fruit-flower-series-usb-handheld-fan-portable-usb-rechargeable-fan",
+      "sku": "WUI-cute-fruit-flower-series-usb-handheld-fan-portable-usb-recha",
+      "categorySlug": "mini-fans",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 149,
+      "compareAtRupees": 199,
+      "stock": 27,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Adventure Buddy Sling Waist/ Chest Bag for Kids",
+      "slug": "adventure-buddy-sling-waist-chest-bag-for-kids",
+      "sku": "WUI-adventure-buddy-sling-waist-chest-bag-for-kids",
+      "categorySlug": "sling-waist-bags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "best-seller",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 265,
+      "compareAtRupees": 399,
+      "stock": 35,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Giftoo Eco-Friendly Plantable Seed Pencils | Write Today, Plant Tomorrow",
+      "slug": "giftoo-eco-friendly-plantable-seed-pencils-write-today-plant-tomorrow",
+      "sku": "WUI-giftoo-eco-friendly-plantable-seed-pencils-write-today-plant",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 29,
+      "compareAtRupees": 49,
+      "stock": 33,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cartoon Design LED Light Wristband Spinner",
+      "slug": "cartoon-design-led-light-wristband-spinner",
+      "sku": "WUI-cartoon-design-led-light-wristband-spinner",
+      "categorySlug": "led-lamps",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 88,
+      "compareAtRupees": 149,
+      "stock": 143,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Creative LCD Drawing Tablet & Calculator Compass – Ideal Kids' Gift",
+      "slug": "creative-lcd-drawing-tablet-calculator-compass-ideal-kids-gift",
+      "sku": "WUI-creative-lcd-drawing-tablet-calculator-compass-ideal-kids-gi",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 225,
+      "compareAtRupees": 399,
+      "stock": 196,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Personalized Kids Name Stickers | Waterproof UV DTF Labels | 16 Stickers",
+      "slug": "personalized-kids-name-stickers-waterproof-uv-dtf-labels-16-stickers",
+      "sku": "WUI-personalized-kids-name-stickers-waterproof-uv-dtf-labels-16-",
+      "categorySlug": "stickers-washi-tapes",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "personalization",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 299,
+      "compareAtRupees": 399,
+      "stock": 73,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Kids Cartoon Duffle Bag",
+      "slug": "kids-cartoon-duffle-bag",
+      "sku": "WUI-kids-cartoon-duffle-bag",
+      "categorySlug": "sling-waist-bags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 199,
+      "compareAtRupees": 299,
+      "stock": 112,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Astronaut Bubble Wands for Kids - Space Theme Party Favors",
+      "slug": "astronaut-bubble-wands-for-kids-space-theme-party-favors",
+      "sku": "WUI-astronaut-bubble-wands-for-kids-space-theme-party-favors",
+      "categorySlug": "fun-toys-games",
+      "themeSlugs": [
+        "space"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 49,
+      "compareAtRupees": 79,
+      "stock": 136,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Personalized Metal Keychains - Round",
+      "slug": "personalized-metal-keychains-round",
+      "sku": "WUI-personalized-metal-keychains-round",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "personalization",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 99,
+      "compareAtRupees": 1980,
+      "stock": 97,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cartoon Silicone Luggage Tags | Cute Travel Bag Identifiers",
+      "slug": "cartoon-silicone-luggage-tags-cute-travel-bag-identifiers",
+      "sku": "WUI-cartoon-silicone-luggage-tags-cute-travel-bag-identifiers",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 65,
+      "compareAtRupees": 79,
+      "stock": 121,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Surprise Toy Organic Bath Bombs for Kids",
+      "slug": "surprise-toy-organic-bath-bombs-for-kids",
+      "sku": "WUI-surprise-toy-organic-bath-bombs-for-kids",
+      "categorySlug": "fun-toys-games",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 199,
+      "compareAtRupees": 299,
+      "stock": 74,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute Magnetic Cartoon Bookmarks Set for Kids",
+      "slug": "cute-magnetic-cartoon-bookmarks-set-for-kids",
+      "sku": "WUI-cute-magnetic-cartoon-bookmarks-set-for-kids",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "best-seller",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 49,
+      "compareAtRupees": 79,
+      "stock": 50,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Magic Scratch Notebook/Diary",
+      "slug": "magic-scratch-notebook-diary",
+      "sku": "WUI-magic-scratch-notebook-diary",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 29,
+      "compareAtRupees": 49,
+      "stock": 68,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Kawaii Magnetic Drawing Board Keychain",
+      "slug": "kawaii-magnetic-drawing-board-keychain",
+      "sku": "WUI-kawaii-magnetic-drawing-board-keychain",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 135,
+      "compareAtRupees": 149,
+      "stock": 156,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cartoon Printed Sipper Water Bottle – 600ml",
+      "slug": "cartoon-printed-sipper-water-bottle-600ml",
+      "sku": "WUI-cartoon-printed-sipper-water-bottle-600ml",
+      "categorySlug": "water-bottles-sippers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 165,
+      "compareAtRupees": 199,
+      "stock": 198,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute Cartoon Waterproof Bandages for Kids – Skin-Friendly",
+      "slug": "cute-cartoon-waterproof-bandages-for-kids-skin-friendly",
+      "sku": "WUI-cute-cartoon-waterproof-bandages-for-kids-skin-friendly",
+      "categorySlug": "art-books",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 25,
+      "compareAtRupees": 49,
+      "stock": 28,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Magic Floating Ink Pen Set of 8 Color - Draw, Dip & Float",
+      "slug": "magic-floating-ink-pen-set-of-8-color-draw-dip-float",
+      "sku": "WUI-magic-floating-ink-pen-set-of-8-color-draw-dip-float",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 125,
+      "compareAtRupees": 199,
+      "stock": 113,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Stretchy Dinosaur Finger Slingshot",
+      "slug": "stretchy-dinosaur-finger-slingshot",
+      "sku": "WUI-stretchy-dinosaur-finger-slingshot",
+      "categorySlug": "sling-waist-bags",
+      "themeSlugs": [
+        "dino"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 35,
+      "compareAtRupees": 49,
+      "stock": 150,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "DIY Animal Cardboard Paper Glasses for Kids",
+      "slug": "diy-animal-cardboard-paper-glasses-for-kids",
+      "sku": "WUI-diy-animal-cardboard-paper-glasses-for-kids",
+      "categorySlug": "diy-craft-kits",
+      "themeSlugs": [
+        "jungle"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 49,
+      "compareAtRupees": 79,
+      "stock": 184,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Personalized Metal Pen – Custom Name & Logo Printing",
+      "slug": "personalized-metal-pen-custom-name-logo-printing",
+      "sku": "WUI-personalized-metal-pen-custom-name-logo-printing",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "personalization",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 58,
+      "compareAtRupees": 99,
+      "stock": 174,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Sling It & Go! Vibrant Sling/Chest Shoulder Bag",
+      "slug": "sling-it-go-vibrant-sling-chest-shoulder-bag-2",
+      "sku": "WUI-sling-it-go-vibrant-sling-chest-shoulder-bag-2",
+      "categorySlug": "sling-waist-bags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 195,
+      "compareAtRupees": 264,
+      "stock": 96,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Kids Smart Educational Touch Phone Toy",
+      "slug": "kids-smart-educational-touch-phone-toy",
+      "sku": "WUI-kids-smart-educational-touch-phone-toy",
+      "categorySlug": "kids-gadgets",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 374,
+      "compareAtRupees": 505,
+      "stock": 75,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Korean Knitted Crossbody Sling Bag",
+      "slug": "korean-knitted-crossbody-sling-bag",
+      "sku": "WUI-korean-knitted-crossbody-sling-bag",
+      "categorySlug": "sling-waist-bags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 235,
+      "compareAtRupees": 318,
+      "stock": 36,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Match Stick Erasers",
+      "slug": "match-stick-erasers",
+      "sku": "WUI-match-stick-erasers",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 325,
+      "compareAtRupees": 439,
+      "stock": 46,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Spicy & Fun Chili Pepper Correction Tape | 5mm x 6mm Refillable",
+      "slug": "spicy-fun-chili-pepper-correction-tape-5mm-x-6mm-refillable",
+      "sku": "WUI-spicy-fun-chili-pepper-correction-tape-5mm-x-6mm-refillable",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [
+        "dessert"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 139,
+      "compareAtRupees": 199,
+      "stock": 154,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute Macron Pastel Whiteout Tape with Ultra-Thin Transparent PET Film",
+      "slug": "cute-macron-pastel-whiteout-tape-with-ultra-thin-transparent-pet-film",
+      "sku": "WUI-cute-macron-pastel-whiteout-tape-with-ultra-thin-transparent",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 55,
+      "compareAtRupees": 99,
+      "stock": 173,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Kawaii Character PET Correction Tape",
+      "slug": "kawaii-character-pet-correction-tape",
+      "sku": "WUI-kawaii-character-pet-correction-tape",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 45,
+      "compareAtRupees": 79,
+      "stock": 158,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute Cartoon Animal Correction Tape | Portable Whiteout Roller",
+      "slug": "cute-cartoon-animal-correction-tape-portable-whiteout-roller",
+      "sku": "WUI-cute-cartoon-animal-correction-tape-portable-whiteout-roller",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [
+        "jungle"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 45,
+      "compareAtRupees": 79,
+      "stock": 32,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Qihao DIY Unicorn Eraser Set of 5pcs | Eraser & Desk Decor",
+      "slug": "qihao-diy-unicorn-eraser-set-of-5pcs-eraser-desk-decor",
+      "sku": "WUI-qihao-diy-unicorn-eraser-set-of-5pcs-eraser-desk-decor",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [
+        "unicorn"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 139,
+      "compareAtRupees": 199,
+      "stock": 135,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Qihao DIY Panda Eraser Set | Erase & Play",
+      "slug": "qihao-diy-panda-eraser-set-erase-play",
+      "sku": "WUI-qihao-diy-panda-eraser-set-erase-play",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [
+        "panda"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 139,
+      "compareAtRupees": 199,
+      "stock": 32,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Good Luck Aesthetic Grid Contrasting Color Small Pouch with Detachable Patch | Soft Handle",
+      "slug": "good-luck-aesthetic-grid-contrasting-color-small-pouch-with-detachable-patch-sof",
+      "sku": "WUI-good-luck-aesthetic-grid-contrasting-color-small-pouch-with-",
+      "categorySlug": "pouches-pencil-cases",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 499,
+      "compareAtRupees": 699,
+      "stock": 87,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Nice Day Aesthetic Small Pouch with Detachable Patch | Large Capacity Storage",
+      "slug": "nice-day-aesthetic-small-pouch-with-detachable-patch-large-capacity-storage",
+      "sku": "WUI-nice-day-aesthetic-small-pouch-with-detachable-patch-large-c",
+      "categorySlug": "pouches-pencil-cases",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 399,
+      "compareAtRupees": 499,
+      "stock": 166,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Yummy Aesthetic Grid Contrasting Color Small Pencil Case with Detachable Patch",
+      "slug": "yummy-aesthetic-grid-contrasting-color-small-pencil-case-with-detachable-patch",
+      "sku": "WUI-yummy-aesthetic-grid-contrasting-color-small-pencil-case-wit",
+      "categorySlug": "pouches-pencil-cases",
+      "themeSlugs": [
+        "dessert"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 449,
+      "compareAtRupees": 499,
+      "stock": 21,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Kawaii Panda Student Tote Bag with Detachable Pencil Pouch | Large Capacity Study Bag",
+      "slug": "kawaii-panda-student-tote-bag-with-detachable-pencil-pouch-large-capacity-study",
+      "sku": "WUI-kawaii-panda-student-tote-bag-with-detachable-pencil-pouch-l",
+      "categorySlug": "sling-waist-bags",
+      "themeSlugs": [
+        "panda"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 699,
+      "compareAtRupees": 799,
+      "stock": 141,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Adventure Buddy Sling Waist/ Chest Bag for Kids",
+      "slug": "adventure-buddy-sling-waist-chest-bag-for-kids-2",
+      "sku": "WUI-adventure-buddy-sling-waist-chest-bag-for-kids-2",
+      "categorySlug": "sling-waist-bags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 265,
+      "compareAtRupees": 399,
+      "stock": 100,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Multi-Layer Canvas Pencil Pouch with Cartoon Patch and Zipper Compartments | Cute Aesthetic Pencil Pouch",
+      "slug": "multi-layer-canvas-pencil-pouch-with-cartoon-patch-and-zipper-compartments-cute",
+      "sku": "WUI-multi-layer-canvas-pencil-pouch-with-cartoon-patch-and-zippe",
+      "categorySlug": "pouches-pencil-cases",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 385,
+      "compareAtRupees": 499,
+      "stock": 42,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "A4 NET FOLDER WITH 3 COMPARTMENT AND HANDLE HAVE A NICE DAY | Vertical L-Shaped Opening School File Folder",
+      "slug": "a4-net-folder-with-3-compartment-and-handle-have-a-nice-day-vertical-l-shaped-op",
+      "sku": "WUI-a4-net-folder-with-3-compartment-and-handle-have-a-nice-day-",
+      "categorySlug": "pouches-pencil-cases",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 399,
+      "compareAtRupees": 599,
+      "stock": 33,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "A4 Net Printed Subject Organizer Bag | Vertical L-Shaped Opening School File Folder",
+      "slug": "a4-net-printed-subject-organizer-bag-vertical-l-shaped-opening-school-file-folde",
+      "sku": "WUI-a4-net-printed-subject-organizer-bag-vertical-l-shaped-openi",
+      "categorySlug": "pouches-pencil-cases",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 325,
+      "compareAtRupees": 399,
+      "stock": 178,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Portable Transparent School File Folder | 13 Grid Transparent School File Folder",
+      "slug": "portable-transparent-school-file-folder-13-grid-transparent-school-file-folder",
+      "sku": "WUI-portable-transparent-school-file-folder-13-grid-transparent-",
+      "categorySlug": "pouches-pencil-cases",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "best-seller",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 499,
+      "compareAtRupees": 599,
+      "stock": 35,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Transaparent 2-Compartment A4 Subject Organizer Bag – Vertical L-Shaped Opening School File Folder",
+      "slug": "transaparent-2-compartment-a4-subject-organizer-bag-vertical-l-shaped-opening-sc",
+      "sku": "WUI-transaparent-2-compartment-a4-subject-organizer-bag-vertical",
+      "categorySlug": "pouches-pencil-cases",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 265,
+      "compareAtRupees": 399,
+      "stock": 47,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "A4 Mesh Zipper Folder – 2-Compartment School Document Organizer with Handle",
+      "slug": "a4-mesh-zipper-folder-2-compartment-school-document-organizer-with-handle",
+      "sku": "WUI-a4-mesh-zipper-folder-2-compartment-school-document-organize",
+      "categorySlug": "pouches-pencil-cases",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 499,
+      "compareAtRupees": 599,
+      "stock": 66,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "3-Layer Expanding Organizer with Zipper Pocket & Reinforced Handle",
+      "slug": "3-layer-expanding-organizer-with-zipper-pocket-reinforced-handle",
+      "sku": "WUI-3-layer-expanding-organizer-with-zipper-pocket-reinforced-ha",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 349,
+      "compareAtRupees": 499,
+      "stock": 140,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Kids' Cute Animal Head 316 Stainless Steel Vacuum Insulated Water Bottle",
+      "slug": "kids-cute-animal-head-316-stainless-steel-vacuum-insulated-water-bottle",
+      "sku": "WUI-kids-cute-animal-head-316-stainless-steel-vacuum-insulated-w",
+      "categorySlug": "water-bottles-sippers",
+      "themeSlugs": [
+        "jungle"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 1250,
+      "compareAtRupees": 1999,
+      "stock": 162,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Creative Building Block Eraser Sets – Interlocking Puzzle Stationery for Kids",
+      "slug": "creative-building-block-eraser-sets-interlocking-puzzle-stationery-for-kids",
+      "sku": "WUI-creative-building-block-eraser-sets-interlocking-puzzle-stat",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 125,
+      "compareAtRupees": 199,
+      "stock": 73,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Adorable Miniature Shopping Basket Eraser Sets – Creative Stationery for Kids",
+      "slug": "adorable-miniature-shopping-basket-eraser-sets-creative-stationery-for-kids",
+      "sku": "WUI-adorable-miniature-shopping-basket-eraser-sets-creative-stat",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 139,
+      "compareAtRupees": 199,
+      "stock": 67,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Electric Dino Bubble Gun | Fun Outdoor Toy with Bubble-in-Bubble Effect",
+      "slug": "electric-dino-bubble-gun-fun-outdoor-toy-with-bubble-in-bubble-effect",
+      "sku": "WUI-electric-dino-bubble-gun-fun-outdoor-toy-with-bubble-in-bubb",
+      "categorySlug": "kids-gadgets",
+      "themeSlugs": [
+        "dino"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 875,
+      "compareAtRupees": 999,
+      "stock": 147,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Die-Cast Metal Motorcycle Series: Miniature Adventure Bike",
+      "slug": "die-cast-metal-motorcycle-series-miniature-adventure-bike",
+      "sku": "WUI-die-cast-metal-motorcycle-series-miniature-adventure-bike",
+      "categorySlug": "miniatures",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 199,
+      "compareAtRupees": 299,
+      "stock": 126,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Jungle Safari Strummer: Interactive 4-String Guitar for Little Musicians",
+      "slug": "jungle-safari-strummer-interactive-4-string-guitar-for-little-musicians",
+      "sku": "WUI-jungle-safari-strummer-interactive-4-string-guitar-for-littl",
+      "categorySlug": "kids-gadgets",
+      "themeSlugs": [
+        "jungle"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 499,
+      "compareAtRupees": 799,
+      "stock": 173,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Melody Elephant: The Interactive Musical Piano for Little Explorers",
+      "slug": "melody-elephant-the-interactive-musical-piano-for-little-explorers",
+      "sku": "WUI-melody-elephant-the-interactive-musical-piano-for-little-exp",
+      "categorySlug": "kids-gadgets",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 399,
+      "compareAtRupees": 499,
+      "stock": 140,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Dino-Musical Magic: The Ultimate Light-Up Piano for Little Maestros",
+      "slug": "dino-musical-magic-the-ultimate-light-up-piano-for-little-maestros",
+      "sku": "WUI-dino-musical-magic-the-ultimate-light-up-piano-for-little-ma",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [
+        "dino"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 399,
+      "compareAtRupees": 499,
+      "stock": 168,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Flower Bubble Blower Machine | Light-Up Bubble Blower for Endless Play",
+      "slug": "flower-bubble-blower-machine-light-up-bubble-blower-for-endless-play",
+      "sku": "WUI-flower-bubble-blower-machine-light-up-bubble-blower-for-endl",
+      "categorySlug": "fun-toys-games",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 1349,
+      "compareAtRupees": 1999,
+      "stock": 40,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Creative LCD Drawing Tablet & Calculator Compass – Ideal Kids' Gift",
+      "slug": "creative-lcd-drawing-tablet-calculator-compass-ideal-kids-gift-2",
+      "sku": "WUI-creative-lcd-drawing-tablet-calculator-compass-ideal-kids-gi",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 225,
+      "compareAtRupees": 399,
+      "stock": 197,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Handmade Crochet Rose Bouquet Pouch | Elegant Floral Accessory for Return Gifts",
+      "slug": "handmade-crochet-rose-bouquet-pouch-elegant-floral-accessory-for-return-gifts",
+      "sku": "WUI-handmade-crochet-rose-bouquet-pouch-elegant-floral-accessory",
+      "categorySlug": "pouches-pencil-cases",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 999,
+      "compareAtRupees": 1599,
+      "stock": 193,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "DIY Hanging Table Tennis Trainer for Children | Adjustable Skill-Building Sport Toy",
+      "slug": "diy-hanging-table-tennis-trainer-for-children-adjustable-skill-building-sport-to",
+      "sku": "WUI-diy-hanging-table-tennis-trainer-for-children-adjustable-ski",
+      "categorySlug": "diy-craft-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 449,
+      "compareAtRupees": 699,
+      "stock": 126,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "LCD Writing Tablet Pen Case | Creative Stationery Compass for Kids",
+      "slug": "lcd-writing-tablet-pen-case-creative-stationery-compass-for-kids",
+      "sku": "WUI-lcd-writing-tablet-pen-case-creative-stationery-compass-for-",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 199,
+      "compareAtRupees": 299,
+      "stock": 174,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "3D DIY Educational Puzzle Kit | Creative Model Building for Kids",
+      "slug": "3d-diy-educational-puzzle-kit-creative-model-building-for-kids",
+      "sku": "WUI-3d-diy-educational-puzzle-kit-creative-model-building-for-ki",
+      "categorySlug": "puzzles-brain-teasers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 125,
+      "compareAtRupees": 199,
+      "stock": 179,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Wooden Magnetic Bead Color & Number Matching Maze | Educational Developmental Toy for Kids",
+      "slug": "wooden-magnetic-bead-color-number-matching-maze-educational-developmental-toy-fo",
+      "sku": "WUI-wooden-magnetic-bead-color-number-matching-maze-educational-",
+      "categorySlug": "puzzles-brain-teasers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 399,
+      "compareAtRupees": 499,
+      "stock": 84,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Mind Puzzler Sliding Number Game for Ages 3+ | Educational Return Gift",
+      "slug": "mind-puzzler-sliding-number-game-for-ages-3-educational-return-gift",
+      "sku": "WUI-mind-puzzler-sliding-number-game-for-ages-3-educational-retu",
+      "categorySlug": "puzzles-brain-teasers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 199,
+      "compareAtRupees": 299,
+      "stock": 178,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Double-Sided Magic Bean Fidget Spinner | Stress Relief Puzzle for Kids & Adults",
+      "slug": "double-sided-magic-bean-fidget-spinner-stress-relief-puzzle-for-kids-adults",
+      "sku": "WUI-double-sided-magic-bean-fidget-spinner-stress-relief-puzzle-",
+      "categorySlug": "puzzles-brain-teasers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 135,
+      "compareAtRupees": 199,
+      "stock": 144,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Magic Ruler Twist Snake Puzzle | Educational Brain Teaser & Shape Shifter",
+      "slug": "magic-ruler-twist-snake-puzzle-educational-brain-teaser-shape-shifter",
+      "sku": "WUI-magic-ruler-twist-snake-puzzle-educational-brain-teaser-shap",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 125,
+      "compareAtRupees": 165,
+      "stock": 128,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute Fruit & Flower Series USB Handheld Fan | Portable USB Rechargeable Fan",
+      "slug": "cute-fruit-flower-series-usb-handheld-fan-portable-usb-rechargeable-fan-2",
+      "sku": "WUI-cute-fruit-flower-series-usb-handheld-fan-portable-usb-recha",
+      "categorySlug": "mini-fans",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 149,
+      "compareAtRupees": 199,
+      "stock": 120,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute Cartoon Folding Hand Fan for Kids",
+      "slug": "cute-cartoon-folding-hand-fan-for-kids",
+      "sku": "WUI-cute-cartoon-folding-hand-fan-for-kids",
+      "categorySlug": "mini-fans",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 25,
+      "compareAtRupees": 49,
+      "stock": 148,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "3-in-1 Mini Desk & Rechargeable Handheld Fan | 3-Speed Mini Portable Fan",
+      "slug": "3-in-1-mini-desk-rechargeable-handheld-fan-3-speed-mini-portable-fan",
+      "sku": "WUI-3-in-1-mini-desk-rechargeable-handheld-fan-3-speed-mini-port",
+      "categorySlug": "mini-fans",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 335,
+      "compareAtRupees": 399,
+      "stock": 28,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Breezy Bubbles Cute Rechargeable Desk Fan | 3-Speed Portable",
+      "slug": "breezy-bubbles-cute-rechargeable-desk-fan-3-speed-portable",
+      "sku": "WUI-breezy-bubbles-cute-rechargeable-desk-fan-3-speed-portable",
+      "categorySlug": "mini-fans",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 499,
+      "compareAtRupees": 699,
+      "stock": 171,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "3-in-1 Portable Turbine Fan with Phone Stand | Rechargeable Neck Fan",
+      "slug": "3-in-1-portable-turbine-fan-with-phone-stand-rechargeable-neck-fan",
+      "sku": "WUI-3-in-1-portable-turbine-fan-with-phone-stand-rechargeable-ne",
+      "categorySlug": "mini-fans",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 599,
+      "compareAtRupees": 799,
+      "stock": 196,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Kawaii Panda Rechargeable Spray Fan | Kids Summer Travel Water Mist Fan",
+      "slug": "kawaii-panda-rechargeable-spray-fan-kids-summer-travel-water-mist-fan",
+      "sku": "WUI-kawaii-panda-rechargeable-spray-fan-kids-summer-travel-water",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [
+        "panda"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 599,
+      "compareAtRupees": 799,
+      "stock": 124,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Jolly Chilly Panda Wearable Portable Fan | 3-Speed Rechargeable Mini Fan",
+      "slug": "jolly-chilly-panda-wearable-portable-fan-3-speed-rechargeable-mini-fan",
+      "sku": "WUI-jolly-chilly-panda-wearable-portable-fan-3-speed-rechargeabl",
+      "categorySlug": "mini-fans",
+      "themeSlugs": [
+        "panda"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 349,
+      "compareAtRupees": 399,
+      "stock": 97,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Matchstick Cutey Cappy Handheld Mini Fan",
+      "slug": "matchstick-cutey-cappy-handheld-mini-fan",
+      "sku": "WUI-matchstick-cutey-cappy-handheld-mini-fan",
+      "categorySlug": "mini-fans",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 249,
+      "compareAtRupees": 399,
+      "stock": 159,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute Animal Fan Sun Hat (Bladeless Cooling Built-in Fan)",
+      "slug": "cute-animal-fan-sun-hat-bladeless-cooling-built-in-fan",
+      "sku": "WUI-cute-animal-fan-sun-hat-bladeless-cooling-built-in-fan",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [
+        "jungle"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 875,
+      "compareAtRupees": 999,
+      "stock": 142,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Fast Food Fun: French Fries & Hamburger USB Fan with Built-in Phone Holder",
+      "slug": "fast-food-fun-french-fries-hamburger-usb-fan-with-built-in-phone-holder",
+      "sku": "WUI-fast-food-fun-french-fries-hamburger-usb-fan-with-built-in-p",
+      "categorySlug": "mini-fans",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 499,
+      "compareAtRupees": 599,
+      "stock": 129,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Retro Vintage Style Mini Table Fan",
+      "slug": "retro-vintage-style-mini-table-fan",
+      "sku": "WUI-retro-vintage-style-mini-table-fan",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 599,
+      "compareAtRupees": 699,
+      "stock": 124,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Mini Grape Shape Hand Pressure Fan",
+      "slug": "mini-grape-shape-hand-pressure-fan",
+      "sku": "WUI-mini-grape-shape-hand-pressure-fan",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 65,
+      "compareAtRupees": 99,
+      "stock": 167,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Return Gifts",
+      "slug": "return-gifts",
+      "sku": "WUI-return-gifts",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 493,
+      "compareAtRupees": 666,
+      "stock": 134,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Personalization",
+      "slug": "personalization",
+      "sku": "WUI-personalization",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "personalization",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 103,
+      "compareAtRupees": 140,
+      "stock": 84,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Fancy Stationery",
+      "slug": "fancy-stationery",
+      "sku": "WUI-fancy-stationery",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 471,
+      "compareAtRupees": 636,
+      "stock": 172,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Trendy on Reels",
+      "slug": "trendy-on-reels",
+      "sku": "WUI-trendy-on-reels",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 335,
+      "compareAtRupees": 453,
+      "stock": 196,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "LED Lamps",
+      "slug": "led-lamps",
+      "sku": "WUI-led-lamps",
+      "categorySlug": "led-lamps",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 474,
+      "compareAtRupees": 640,
+      "stock": 135,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "MINI FANS",
+      "slug": "mini-fans",
+      "sku": "WUI-mini-fans",
+      "categorySlug": "mini-fans",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 121,
+      "compareAtRupees": 164,
+      "stock": 42,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Lunch Boxes",
+      "slug": "lunch-boxes",
+      "sku": "WUI-lunch-boxes",
+      "categorySlug": "lunch-boxes",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 281,
+      "compareAtRupees": 380,
+      "stock": 62,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Keychains",
+      "slug": "keychains",
+      "sku": "WUI-keychains",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 226,
+      "compareAtRupees": 306,
+      "stock": 27,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Fashion Accessories",
+      "slug": "fashion-accessories",
+      "sku": "WUI-fashion-accessories",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 152,
+      "compareAtRupees": 206,
+      "stock": 53,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Pouches & Cases",
+      "slug": "pouches-cases",
+      "sku": "WUI-pouches-cases",
+      "categorySlug": "pouches-pencil-cases",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 356,
+      "compareAtRupees": 481,
+      "stock": 97,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "School Bags",
+      "slug": "school-bags",
+      "sku": "WUI-school-bags",
+      "categorySlug": "school-bags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 327,
+      "compareAtRupees": 442,
+      "stock": 28,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Highlighters & Markers",
+      "slug": "highlighters-markers",
+      "sku": "WUI-highlighters-markers",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 449,
+      "compareAtRupees": 607,
+      "stock": 30,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Bottle & Sippers",
+      "slug": "bottle-sippers",
+      "sku": "WUI-bottle-sippers",
+      "categorySlug": "water-bottles-sippers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 252,
+      "compareAtRupees": 341,
+      "stock": 173,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Tooth Brushes",
+      "slug": "tooth-brushes",
+      "sku": "WUI-tooth-brushes",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 310,
+      "compareAtRupees": 419,
+      "stock": 131,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Handbags / Tote Bags",
+      "slug": "handbags-tote-bags",
+      "sku": "WUI-handbags-tote-bags",
+      "categorySlug": "sling-waist-bags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 492,
+      "compareAtRupees": 665,
+      "stock": 153,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Gift Hampers",
+      "slug": "gift-hampers",
+      "sku": "WUI-gift-hampers",
+      "categorySlug": "corporate-gift-sets",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 464,
+      "compareAtRupees": 627,
+      "stock": 25,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Kids Gadgets",
+      "slug": "kids-gadgets",
+      "sku": "WUI-kids-gadgets",
+      "categorySlug": "kids-gadgets",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 108,
+      "compareAtRupees": 146,
+      "stock": 149,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Piggy Banks",
+      "slug": "piggy-banks",
+      "sku": "WUI-piggy-banks",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 493,
+      "compareAtRupees": 666,
+      "stock": 54,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute Fruit & Flower Series USB Handheld Fan | Portable USB Rechargeable Fan",
+      "slug": "cute-fruit-flower-series-usb-handheld-fan-portable-usb-rechargeable-fan-3",
+      "sku": "WUI-cute-fruit-flower-series-usb-handheld-fan-portable-usb-recha",
+      "categorySlug": "mini-fans",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 149,
+      "compareAtRupees": 199,
+      "stock": 119,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Kids Digital Microscope Camera | 500X Magnification 2.0 Inch Screen",
+      "slug": "kids-digital-microscope-camera-500x-magnification-2-0-inch-screen",
+      "sku": "WUI-kids-digital-microscope-camera-500x-magnification-2-0-inch-s",
+      "categorySlug": "kids-gadgets",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 2875,
+      "compareAtRupees": 3499,
+      "stock": 101,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Tiger HD Rechargeable Tiger Digital Camera for Kids",
+      "slug": "tiger-hd-rechargeable-tiger-digital-camera-for-kids",
+      "sku": "WUI-tiger-hd-rechargeable-tiger-digital-camera-for-kids",
+      "categorySlug": "kids-gadgets",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 1375,
+      "compareAtRupees": 1499,
+      "stock": 107,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Bunny Edition Dual-Lens Children’s Digital Camera with 2.0-inch IPS Eye-Protection Screen",
+      "slug": "bunny-edition-dual-lens-children-s-digital-camera-with-2-0-inch-ips-eye-protecti",
+      "sku": "WUI-bunny-edition-dual-lens-children-s-digital-camera-with-2-0-i",
+      "categorySlug": "kids-gadgets",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 1375,
+      "compareAtRupees": 1499,
+      "stock": 178,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Panda Edition Dual-Lens Children’s Digital Camera",
+      "slug": "panda-edition-dual-lens-children-s-digital-camera",
+      "sku": "WUI-panda-edition-dual-lens-children-s-digital-camera",
+      "categorySlug": "kids-gadgets",
+      "themeSlugs": [
+        "panda"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 1375,
+      "compareAtRupees": 1499,
+      "stock": 110,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Dino Theme Dual-Lens Children's Digital Camera",
+      "slug": "dino-theme-dual-lens-children-s-digital-camera",
+      "sku": "WUI-dino-theme-dual-lens-children-s-digital-camera",
+      "categorySlug": "kids-gadgets",
+      "themeSlugs": [
+        "dino"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 1375,
+      "compareAtRupees": 1499,
+      "stock": 147,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Kids Smart Walkie Talkies with Video Calling",
+      "slug": "kids-smart-walkie-talkies-with-video-calling",
+      "sku": "WUI-kids-smart-walkie-talkies-with-video-calling",
+      "categorySlug": "kids-gadgets",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 2250,
+      "compareAtRupees": 2999,
+      "stock": 93,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Ear Cat Wired In-Ear Earphones",
+      "slug": "ear-cat-wired-in-ear-earphones",
+      "sku": "WUI-ear-cat-wired-in-ear-earphones",
+      "categorySlug": "kids-gadgets",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 125,
+      "compareAtRupees": 199,
+      "stock": 176,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Kids Plush Unicorn Waist Bag",
+      "slug": "kids-plush-unicorn-waist-bag",
+      "sku": "WUI-kids-plush-unicorn-waist-bag",
+      "categorySlug": "sling-waist-bags",
+      "themeSlugs": [
+        "unicorn"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 225,
+      "compareAtRupees": 299,
+      "stock": 107,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute Cartoon Waterproof Bandages for Kids – Skin-Friendly",
+      "slug": "cute-cartoon-waterproof-bandages-for-kids-skin-friendly-2",
+      "sku": "WUI-cute-cartoon-waterproof-bandages-for-kids-skin-friendly-2",
+      "categorySlug": "art-books",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 25,
+      "compareAtRupees": 49,
+      "stock": 169,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Montessori Busy Board – Fun & Learning in One!",
+      "slug": "montessori-busy-board-fun-learning-in-one",
+      "sku": "WUI-montessori-busy-board-fun-learning-in-one",
+      "categorySlug": "educational-toys",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 599,
+      "compareAtRupees": 999,
+      "stock": 88,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Educational Ultimate Skill Learning Activity Backpack",
+      "slug": "educational-ultimate-skill-learning-activity-backpack",
+      "sku": "WUI-educational-ultimate-skill-learning-activity-backpack",
+      "categorySlug": "school-bags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 849,
+      "compareAtRupees": 1999,
+      "stock": 169,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Bamboo Fiber Tumbler | Silicone Lid & Sleeve - 400ml",
+      "slug": "bamboo-fiber-tumbler-silicone-lid-sleeve-400ml",
+      "sku": "WUI-bamboo-fiber-tumbler-silicone-lid-sleeve-400ml",
+      "categorySlug": "water-bottles-sippers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 449,
+      "compareAtRupees": 799,
+      "stock": 187,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Magical Space Astronaut Erasable Gel Pens - Pack of 12",
+      "slug": "magical-space-astronaut-erasable-gel-pens-pack-of-12",
+      "sku": "WUI-magical-space-astronaut-erasable-gel-pens-pack-of-12",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [
+        "space"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 299,
+      "compareAtRupees": 349,
+      "stock": 165,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "2 in 1 Magic Invisible Pen Highlighter Set",
+      "slug": "2-in-1-magic-invisible-pen-highlighter-set",
+      "sku": "WUI-2-in-1-magic-invisible-pen-highlighter-set",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 69,
+      "compareAtRupees": 99,
+      "stock": 81,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute Panda Acrylic Plating Cloud Keychain",
+      "slug": "cute-panda-acrylic-plating-cloud-keychain",
+      "sku": "WUI-cute-panda-acrylic-plating-cloud-keychain",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [
+        "panda"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 135,
+      "compareAtRupees": 299,
+      "stock": 23,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "DIY Construction Vehicle Puzzle Pencil Sharpener",
+      "slug": "diy-construction-vehicle-puzzle-pencil-sharpener",
+      "sku": "WUI-diy-construction-vehicle-puzzle-pencil-sharpener",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 69,
+      "compareAtRupees": 79,
+      "stock": 37,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "DIY Space Craft Puzzle Pencil Sharpener",
+      "slug": "diy-space-craft-puzzle-pencil-sharpener",
+      "sku": "WUI-diy-space-craft-puzzle-pencil-sharpener",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [
+        "space"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 55,
+      "compareAtRupees": 69,
+      "stock": 102,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "DIY Jungle Family Puzzle Pencil Sharpeners",
+      "slug": "diy-jungle-family-puzzle-pencil-sharpeners",
+      "sku": "WUI-diy-jungle-family-puzzle-pencil-sharpeners",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [
+        "jungle"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 65,
+      "compareAtRupees": 69,
+      "stock": 186,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "DIY Kids Sewing Kit, Handbag – Stitch Your Own Mini Bag",
+      "slug": "diy-kids-sewing-kit-handbag-stitch-your-own-mini-bag",
+      "sku": "WUI-diy-kids-sewing-kit-handbag-stitch-your-own-mini-bag",
+      "categorySlug": "sling-waist-bags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 165,
+      "compareAtRupees": 299,
+      "stock": 173,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "DIY Animal Sewing Craft Kit for Kids | Fun Wool Embroidery Set",
+      "slug": "diy-animal-sewing-craft-kit-for-kids-fun-wool-embroidery-set",
+      "sku": "WUI-diy-animal-sewing-craft-kit-for-kids-fun-wool-embroidery-set",
+      "categorySlug": "diy-craft-kits",
+      "themeSlugs": [
+        "jungle"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 199,
+      "compareAtRupees": 299,
+      "stock": 81,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "DIY Handmade Bag Kit - Fun Sewing Craft Set",
+      "slug": "diy-handmade-bag-kit-fun-sewing-craft-set",
+      "sku": "WUI-diy-handmade-bag-kit-fun-sewing-craft-set",
+      "categorySlug": "diy-craft-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 265,
+      "compareAtRupees": 299,
+      "stock": 85,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "DIY Coloring Puzzle Set",
+      "slug": "diy-coloring-puzzle-set",
+      "sku": "WUI-diy-coloring-puzzle-set",
+      "categorySlug": "puzzles-brain-teasers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 99,
+      "compareAtRupees": 149,
+      "stock": 172,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "DIY Sewing Handmade Pencil Case Kit 🎨 Beginner Craft for Kids",
+      "slug": "diy-sewing-handmade-pencil-case-kit-beginner-craft-for-kids",
+      "sku": "WUI-diy-sewing-handmade-pencil-case-kit-beginner-craft-for-kids",
+      "categorySlug": "pouches-pencil-cases",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 249,
+      "compareAtRupees": 299,
+      "stock": 57,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Personalized Pen & Keychain Set - Corporate Gift",
+      "slug": "personalized-pen-keychain-set-corporate-gift",
+      "sku": "WUI-personalized-pen-keychain-set-corporate-gift",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "personalization",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 165,
+      "compareAtRupees": 199,
+      "stock": 107,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Customize Diary & Pen Combo Corporate Gift Set",
+      "slug": "customize-diary-pen-combo-corporate-gift-set",
+      "sku": "WUI-customize-diary-pen-combo-corporate-gift-set",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 375,
+      "compareAtRupees": 399,
+      "stock": 192,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Pen & Keychain Perfect for Corporate & Personal Gifting",
+      "slug": "pen-keychain-perfect-for-corporate-personal-gifting",
+      "sku": "WUI-pen-keychain-perfect-for-corporate-personal-gifting",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 249,
+      "compareAtRupees": 337,
+      "stock": 196,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Corporate Gift Box for Employees & Clients – Custom Gift Set | Diary, Pen, Keychain, Bottle",
+      "slug": "corporate-gift-box-for-employees-clients-custom-gift-set-diary-pen-keychain-bott",
+      "sku": "WUI-corporate-gift-box-for-employees-clients-custom-gift-set-dia",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 999,
+      "compareAtRupees": 999,
+      "stock": 38,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "3 in 1 Personalized Corporate Gift Set | Diary, Pen & Bottle",
+      "slug": "3-in-1-personalized-corporate-gift-set-diary-pen-bottle",
+      "sku": "WUI-3-in-1-personalized-corporate-gift-set-diary-pen-bottle",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "personalization",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 899,
+      "compareAtRupees": 999,
+      "stock": 43,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Advocate Personalized Pen And Keychain Set",
+      "slug": "advocate-personalized-pen-and-keychain-set",
+      "sku": "WUI-advocate-personalized-pen-and-keychain-set",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "personalization",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 249,
+      "compareAtRupees": 299,
+      "stock": 192,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Personalized Diary, Pen & Keychain Employee Gift Set",
+      "slug": "personalized-diary-pen-keychain-employee-gift-set",
+      "sku": "WUI-personalized-diary-pen-keychain-employee-gift-set",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "personalization",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 535,
+      "compareAtRupees": 699,
+      "stock": 108,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Executive Personalized Gift Set – Bottle, Pen, and Diary",
+      "slug": "executive-personalized-gift-set-bottle-pen-and-diary",
+      "sku": "WUI-executive-personalized-gift-set-bottle-pen-and-diary",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "personalization",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 899,
+      "compareAtRupees": 999,
+      "stock": 194,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "DINO",
+      "slug": "dino",
+      "sku": "WUI-dino",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [
+        "dino"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 425,
+      "compareAtRupees": 574,
+      "stock": 146,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "UNICORN",
+      "slug": "unicorn",
+      "sku": "WUI-unicorn",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [
+        "unicorn"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 283,
+      "compareAtRupees": 383,
+      "stock": 44,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Mermaid Theme",
+      "slug": "mermaid-theme",
+      "sku": "WUI-mermaid-theme",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [
+        "mermaid"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 350,
+      "compareAtRupees": 473,
+      "stock": 51,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Space Theme",
+      "slug": "space-theme",
+      "sku": "WUI-space-theme",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [
+        "space"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 293,
+      "compareAtRupees": 396,
+      "stock": 94,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Jungle Theme",
+      "slug": "jungle-theme",
+      "sku": "WUI-jungle-theme",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [
+        "jungle"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 346,
+      "compareAtRupees": 468,
+      "stock": 107,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "PANDA",
+      "slug": "panda",
+      "sku": "WUI-panda",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [
+        "panda"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 285,
+      "compareAtRupees": 385,
+      "stock": 86,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Capybara",
+      "slug": "capybara",
+      "sku": "WUI-capybara",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 414,
+      "compareAtRupees": 559,
+      "stock": 35,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Dessert Theme",
+      "slug": "dessert-theme",
+      "sku": "WUI-dessert-theme",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [
+        "dessert"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 497,
+      "compareAtRupees": 671,
+      "stock": 38,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Kids' Cute Animal Head 316 Stainless Steel Vacuum Insulated Water Bottle",
+      "slug": "kids-cute-animal-head-316-stainless-steel-vacuum-insulated-water-bottle-2",
+      "sku": "WUI-kids-cute-animal-head-316-stainless-steel-vacuum-insulated-w",
+      "categorySlug": "water-bottles-sippers",
+      "themeSlugs": [
+        "jungle"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 1250,
+      "compareAtRupees": 1999,
+      "stock": 65,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "3D Animal Head Kids Plastic Water Bottle | 500ml Lightweight Sipper School Bottle",
+      "slug": "3d-animal-head-kids-plastic-water-bottle-500ml-lightweight-sipper-school-bottle",
+      "sku": "WUI-3d-animal-head-kids-plastic-water-bottle-500ml-lightweight-s",
+      "categorySlug": "water-bottles-sippers",
+      "themeSlugs": [
+        "jungle"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 299,
+      "compareAtRupees": 499,
+      "stock": 71,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cool Bear 520ml Double Spout & Straw Bottle",
+      "slug": "cool-bear-520ml-double-spout-straw-bottle",
+      "sku": "WUI-cool-bear-520ml-double-spout-straw-bottle",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 525,
+      "compareAtRupees": 799,
+      "stock": 112,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "2-in-1 Kids Dual Compartment Bottle with Straws 580ml",
+      "slug": "2-in-1-kids-dual-compartment-bottle-with-straws-580ml",
+      "sku": "WUI-2-in-1-kids-dual-compartment-bottle-with-straws-580ml",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 849,
+      "compareAtRupees": 999,
+      "stock": 88,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "640ml Dual Compartment Straw Sipper Bottle",
+      "slug": "640ml-dual-compartment-straw-sipper-bottle",
+      "sku": "WUI-640ml-dual-compartment-straw-sipper-bottle",
+      "categorySlug": "water-bottles-sippers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 899,
+      "compareAtRupees": 1199,
+      "stock": 126,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "3D Bear Clear Water Bottle | 600ml Kids Fruit Infuser Sipper",
+      "slug": "3d-bear-clear-water-bottle-600ml-kids-fruit-infuser-sipper",
+      "sku": "WUI-3d-bear-clear-water-bottle-600ml-kids-fruit-infuser-sipper",
+      "categorySlug": "water-bottles-sippers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 449,
+      "compareAtRupees": 599,
+      "stock": 117,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute 3D Rabbit Ear Sipper Cup | 550ml Pop-Up Straw Bottle for Kids",
+      "slug": "cute-3d-rabbit-ear-sipper-cup-550ml-pop-up-straw-bottle-for-kids",
+      "sku": "WUI-cute-3d-rabbit-ear-sipper-cup-550ml-pop-up-straw-bottle-for-",
+      "categorySlug": "water-bottles-sippers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 699,
+      "compareAtRupees": 899,
+      "stock": 27,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "3D Dome 390ml Kids Sipper Cup | Tumbler with Curly Straw",
+      "slug": "3d-dome-390ml-kids-sipper-cup-tumbler-with-curly-straw",
+      "sku": "WUI-3d-dome-390ml-kids-sipper-cup-tumbler-with-curly-straw",
+      "categorySlug": "water-bottles-sippers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 499,
+      "compareAtRupees": 699,
+      "stock": 139,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "3D Ice Cream Swirl Tumbler with Straw - 500ml",
+      "slug": "3d-ice-cream-swirl-tumbler-with-straw-500ml",
+      "sku": "WUI-3d-ice-cream-swirl-tumbler-with-straw-500ml",
+      "categorySlug": "water-bottles-sippers",
+      "themeSlugs": [
+        "dessert"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 525,
+      "compareAtRupees": 599,
+      "stock": 124,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Flip-top Water Bottle with Safety Lock - 620ml",
+      "slug": "flip-top-water-bottle-with-safety-lock-620ml",
+      "sku": "WUI-flip-top-water-bottle-with-safety-lock-620ml",
+      "categorySlug": "water-bottles-sippers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 599,
+      "compareAtRupees": 699,
+      "stock": 62,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "600ml Kawaii 3D Dome Water Bottle Sipper with Handle",
+      "slug": "600ml-kawaii-3d-dome-water-bottle-sipper-with-handle",
+      "sku": "WUI-600ml-kawaii-3d-dome-water-bottle-sipper-with-handle",
+      "categorySlug": "water-bottles-sippers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 499,
+      "compareAtRupees": 599,
+      "stock": 109,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "500ml Collapsible Unicorn Ice Cream Water Bottle",
+      "slug": "500ml-collapsible-unicorn-ice-cream-water-bottle",
+      "sku": "WUI-500ml-collapsible-unicorn-ice-cream-water-bottle",
+      "categorySlug": "water-bottles-sippers",
+      "themeSlugs": [
+        "unicorn",
+        "dessert"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 299,
+      "compareAtRupees": 399,
+      "stock": 154,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Jolly-Silly Cute 3-in-1 LED Study Desk Lamp | USB Rechargeable Night Light & Organizer",
+      "slug": "jolly-silly-cute-3-in-1-led-study-desk-lamp-usb-rechargeable-night-light-organiz",
+      "sku": "WUI-jolly-silly-cute-3-in-1-led-study-desk-lamp-usb-rechargeable",
+      "categorySlug": "led-lamps",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 399,
+      "compareAtRupees": 599,
+      "stock": 143,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Dr.Bear Bedside Plug-in Night Light/Table Lamp",
+      "slug": "dr-bear-bedside-plug-in-night-light-table-lamp",
+      "sku": "WUI-dr-bear-bedside-plug-in-night-light-table-lamp",
+      "categorySlug": "led-lamps",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 1299,
+      "compareAtRupees": 1499,
+      "stock": 77,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Magical Unicorn LED Night Light",
+      "slug": "magical-unicorn-led-night-light",
+      "sku": "WUI-magical-unicorn-led-night-light",
+      "categorySlug": "led-lamps",
+      "themeSlugs": [
+        "unicorn"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 135,
+      "compareAtRupees": 199,
+      "stock": 111,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Adorable Lion LED Night Light",
+      "slug": "adorable-lion-led-night-light",
+      "sku": "WUI-adorable-lion-led-night-light",
+      "categorySlug": "led-lamps",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 225,
+      "compareAtRupees": 299,
+      "stock": 67,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Adorable Sleeping Panda Night Light",
+      "slug": "adorable-sleeping-panda-night-light",
+      "sku": "WUI-adorable-sleeping-panda-night-light",
+      "categorySlug": "led-lamps",
+      "themeSlugs": [
+        "panda"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 135,
+      "compareAtRupees": 199,
+      "stock": 67,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Guitar Bunny LED Night Light",
+      "slug": "guitar-bunny-led-night-light",
+      "sku": "WUI-guitar-bunny-led-night-light",
+      "categorySlug": "led-lamps",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 135,
+      "compareAtRupees": 199,
+      "stock": 153,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Panda LED Night Light",
+      "slug": "panda-led-night-light",
+      "sku": "WUI-panda-led-night-light",
+      "categorySlug": "led-lamps",
+      "themeSlugs": [
+        "panda"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 135,
+      "compareAtRupees": 199,
+      "stock": 160,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Bia-Face Rabbit LED Night Light",
+      "slug": "bia-face-rabbit-led-night-light",
+      "sku": "WUI-bia-face-rabbit-led-night-light",
+      "categorySlug": "led-lamps",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 135,
+      "compareAtRupees": 199,
+      "stock": 137,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "XO Tic-Tac-Toe Wooden Game – Fun Brain Training for Kids",
+      "slug": "xo-tic-tac-toe-wooden-game-fun-brain-training-for-kids",
+      "sku": "WUI-xo-tic-tac-toe-wooden-game-fun-brain-training-for-kids",
+      "categorySlug": "fun-toys-games",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 75,
+      "compareAtRupees": 99,
+      "stock": 112,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "15-in-1 Mathematical Training Flash Cards (Reusable)",
+      "slug": "15-in-1-mathematical-training-flash-cards-reusable",
+      "sku": "WUI-15-in-1-mathematical-training-flash-cards-reusable",
+      "categorySlug": "educational-toys",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 99,
+      "compareAtRupees": 149,
+      "stock": 75,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Self-Discipline Multifunctional Habit Tracker",
+      "slug": "self-discipline-multifunctional-habit-tracker",
+      "sku": "WUI-self-discipline-multifunctional-habit-tracker",
+      "categorySlug": "educational-toys",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 275,
+      "compareAtRupees": 399,
+      "stock": 194,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute Cartoon Erasable Writing Board & Weekly Planner (2-in-1)",
+      "slug": "cute-cartoon-erasable-writing-board-weekly-planner-2-in-1",
+      "sku": "WUI-cute-cartoon-erasable-writing-board-weekly-planner-2-in-1",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 59,
+      "compareAtRupees": 99,
+      "stock": 116,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Wooden Tangram Puzzles",
+      "slug": "wooden-tangram-puzzles",
+      "sku": "WUI-wooden-tangram-puzzles",
+      "categorySlug": "puzzles-brain-teasers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 49,
+      "compareAtRupees": 99,
+      "stock": 195,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "DIY Diamond Crystal Painting Kit",
+      "slug": "diy-diamond-crystal-painting-kit",
+      "sku": "WUI-diy-diamond-crystal-painting-kit",
+      "categorySlug": "diy-craft-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 135,
+      "compareAtRupees": 149,
+      "stock": 166,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Soft Alphabet Cognitive Car Toy : A-B-C Car Ride (1 pcs Assorted)",
+      "slug": "soft-alphabet-cognitive-car-toy-a-b-c-car-ride-1-pcs-assorted",
+      "sku": "WUI-soft-alphabet-cognitive-car-toy-a-b-c-car-ride-1-pcs-assorte",
+      "categorySlug": "educational-toys",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 69,
+      "compareAtRupees": 199,
+      "stock": 93,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Dual- Sided Magnetic Drawing Mini Whiteboard",
+      "slug": "dual-sided-magnetic-drawing-mini-whiteboard",
+      "sku": "WUI-dual-sided-magnetic-drawing-mini-whiteboard",
+      "categorySlug": "diy-craft-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 139,
+      "compareAtRupees": 199,
+      "stock": 40,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "3-in-1 Wooden Puzzle Toy Board",
+      "slug": "3-in-1-wooden-puzzle-toy-board",
+      "sku": "WUI-3-in-1-wooden-puzzle-toy-board",
+      "categorySlug": "puzzles-brain-teasers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 225,
+      "compareAtRupees": 299,
+      "stock": 31,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Wooden Maze Ball Game Classic Skill & Focus Puzzle Toy",
+      "slug": "wooden-maze-ball-game-classic-skill-focus-puzzle-toy",
+      "sku": "WUI-wooden-maze-ball-game-classic-skill-focus-puzzle-toy",
+      "categorySlug": "puzzles-brain-teasers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 149,
+      "compareAtRupees": 199,
+      "stock": 147,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "16-Holes Cute Cartoon Metal Harmonica for Kids",
+      "slug": "16-holes-cute-cartoon-metal-harmonica-for-kids",
+      "sku": "WUI-16-holes-cute-cartoon-metal-harmonica-for-kids",
+      "categorySlug": "pens-pencils",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 65,
+      "compareAtRupees": 99,
+      "stock": 151,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Wooden Block Puzzles for Toddlers & Kids | Fun & Educational",
+      "slug": "wooden-block-puzzles-for-toddlers-kids-fun-educational",
+      "sku": "WUI-wooden-block-puzzles-for-toddlers-kids-fun-educational",
+      "categorySlug": "puzzles-brain-teasers",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 249,
+      "compareAtRupees": 299,
+      "stock": 38,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Personalized Metal Keychains - Round",
+      "slug": "personalized-metal-keychains-round-2",
+      "sku": "WUI-personalized-metal-keychains-round-2",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "personalization",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 99,
+      "compareAtRupees": 1980,
+      "stock": 44,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Personalized Metal Keychains Round - Blue",
+      "slug": "personalized-metal-keychains-round-blue",
+      "sku": "WUI-personalized-metal-keychains-round-blue",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "personalization",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 99,
+      "compareAtRupees": 149,
+      "stock": 92,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "2-in-1 Metal Keychain + Mobile Stand – Sleek & Handy",
+      "slug": "2-in-1-metal-keychain-mobile-stand-sleek-handy",
+      "sku": "WUI-2-in-1-metal-keychain-mobile-stand-sleek-handy",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 99,
+      "compareAtRupees": 149,
+      "stock": 103,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Personalized House Shape Keychain",
+      "slug": "personalized-house-shape-keychain",
+      "sku": "WUI-personalized-house-shape-keychain",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "personalization",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 99,
+      "compareAtRupees": 149,
+      "stock": 164,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Personalized Rectangular Metal Keychain - Name or Logo Engraving",
+      "slug": "personalized-rectangular-metal-keychain-name-or-logo-engraving",
+      "sku": "WUI-personalized-rectangular-metal-keychain-name-or-logo-engravi",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "best-seller",
+        "personalization",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 99,
+      "compareAtRupees": 149,
+      "stock": 20,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Customised Metal Keychain - for Corporate Gifting & Business Promotions",
+      "slug": "customised-metal-keychain-for-corporate-gifting-business-promotions",
+      "sku": "WUI-customised-metal-keychain-for-corporate-gifting-business-pro",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 125,
+      "compareAtRupees": 125,
+      "stock": 52,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Kawaii Magnetic Drawing Board Keychain",
+      "slug": "kawaii-magnetic-drawing-board-keychain-2",
+      "sku": "WUI-kawaii-magnetic-drawing-board-keychain-2",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 135,
+      "compareAtRupees": 149,
+      "stock": 87,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Customizable Rectangular Metal Keychain",
+      "slug": "customizable-rectangular-metal-keychain",
+      "sku": "WUI-customizable-rectangular-metal-keychain",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 99,
+      "compareAtRupees": 149,
+      "stock": 68,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Rotating Metal Keychain with Custom Name Logo Printing",
+      "slug": "rotating-metal-keychain-with-custom-name-logo-printing",
+      "sku": "WUI-rotating-metal-keychain-with-custom-name-logo-printing",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "personalization",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 99,
+      "compareAtRupees": 149,
+      "stock": 78,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Custom Round Metal Keychain – Engrave Name or Logo",
+      "slug": "custom-round-metal-keychain-engrave-name-or-logo",
+      "sku": "WUI-custom-round-metal-keychain-engrave-name-or-logo",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "personalization",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 99,
+      "compareAtRupees": 149,
+      "stock": 98,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Personalized Metal Keychains Round - Red",
+      "slug": "personalized-metal-keychains-round-red",
+      "sku": "WUI-personalized-metal-keychains-round-red",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "personalization",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 68,
+      "compareAtRupees": 99,
+      "stock": 35,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "personalization-picks",
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Mini Projection Camera Keychain",
+      "slug": "mini-projection-camera-keychain",
+      "sku": "WUI-mini-projection-camera-keychain",
+      "categorySlug": "keychains-luggage-tags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 99,
+      "compareAtRupees": 125,
+      "stock": 94,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "4-Compartment Kids Stainless Steel Lunch Box | 1000ml",
+      "slug": "4-compartment-kids-stainless-steel-lunch-box-1000ml",
+      "sku": "WUI-4-compartment-kids-stainless-steel-lunch-box-1000ml",
+      "categorySlug": "lunch-boxes",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 899,
+      "compareAtRupees": 999,
+      "stock": 32,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Astronaut Customized Stainless Steel Lunch Box - 700ml",
+      "slug": "astronaut-customized-stainless-steel-lunch-box-700ml",
+      "sku": "WUI-astronaut-customized-stainless-steel-lunch-box-700ml",
+      "categorySlug": "lunch-boxes",
+      "themeSlugs": [
+        "space"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 649,
+      "compareAtRupees": 799,
+      "stock": 80,
+      "isPersonalizable": true,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Yum Yum 2 Grid Stainless Steel Lunch Box - 650ml",
+      "slug": "yum-yum-2-grid-stainless-steel-lunch-box-650ml",
+      "sku": "WUI-yum-yum-2-grid-stainless-steel-lunch-box-650ml",
+      "categorySlug": "lunch-boxes",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 699,
+      "compareAtRupees": 799,
+      "stock": 106,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute Animal Personlized Lunch Box - 600ml",
+      "slug": "cute-animal-personlized-lunch-box-600ml",
+      "sku": "WUI-cute-animal-personlized-lunch-box-600ml",
+      "categorySlug": "lunch-boxes",
+      "themeSlugs": [
+        "jungle"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 799,
+      "compareAtRupees": 999,
+      "stock": 57,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Brunch Munch Stainless Steel Lunch Box - 800ml",
+      "slug": "brunch-munch-stainless-steel-lunch-box-800ml",
+      "sku": "WUI-brunch-munch-stainless-steel-lunch-box-800ml",
+      "categorySlug": "lunch-boxes",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 625,
+      "compareAtRupees": 799,
+      "stock": 128,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Udon Dream Round Stainless Steel Lunch Box - 720ml",
+      "slug": "udon-dream-round-stainless-steel-lunch-box-720ml",
+      "sku": "WUI-udon-dream-round-stainless-steel-lunch-box-720ml",
+      "categorySlug": "lunch-boxes",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 499,
+      "compareAtRupees": 599,
+      "stock": 78,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Bombay Bites 3-compartment Stainless Steel Lunch Box - 800ml",
+      "slug": "bombay-bites-3-compartment-stainless-steel-lunch-box-800ml",
+      "sku": "WUI-bombay-bites-3-compartment-stainless-steel-lunch-box-800ml",
+      "categorySlug": "lunch-boxes",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 1049,
+      "compareAtRupees": 1299,
+      "stock": 149,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Happy Panda Stainless Steel Lunch Box - 700ml",
+      "slug": "happy-panda-stainless-steel-lunch-box-700ml",
+      "sku": "WUI-happy-panda-stainless-steel-lunch-box-700ml",
+      "categorySlug": "lunch-boxes",
+      "themeSlugs": [
+        "panda"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 649,
+      "compareAtRupees": 899,
+      "stock": 96,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Mofu Tofu 4-Compartment Kids Lunch Box 1000ml",
+      "slug": "mofu-tofu-4-compartment-kids-lunch-box-1000ml",
+      "sku": "WUI-mofu-tofu-4-compartment-kids-lunch-box-1000ml",
+      "categorySlug": "lunch-boxes",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 1099,
+      "compareAtRupees": 1299,
+      "stock": 24,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Retro Panda TV 3-Grid Stainless Steel Lunch Box",
+      "slug": "retro-panda-tv-3-grid-stainless-steel-lunch-box",
+      "sku": "WUI-retro-panda-tv-3-grid-stainless-steel-lunch-box",
+      "categorySlug": "lunch-boxes",
+      "themeSlugs": [
+        "panda"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-boys",
+        "age-9-plus"
+      ],
+      "priceRupees": 1099,
+      "compareAtRupees": 1399,
+      "stock": 59,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Tento Bento 4-Compartment 1100ml Stainless Steel Lunch Box",
+      "slug": "tento-bento-4-compartment-1100ml-stainless-steel-lunch-box",
+      "sku": "WUI-tento-bento-4-compartment-1100ml-stainless-steel-lunch-box",
+      "categorySlug": "lunch-boxes",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 999,
+      "compareAtRupees": 1299,
+      "stock": 197,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Tokyo Buffet Stainless Steel Lunch Box 4-Grid with Soup Bowl - 1000ml",
+      "slug": "tokyo-buffet-stainless-steel-lunch-box-4-grid-with-soup-bowl-1000ml",
+      "sku": "WUI-tokyo-buffet-stainless-steel-lunch-box-4-grid-with-soup-bowl",
+      "categorySlug": "lunch-boxes",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 1099,
+      "compareAtRupees": 1399,
+      "stock": 122,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Large Capacity Casual Plaid School Bag with Detachable Pouch",
+      "slug": "large-capacity-casual-plaid-school-bag-with-detachable-pouch",
+      "sku": "WUI-large-capacity-casual-plaid-school-bag-with-detachable-pouch",
+      "categorySlug": "school-bags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 399,
+      "compareAtRupees": 499,
+      "stock": 82,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Aesthetic Backpack For School, College Students, Travel and commuting",
+      "slug": "aesthetic-backpack-for-school-college-students-travel-and-commuting",
+      "sku": "WUI-aesthetic-backpack-for-school-college-students-travel-and-co",
+      "categorySlug": "school-bags",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 499,
+      "compareAtRupees": 699,
+      "stock": 68,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute Cartoon Panda, Princess & Bear Kids School Bag",
+      "slug": "cute-cartoon-panda-princess-bear-kids-school-bag",
+      "sku": "WUI-cute-cartoon-panda-princess-bear-kids-school-bag",
+      "categorySlug": "school-bags",
+      "themeSlugs": [
+        "panda"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 1399,
+      "compareAtRupees": 1599,
+      "stock": 78,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "3D Animal Preschool Anti-Lost Daycare Toddler Bag",
+      "slug": "3d-animal-preschool-anti-lost-daycare-toddler-bag",
+      "sku": "WUI-3d-animal-preschool-anti-lost-daycare-toddler-bag",
+      "categorySlug": "school-bags",
+      "themeSlugs": [
+        "jungle"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 1099,
+      "compareAtRupees": 1499,
+      "stock": 20,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Cute 3D Striped Animal Toddler School Bag",
+      "slug": "cute-3d-striped-animal-toddler-school-bag",
+      "sku": "WUI-cute-3d-striped-animal-toddler-school-bag",
+      "categorySlug": "school-bags",
+      "themeSlugs": [
+        "jungle"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 1099,
+      "compareAtRupees": 1399,
+      "stock": 149,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "3D Magical Unicorn & Mermaid Kids School Bag | Lightweight Toddler Backpack",
+      "slug": "3d-magical-unicorn-mermaid-kids-school-bag-lightweight-toddler-backpack",
+      "sku": "WUI-3d-magical-unicorn-mermaid-kids-school-bag-lightweight-toddl",
+      "categorySlug": "school-bags",
+      "themeSlugs": [
+        "unicorn",
+        "mermaid"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 1099,
+      "compareAtRupees": 1399,
+      "stock": 198,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "MumuMimi 3D Animal Kids School Bag | Durable Preschool Bag",
+      "slug": "mumumimi-3d-animal-kids-school-bag-durable-preschool-bag",
+      "sku": "WUI-mumumimi-3d-animal-kids-school-bag-durable-preschool-bag",
+      "categorySlug": "school-bags",
+      "themeSlugs": [
+        "jungle"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "best-seller",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 999,
+      "compareAtRupees": 1399,
+      "stock": 32,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "My Darling Dino kids School bag",
+      "slug": "my-darling-dino-kids-school-bag",
+      "sku": "WUI-my-darling-dino-kids-school-bag",
+      "categorySlug": "school-bags",
+      "themeSlugs": [
+        "dino"
+      ],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-9-plus"
+      ],
+      "priceRupees": 1399,
+      "compareAtRupees": 1599,
+      "stock": 67,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "FREE SHIPPING",
+      "slug": "free-shipping",
+      "sku": "WUI-free-shipping",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 180,
+      "compareAtRupees": 244,
+      "stock": 141,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "3 Days Return / Refund",
+      "slug": "3-days-return-refund",
+      "sku": "WUI-3-days-return-refund",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-unisex",
+        "age-6-9"
+      ],
+      "priceRupees": 348,
+      "compareAtRupees": 470,
+      "stock": 129,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Customer Support",
+      "slug": "customer-support",
+      "sku": "WUI-customer-support",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "best-seller",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 419,
+      "compareAtRupees": 566,
+      "stock": 40,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Need help?",
+      "slug": "need-help",
+      "sku": "WUI-need-help",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-3-6"
+      ],
+      "priceRupees": 379,
+      "compareAtRupees": 512,
+      "stock": 80,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Newsletter",
+      "slug": "newsletter",
+      "sku": "WUI-newsletter",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "gender-boys",
+        "age-6-9"
+      ],
+      "priceRupees": 172,
+      "compareAtRupees": 233,
+      "stock": 53,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Policy",
+      "slug": "policy",
+      "sku": "WUI-policy",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 129,
+      "compareAtRupees": 175,
+      "stock": 190,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    },
+    {
+      "name": "Store Info",
+      "slug": "store-info",
+      "sku": "WUI-store-info",
+      "categorySlug": "stationery-kits",
+      "themeSlugs": [],
+      "tagSlugs": [
+        "gift-idea",
+        "new-arrival",
+        "gender-girls",
+        "age-0-3"
+      ],
+      "priceRupees": 429,
+      "compareAtRupees": 580,
+      "stock": 130,
+      "isPersonalizable": false,
+      "collectionSlugs": [
+        "new-arrivals",
+        "trending",
+        "return-gifts"
+      ]
+    }
+  ]
+}

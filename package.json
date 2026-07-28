@@ -13,6 +13,7 @@
     "db:seed": "npx tsx prisma/seed.ts",
     "catalog:seed": "npx tsx prisma/seed.ts",
     "catalog:seed:only": "npx tsx prisma/seed.catalog.ts",
+    "catalog:build-products": "node scripts/build-catalog-from-giftoo-md.mjs",
     "production:catalog": "node scripts/setup-production-catalog.mjs",
     "vercel:env": "node scripts/sync-env-to-vercel.mjs",
     "test:account": "tsx --test tests/account-order-access.test.ts",

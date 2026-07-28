@@ -3,26 +3,23 @@ import type { Metadata } from "next";
 import { SiteHeader } from "@/components/layout/SiteHeader";
 import { SiteFooter } from "@/components/layout/SiteFooter";
 import { HeroBanner } from "@/components/home/HeroBanner";
-import { CollectionCarousel } from "@/components/home/CollectionCarousel";
-import { CategoryGrid } from "@/components/home/CategoryGrid";
-import { ThemeGrid } from "@/components/home/ThemeGrid";
+import { HomePageSections } from "@/components/home/HomePageSections";
 import { TrustStrip } from "@/components/home/TrustStrip";
 import { ReviewsStrip } from "@/components/home/ReviewsStrip";
-import { NewsletterSignup } from "@/components/home/NewsletterSignup";
 import { WhatsAppWidget } from "@/components/storefront/WhatsAppWidget";
-import { getHomePageData } from "@/lib/catalog/home";
+import { buildHomeSections } from "@/lib/catalog/home-sections";
 import { getLatestReviews } from "@/lib/catalog/reviews-home";
 
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Gifts, Return Favors & Party Picks",
+  title: "India's Birthday Return Gifts & Party Picks",
   description:
-    "Shop curated return gifts, new arrivals, and trending picks — a gift-store experience inspired by the best online shops.",
+    "Shop return gifts, new arrivals, personalization, and trending picks — a gift-store experience inspired by giftoo.in.",
 };
 
 export default async function Home() {
-  const data = await getHomePageData();
+  const sections = await buildHomeSections();
   let reviews: Awaited<ReturnType<typeof getLatestReviews>> = [];
   try {
     reviews = await getLatestReviews(12);
@@ -34,38 +31,8 @@ export default async function Home() {
     <div className="min-h-screen bg-neutral-bg">
       <SiteHeader />
       <HeroBanner />
-      {data ? (
-        <>
-          {data.collections.map((col) => {
-            const products = data.collectionProducts[col.slug] ?? [];
-            if (!products.length) return null;
-            return (
-              <CollectionCarousel
-                key={col.slug}
-                title={col.title}
-                products={products}
-                viewAllHref={`/collections/${col.slug}`}
-              />
-            );
-          })}
-          {data.videoProducts.length > 0 ? (
-            <CollectionCarousel
-              title="Shop by video 🎬"
-              products={data.videoProducts}
-              viewAllHref="/products"
-              variant="video"
-            />
-          ) : null}
-          {data.newArrivals.length > 0 ? (
-            <CollectionCarousel
-              title="New arrivals 🎉"
-              products={data.newArrivals}
-              viewAllHref="/products?tags=new-arrival"
-            />
-          ) : null}
-          <CategoryGrid categories={data.categories} />
-          <ThemeGrid />
-        </>
+      {sections.length > 0 ? (
+        <HomePageSections sections={sections} />
       ) : (
         <section className="mx-auto max-w-2xl px-4 py-16 text-center">
           <p className="text-lg text-neutral-muted">
@@ -83,7 +50,6 @@ export default async function Home() {
       )}
       <ReviewsStrip reviews={reviews} />
       <TrustStrip />
-      <NewsletterSignup />
       <SiteFooter />
       <WhatsAppWidget />
     </div>

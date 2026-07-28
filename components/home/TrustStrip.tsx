@@ -1,19 +1,21 @@
-import { getShippingFreeThresholdDisplay } from "@/lib/store/storefront-config";
+import { getShippingFreeThresholdDisplay, getWhatsAppNumber } from "@/lib/store/storefront-config";
 
 const ITEMS = [
   {
     title: "Free shipping",
-    body: `On orders above ₹${getShippingFreeThresholdDisplay()}`,
+    body: `Get free shipping on orders above ₹${getShippingFreeThresholdDisplay()}`,
     icon: "🚚",
   },
   {
-    title: "Easy returns",
-    body: "Hassle-free refund policy",
+    title: "3 days return / refund",
+    body: "Partial / full return & refund policy",
     icon: "↩️",
   },
   {
     title: "Customer support",
-    body: "We're here to help",
+    body: getWhatsAppNumber()
+      ? "24×7 WhatsApp chat support available"
+      : "Email support for orders & shipping",
     icon: "💬",
   },
 ];

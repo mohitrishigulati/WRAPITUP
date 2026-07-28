@@ -16,8 +16,53 @@ function SubmitButton() {
   );
 }
 
-export function NewsletterSignup() {
+export function NewsletterSignup({ compact = false }: { compact?: boolean }) {
   const [state, action] = useFormState(subscribeNewsletterAction, { ok: false } as NewsletterState);
+
+  const form = (
+    <>
+      <form action={action} className="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-center">
+        <input
+          type="email"
+          name="email"
+          required
+          placeholder="Email address"
+          className="min-w-0 flex-1 rounded-full border border-zinc-300 px-4 py-2.5 text-sm sm:max-w-xs"
+        />
+        <SubmitButton />
+      </form>
+      {state.message ? (
+        <p
+          className={`mt-3 text-sm ${state.ok ? "text-green-700" : "text-red-600"}`}
+          role="status"
+        >
+          {state.message}
+        </p>
+      ) : null}
+    </>
+  );
+
+  if (compact) {
+    return (
+      <div>
+        <form action={action} className="flex flex-col gap-2 sm:flex-row">
+          <input
+            type="email"
+            name="email"
+            required
+            placeholder="Email"
+            className="min-w-0 flex-1 rounded-full border border-zinc-600 bg-zinc-800 px-4 py-2 text-sm text-white placeholder:text-zinc-500"
+          />
+          <SubmitButton />
+        </form>
+        {state.message ? (
+          <p className={`mt-2 text-xs ${state.ok ? "text-green-400" : "text-red-400"}`} role="status">
+            {state.message}
+          </p>
+        ) : null}
+      </div>
+    );
+  }
 
   return (
     <section className="bg-brand-50 py-12">
@@ -27,24 +72,7 @@ export function NewsletterSignup() {
           <p className="mt-2 text-sm text-zinc-600">
             Sales, new arrivals, and return-gift ideas — no spam.
           </p>
-          <form action={action} className="mt-6 flex flex-col gap-2 sm:flex-row sm:justify-center">
-            <input
-              type="email"
-              name="email"
-              required
-              placeholder="Email address"
-              className="min-w-0 flex-1 rounded-full border border-zinc-300 px-4 py-2.5 text-sm sm:max-w-xs"
-            />
-            <SubmitButton />
-          </form>
-          {state.message ? (
-            <p
-              className={`mt-3 text-sm ${state.ok ? "text-green-700" : "text-red-600"}`}
-              role="status"
-            >
-              {state.message}
-            </p>
-          ) : null}
+          {form}
         </div>
       </div>
     </section>

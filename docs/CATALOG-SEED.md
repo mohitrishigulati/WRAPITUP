@@ -1,6 +1,6 @@
 # Catalog seed
 
-Creates the WrapItUp demo catalog from `prisma/seed.catalog.ts`: **8 parent categories**, **26 leaf categories**, **7 themes**, **11 tags**, **4 homepage collections**, **24 published products**, coupon `WELCOME10`, admin + demo users.
+Creates the WrapItUp demo catalog from `prisma/seed.catalog.ts`: **8 parent categories**, **26 leaf categories**, **7 themes**, **11 tags**, **4 homepage collections**, **205 products** (from Giftoo export JSON), coupon `WELCOME10`, admin + demo users.
 
 Taxonomy reference: [WRAPITUP-CATEGORY-TAXONOMY.md](./WRAPITUP-CATEGORY-TAXONOMY.md).
 
@@ -48,6 +48,17 @@ Then update `DATABASE_URL` on Vercel to the same URL and redeploy.
 ## Product images
 
 Sample products use [placehold.co](https://placehold.co) URLs until real photos are uploaded.
+
+## Regenerate SKUs from Giftoo markdown
+
+Source: `data/www.giftoo.in-0.md` (homepage export). Output: `prisma/data/catalog-products.json`.
+
+```powershell
+npm run catalog:build-products
+npm run catalog:seed
+```
+
+Each variant SKU: `WUI-<product-slug>`. Prices parsed from sale/compare lines in the markdown when present.
 
 ## Nav filter tags
 

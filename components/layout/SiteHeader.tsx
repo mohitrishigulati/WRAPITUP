@@ -6,6 +6,7 @@ import { CartButton } from "@/components/cart/CartButton";
 import { DeployConfigBanner } from "@/components/layout/DeployConfigBanner";
 import { PromoBar } from "@/components/layout/PromoBar";
 import { MegaMenu } from "@/components/layout/MegaMenu";
+import { NavShortcutBar } from "@/components/layout/NavShortcutBar";
 import { listThemesForNav } from "@/lib/catalog/themes";
 import { db } from "@/lib/db";
 import { AGE_TAG_SLUGS, GENDER_TAG_SLUGS } from "@/lib/store/storefront-config";
@@ -122,6 +123,7 @@ export async function SiteHeader() {
           )}
         </div>
       </div>
+      <NavShortcutBar />
     </header>
     </>
   );

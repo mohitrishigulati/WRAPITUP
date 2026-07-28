@@ -6,6 +6,12 @@
  * Full seed (catalog + admin + coupon): npm run db:seed
  */
 import { PrismaClient, type Prisma } from "@prisma/client";
+import { readFileSync, existsSync } from "fs";
+import { join, dirname } from "path";
+import { fileURLToPath } from "url";
+
+const __dirname = dirname(fileURLToPath(import.meta.url));
+const CATALOG_JSON = join(__dirname, "data", "catalog-products.json");
 
 const DEFAULT_PERSONALIZATION: Prisma.InputJsonValue = [
   { key: "name", label: "Name to print", maxLength: 20 },
@@ -128,6 +134,7 @@ const collections = [
 type SeedProduct = {
   name: string;
   slug: string;
+  sku?: string;
   categorySlug: string;
   themeSlugs?: string[];
   tagSlugs?: string[];
@@ -139,7 +146,31 @@ type SeedProduct = {
   videoUrl?: string;
 };
 
-const products: SeedProduct[] = [
+function loadCatalogProducts(): SeedProduct[] {
+  if (existsSync(CATALOG_JSON)) {
+    const raw = JSON.parse(readFileSync(CATALOG_JSON, "utf8")) as {
+      products: SeedProduct[];
+    };
+    const list = raw.products ?? [];
+    if (list.length > 0) {
+      const videoSlug = list.find((p) =>
+        /usb.*fan|handheld fan/i.test(p.name),
+      )?.slug;
+      return list.map((p) => ({
+        ...p,
+        ...(p.slug === videoSlug && !p.videoUrl
+          ? {
+              videoUrl:
+                "https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4",
+            }
+          : {}),
+      }));
+    }
+  }
+  return FALLBACK_PRODUCTS;
+}
+
+const FALLBACK_PRODUCTS: SeedProduct[] = [
   { name: "Unicorn Print Insulated Lunch Bag", slug: "unicorn-insulated-lunch-bag", categorySlug: "lunch-boxes", themeSlugs: ["unicorn"], tagSlugs: ["gender-girls", "age-3-6", "gift-idea"], priceRupees: 349, compareAtRupees: 449, stock: 40, collectionSlugs: ["return-gifts"] },
   { name: "Dino Explorer Sling Bag", slug: "dino-explorer-sling-bag", categorySlug: "sling-waist-bags", themeSlugs: ["dino"], tagSlugs: ["gender-boys", "age-3-6"], priceRupees: 199, compareAtRupees: 299, stock: 60, collectionSlugs: ["return-gifts", "trending"] },
   { name: "Personalized Name Keychain — Round", slug: "personalized-name-keychain-round", categorySlug: "keychains-luggage-tags", tagSlugs: ["gender-unisex", "personalization", "best-seller"], priceRupees: 99, compareAtRupees: 149, stock: 200, isPersonalizable: true, collectionSlugs: ["personalization-picks", "trending"] },
@@ -165,6 +196,8 @@ const products: SeedProduct[] = [
   { name: "Panda Plush Soft Toy Keyring", slug: "panda-plush-soft-toy-keyring", categorySlug: "plushies-soft-toys", themeSlugs: ["panda"], tagSlugs: ["gender-unisex", "age-0-3", "gift-idea"], priceRupees: 149, compareAtRupees: 199, stock: 85, collectionSlugs: ["return-gifts"] },
   { name: "Corporate 3-in-1 Gift Set (Diary, Pen, Bottle)", slug: "corporate-3in1-gift-set", categorySlug: "corporate-gift-sets", tagSlugs: ["gender-unisex", "personalization"], priceRupees: 899, compareAtRupees: 999, stock: 40, isPersonalizable: true, collectionSlugs: ["personalization-picks"] },
 ];
+
+const products = loadCatalogProducts();
 
 function productImageUrl(name: string) {
   return `https://placehold.co/600x600?text=${encodeURIComponent(name.slice(0, 40))}`;
@@ -250,7 +283,7 @@ export async function seedCatalog(dbClient: PrismaClient) {
         ...(p.videoUrl ? { videoUrl: p.videoUrl } : {}),
         variants: {
           create: {
-            sku: `${p.slug}-default`,
+            sku: p.sku ?? `${p.slug}-default`,
             name: "Default",
             attributes: {},
             stock: p.stock,

@@ -15,6 +15,7 @@ export type CatalogProductListItem = {
   categorySlug: string;
   minPrice: number;
   maxPrice: number;
+  maxCompareAtPrice: number | null;
   averageRating: number | null;
   reviewCount: number;
   inStock: boolean;

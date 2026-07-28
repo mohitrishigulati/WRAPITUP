@@ -6,9 +6,19 @@ export function decimalToNumber(value: Decimal | number | null | undefined): num
   return Number(value.toString());
 }
 
+const storeCurrency =
+  process.env.NEXT_PUBLIC_STORE_CURRENCY?.trim().toUpperCase() || "INR";
+
 export function formatUsd(amount: number) {
-  return new Intl.NumberFormat("en-US", {
+  return formatMoney(amount);
+}
+
+export function formatMoney(amount: number) {
+  const currency = storeCurrency === "USD" ? "USD" : "INR";
+  const locale = currency === "INR" ? "en-IN" : "en-US";
+  return new Intl.NumberFormat(locale, {
     style: "currency",
-    currency: "USD",
+    currency,
+    maximumFractionDigits: currency === "INR" ? 0 : 2,
   }).format(amount);
 }

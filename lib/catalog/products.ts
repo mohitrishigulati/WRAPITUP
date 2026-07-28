@@ -14,6 +14,7 @@ type ListProductsInput = {
   minPrice?: number;
   maxPrice?: number;
   inStockOnly?: boolean;
+  pageSize?: number;
 };
 
 type ListRow = {
@@ -26,6 +27,7 @@ type ListRow = {
   category_slug: string;
   min_price: Prisma.Decimal | null;
   max_price: Prisma.Decimal | null;
+  max_compare_at: Prisma.Decimal | null;
   avg_rating: number | null;
   review_count: bigint;
   total_stock: bigint;
@@ -115,7 +117,8 @@ function buildListQuery(input: ListProductsInput, countOnly: boolean) {
     LEFT JOIN LATERAL (
       SELECT
         MIN(COALESCE(v."price", p."basePrice")) AS min_price,
-        MAX(COALESCE(v."price", p."basePrice")) AS max_price
+        MAX(COALESCE(v."price", p."basePrice")) AS max_price,
+        MAX(v."compareAtPrice") AS max_compare_at
       FROM "ProductVariant" v
       WHERE v."productId" = p."id"
     ) pr ON true
@@ -142,7 +145,8 @@ function buildListQuery(input: ListProductsInput, countOnly: boolean) {
     return Prisma.sql`SELECT COUNT(*)::int AS count ${baseFrom}`;
   }
 
-  const offset = (input.page - 1) * PAGE_SIZE;
+  const pageSize = input.pageSize ?? PAGE_SIZE;
+  const offset = (input.page - 1) * pageSize;
   const order = orderClause(input.sort, Boolean(q));
 
   return Prisma.sql`
@@ -156,19 +160,21 @@ function buildListQuery(input: ListProductsInput, countOnly: boolean) {
       c."slug" AS category_slug,
       COALESCE(pr.min_price, p."basePrice") AS min_price,
       COALESCE(pr.max_price, p."basePrice") AS max_price,
+      pr.max_compare_at,
       rv.avg_rating,
       COALESCE(rv.review_count, 0) AS review_count,
       COALESCE(st.total_stock, 0) AS total_stock,
       ${relevanceSql} AS relevance
     ${baseFrom}
     ORDER BY ${order}
-    LIMIT ${PAGE_SIZE} OFFSET ${offset}
+    LIMIT ${pageSize} OFFSET ${offset}
   `;
 }
 
 function mapListRow(row: ListRow): CatalogProductListItem {
   const minPrice = decimalToNumber(row.min_price);
   const maxPrice = decimalToNumber(row.max_price);
+  const maxCompareAt = row.max_compare_at ? decimalToNumber(row.max_compare_at) : null;
   return {
     id: row.id,
     name: row.name,
@@ -178,6 +184,8 @@ function mapListRow(row: ListRow): CatalogProductListItem {
     categorySlug: row.category_slug,
     minPrice,
     maxPrice,
+    maxCompareAtPrice:
+      maxCompareAt != null && maxCompareAt > minPrice ? maxCompareAt : null,
     averageRating: row.avg_rating,
     reviewCount: Number(row.review_count),
     inStock: Number(row.total_stock) > 0,
@@ -192,14 +200,15 @@ export async function listProducts(input: ListProductsInput) {
   ]);
 
   const total = countResult[0]?.count ?? 0;
-  const totalPages = Math.max(1, Math.ceil(total / PAGE_SIZE));
+  const pageSize = input.pageSize ?? PAGE_SIZE;
+  const totalPages = Math.max(1, Math.ceil(total / pageSize));
 
   return {
     products: rows.map(mapListRow),
     total,
     totalPages,
     page: input.page,
-    pageSize: PAGE_SIZE,
+    pageSize,
   };
 }
 

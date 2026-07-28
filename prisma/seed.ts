@@ -11,7 +11,12 @@ type VariantSeed = {
   attributes: Record<string, string>;
   stock: number;
   price?: number;
+  compareAtPrice?: number;
 };
+
+function saleCompareAt(price: number) {
+  return Math.ceil(price * 1.35);
+}
 
 type ProductSeed = {
   name: string;
@@ -48,7 +53,7 @@ const CATEGORIES = [
   {
     name: "Gifts & wrap",
     slug: "gifts-wrap",
-    description: "Paper, ribbons, and ready-to-give sets.",
+    description: "Return gifts, paper, ribbons, and ready-to-give sets.",
     parentSlug: null,
   },
   {
@@ -288,13 +293,17 @@ export async function seedCatalog(dbClient: PrismaClient = db) {
         images: item.images,
         isPublished: true,
         variants: {
-          create: item.variants.map((v) => ({
-            sku: v.sku,
-            name: v.name,
-            attributes: v.attributes,
-            stock: v.stock,
-            ...(v.price != null ? { price: v.price } : {}),
-          })),
+          create: item.variants.map((v) => {
+            const unitPrice = v.price ?? item.basePrice;
+            return {
+              sku: v.sku,
+              name: v.name,
+              attributes: v.attributes,
+              stock: v.stock,
+              ...(v.price != null ? { price: v.price } : {}),
+              compareAtPrice: v.compareAtPrice ?? saleCompareAt(unitPrice),
+            };
+          }),
         },
         tags: {
           create: item.tagSlugs.map((slug) => ({

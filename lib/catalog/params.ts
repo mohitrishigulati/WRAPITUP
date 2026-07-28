@@ -11,6 +11,7 @@ const sortSchema = z.enum([
 ]);
 
 export const PAGE_SIZE = 12;
+export const HOME_SECTION_SIZE = 8;
 
 export function parseCatalogParams(searchParams: Record<string, string | string[] | undefined>) {
   const raw = {

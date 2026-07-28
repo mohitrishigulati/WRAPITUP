@@ -4,6 +4,7 @@ import { getAllCategoriesForNav } from "@/lib/catalog/categories";
 import { logoutAction } from "@/actions/auth";
 import { CartButton } from "@/components/cart/CartButton";
 import { DeployConfigBanner } from "@/components/layout/DeployConfigBanner";
+import { PromoBar } from "@/components/layout/PromoBar";
 
 async function loadNavCategories() {
   if (!process.env.DATABASE_URL?.trim()) return [];
@@ -20,21 +21,37 @@ export async function SiteHeader() {
   return (
     <>
       <DeployConfigBanner />
-    <header className="border-b border-zinc-200 bg-white">
-      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
-        <div className="flex items-center gap-8">
-          <Link href="/" className="text-lg font-semibold tracking-tight text-zinc-900">
+      <PromoBar />
+      <header className="sticky top-0 z-30 border-b border-zinc-200 bg-white/95 backdrop-blur">
+      <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-3 sm:px-6">
+        <div className="flex min-w-0 flex-1 items-center gap-6 lg:gap-8">
+          <Link
+            href="/"
+            className="shrink-0 text-xl font-bold tracking-tight text-brand-700"
+          >
             WrapItUp
           </Link>
-          <nav className="hidden items-center gap-5 text-sm text-zinc-700 md:flex">
-            <Link href="/products" className="hover:text-zinc-900">
-              All products
+          <nav className="hidden max-w-3xl flex-1 flex-wrap items-center gap-x-4 gap-y-1 text-sm text-zinc-700 lg:flex">
+            <Link href="/" className="font-medium hover:text-brand-600">
+              Home
             </Link>
-            {categories.map((category) => (
+            <Link href="/products?tags=gift-idea" className="hover:text-brand-600">
+              Return gifts
+            </Link>
+            <Link href="/products?tags=new-arrival" className="hover:text-brand-600">
+              New arrivals
+            </Link>
+            <Link href="/products?tags=best-seller" className="hover:text-brand-600">
+              #Trending
+            </Link>
+            <Link href="/products" className="hover:text-brand-600">
+              View all
+            </Link>
+            {categories.slice(0, 4).map((category) => (
               <div key={category.id} className="group relative">
                 <Link
                   href={`/categories/${category.slug}`}
-                  className="hover:text-zinc-900"
+                  className="hover:text-brand-600"
                 >
                   {category.name}
                 </Link>
@@ -44,7 +61,7 @@ export async function SiteHeader() {
                       <Link
                         key={child.id}
                         href={`/categories/${child.slug}`}
-                        className="block px-4 py-2 hover:bg-zinc-50"
+                        className="block px-4 py-2 hover:bg-brand-50"
                       >
                         {child.name}
                       </Link>
@@ -56,6 +73,12 @@ export async function SiteHeader() {
           </nav>
         </div>
         <div className="flex items-center gap-3 text-sm">
+          <Link
+            href="/products"
+            className="hidden rounded-full border border-zinc-200 px-3 py-1.5 text-zinc-600 hover:border-brand-300 hover:text-brand-700 sm:inline-flex"
+          >
+            Search
+          </Link>
           {session?.user?.role === "ADMIN" ? (
             <Link href="/admin" className="text-zinc-700 hover:text-zinc-900">
               Admin
@@ -83,7 +106,7 @@ export async function SiteHeader() {
               </Link>
               <Link
                 href="/signup"
-                className="rounded-lg bg-zinc-900 px-3 py-1.5 text-white hover:bg-zinc-800"
+                className="rounded-full bg-brand-600 px-3 py-1.5 font-medium text-white hover:bg-brand-700"
               >
                 Sign up
               </Link>

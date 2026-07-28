@@ -23,10 +23,10 @@ export const metadata: Metadata = {
     default: "WrapItUp",
     template: "%s | WrapItUp",
   },
-  description: "Curated home goods and gifts — shop WrapItUp.",
+  description: "Curated gifts, return favors, and party picks — shop WrapItUp.",
   openGraph: {
     siteName: "WrapItUp",
-    locale: "en_US",
+    locale: "en_IN",
     type: "website",
   },
 };

@@ -1,4 +1,5 @@
-import { CollectionCarousel } from "@/components/home/CollectionCarousel";
+import { HomeProductSection } from "@/components/home/HomeProductSection";
+import { HomePromoBanner } from "@/components/home/HomePromoBanner";
 import { ShopByCategoryTiles } from "@/components/home/ShopByCategoryTiles";
 import { ThemeGrid } from "@/components/home/ThemeGrid";
 import type { RenderableHomeSection } from "@/lib/catalog/home-sections";
@@ -13,7 +14,7 @@ export function HomePageSections({ sections }: HomePageSectionsProps) {
       {sections.map((section, index) => {
         if (section.type === "collection") {
           return (
-            <CollectionCarousel
+            <HomeProductSection
               key={`col-${section.slug}`}
               title={section.title}
               products={section.products}
@@ -23,7 +24,7 @@ export function HomePageSections({ sections }: HomePageSectionsProps) {
         }
         if (section.type === "video") {
           return (
-            <CollectionCarousel
+            <HomeProductSection
               key="video"
               title="Shop by Video"
               products={section.products}
@@ -34,13 +35,24 @@ export function HomePageSections({ sections }: HomePageSectionsProps) {
         }
         if (section.type === "category") {
           return (
-            <CollectionCarousel
+            <HomeProductSection
               key={`cat-${section.categorySlug}-${index}`}
               title={section.title}
               subtitle={section.subtitle}
               products={section.products}
               viewAllHref={`/categories/${section.categorySlug}`}
-              viewAllLabel={section.viewAllLabel}
+              viewAllLabel={section.viewAllLabel ?? "View all"}
+            />
+          );
+        }
+        if (section.type === "promo") {
+          return (
+            <HomePromoBanner
+              key={`promo-${section.title}`}
+              title={section.title}
+              subtitle={section.subtitle}
+              href={section.href}
+              imageUrl={section.imageUrl}
             />
           );
         }

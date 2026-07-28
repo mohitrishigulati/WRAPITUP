@@ -41,10 +41,10 @@ export function getHeroConfig() {
       process.env.NEXT_PUBLIC_HERO_IMAGE_URL?.trim() ||
       "https://images.unsplash.com/photo-1513885535751-8b9238bd345a?auto=format&fit=crop&w=1600&q=80",
     href: process.env.NEXT_PUBLIC_HERO_LINK?.trim() || "/products?tags=gift-idea",
-    title: process.env.NEXT_PUBLIC_HERO_TITLE?.trim() || "Return gifts kids love 🎉",
+    title: process.env.NEXT_PUBLIC_HERO_TITLE?.trim() || "Cute, Compact & Ready to Go!",
     subtitle:
       process.env.NEXT_PUBLIC_HERO_SUBTITLE?.trim() ||
-      "Curated party favors, personalization, and bulk-friendly picks.",
+      "Fast sling bags kids love — party-ready return gifts.",
   };
 }
 

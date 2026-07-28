@@ -1,36 +1,65 @@
 import Link from "next/link";
-import { getAllThemesWithCounts } from "@/lib/catalog/themes";
-import { safeCatalogQuery } from "@/lib/catalog/safe-query";
+import { HOME_THEME_TILES } from "@/lib/store/home-sections";
 
-type ThemeGridProps = {
-  themes?: Awaited<ReturnType<typeof getAllThemesWithCounts>>;
+type ThemeRow = {
+  id: string;
+  slug: string;
+  name: string;
+  productCount?: number;
 };
 
-export async function ThemeGrid({ themes: themesProp }: ThemeGridProps) {
-  const themes =
-    themesProp ??
-    (await safeCatalogQuery(() => getAllThemesWithCounts(), [] as Awaited<
-      ReturnType<typeof getAllThemesWithCounts>
-    >));
-  if (themes.length === 0) return null;
+type ThemeGridProps = {
+  themes?: ThemeRow[];
+};
+
+function emojiForTheme(slug: string) {
+  const hit = HOME_THEME_TILES.find((t) => t.slug === slug);
+  return hit?.emoji ?? "🎁";
+}
+
+export function ThemeGrid({ themes: themesProp }: ThemeGridProps) {
+  const fromDb = themesProp ?? [];
+  const tiles =
+    fromDb.length > 0
+      ? fromDb.map((t) => ({
+          slug: t.slug,
+          name: t.name.toUpperCase() === t.name ? t.name : t.name,
+          emoji: emojiForTheme(t.slug),
+          count: t.productCount,
+        }))
+      : HOME_THEME_TILES.map((t) => ({
+          slug: t.slug,
+          name: t.name,
+          emoji: t.emoji,
+          count: undefined as number | undefined,
+        }));
+
+  if (tiles.length === 0) return null;
 
   return (
-    <section className="bg-neutral-surface py-10">
+    <section className="border-t border-zinc-200 bg-white py-8 sm:py-10">
       <div className="mx-auto max-w-7xl px-4 sm:px-6">
-        <h2 className="mb-6 font-display text-xl font-semibold text-neutral-text sm:text-2xl">
+        <h2 className="mb-8 text-center font-display text-lg font-semibold text-neutral-text sm:text-xl">
           Shop by theme
         </h2>
-        <ul className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
-          {themes.map((theme) => (
-            <li key={theme.id}>
+        <ul className="flex flex-wrap justify-center gap-4 sm:gap-6 md:gap-8">
+          {tiles.map((theme) => (
+            <li key={theme.slug}>
               <Link
                 href={`/themes/${theme.slug}`}
-                className="flex flex-col items-center rounded-2xl border border-neutral-border bg-gradient-to-br from-brand-50 to-neutral-surface p-6 text-center transition hover:border-accent-pink hover:shadow-md"
+                className="group flex w-[5.5rem] flex-col items-center text-center sm:w-24"
               >
-                <span className="font-display text-2xl font-bold text-brand-600">{theme.name}</span>
-                <span className="mt-2 text-xs text-neutral-muted">
-                  {theme.productCount} product{theme.productCount === 1 ? "" : "s"}
+                <span className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-br from-brand-50 to-accent-lilac/30 text-3xl shadow-sm ring-1 ring-zinc-200 transition group-hover:-translate-y-0.5 group-hover:ring-accent-pink sm:h-20 sm:w-20 sm:text-4xl">
+                  {theme.emoji}
                 </span>
+                <span className="mt-2 text-[10px] font-semibold uppercase leading-tight text-neutral-text sm:text-xs">
+                  {theme.name}
+                </span>
+                {theme.count != null ? (
+                  <span className="mt-0.5 text-[10px] text-neutral-muted">
+                    {theme.count} products
+                  </span>
+                ) : null}
               </Link>
             </li>
           ))}

@@ -1,4 +1,4 @@
-import type { CarouselProduct } from "@/components/home/CollectionCarousel";
+import type { HomeSectionProduct } from "@/components/home/HomeProductSection";
 import { getCollectionProducts } from "@/lib/catalog/collections";
 import { listProductsWithVideo } from "@/lib/catalog/collections";
 import { listProductsForCategorySlug } from "@/lib/catalog/products";
@@ -7,30 +7,53 @@ import { HOME_SECTION_SIZE } from "@/lib/catalog/params";
 import { safeCatalogQuery } from "@/lib/catalog/safe-query";
 import { isDatabaseReachable } from "@/lib/db/connectivity";
 import { db } from "@/lib/db";
-import {
-  HOME_SECTIONS,
-  HOME_SHOP_TILES,
-  type HomeSectionConfig,
-} from "@/lib/store/home-sections";
+import { HOME_SECTIONS, HOME_SHOP_TILES, type HomeSectionConfig } from "@/lib/store/home-sections";
 
 export type RenderableHomeSection =
   | {
       type: "collection";
       title: string;
       slug: string;
-      products: CarouselProduct[];
+      products: HomeSectionProduct[];
     }
-  | { type: "video"; products: CarouselProduct[] }
+  | { type: "video"; products: HomeSectionProduct[] }
   | {
       type: "category";
       title: string;
       subtitle?: string;
       categorySlug: string;
-      products: CarouselProduct[];
+      products: HomeSectionProduct[];
       viewAllLabel?: string;
     }
   | { type: "shop-tiles" }
-  | { type: "themes"; themes: Awaited<ReturnType<typeof getAllThemesWithCounts>> };
+  | { type: "themes"; themes: Awaited<ReturnType<typeof getAllThemesWithCounts>> }
+  | {
+      type: "promo";
+      title: string;
+      subtitle?: string;
+      href: string;
+      imageUrl: string;
+    };
+
+function staticShellSections(): RenderableHomeSection[] {
+  const out: RenderableHomeSection[] = [];
+  for (const config of HOME_SECTIONS) {
+    if (config.type === "promo") {
+      out.push({
+        type: "promo",
+        title: config.title,
+        subtitle: config.subtitle,
+        href: config.href,
+        imageUrl: config.imageUrl,
+      });
+    } else if (config.type === "shop-tiles") {
+      out.push({ type: "shop-tiles" });
+    } else if (config.type === "themes") {
+      out.push({ type: "themes", themes: [] });
+    }
+  }
+  return out;
+}
 
 async function loadCollectionSection(
   slug: string,
@@ -76,8 +99,7 @@ async function loadCategorySection(
 
 export async function buildHomeSections(): Promise<RenderableHomeSection[]> {
   if (!(await isDatabaseReachable())) {
-    const hasShopTiles = HOME_SECTIONS.some((s) => s.type === "shop-tiles");
-    return hasShopTiles ? [{ type: "shop-tiles" }] : [];
+    return staticShellSections();
   }
 
   const sections: RenderableHomeSection[] = [];
@@ -89,7 +111,7 @@ export async function buildHomeSections(): Promise<RenderableHomeSection[]> {
     } else if (config.type === "video") {
       const products = await safeCatalogQuery(
         () => listProductsWithVideo(HOME_SECTION_SIZE),
-        [] as CarouselProduct[],
+        [] as HomeSectionProduct[],
       );
       if (products.length) sections.push({ type: "video", products });
     } else if (config.type === "category") {
@@ -99,7 +121,15 @@ export async function buildHomeSections(): Promise<RenderableHomeSection[]> {
       sections.push({ type: "shop-tiles" });
     } else if (config.type === "themes") {
       const themes = await safeCatalogQuery(() => getAllThemesWithCounts(), []);
-      if (themes.length) sections.push({ type: "themes", themes });
+      sections.push({ type: "themes", themes });
+    } else if (config.type === "promo") {
+      sections.push({
+        type: "promo",
+        title: config.title,
+        subtitle: config.subtitle,
+        href: config.href,
+        imageUrl: config.imageUrl,
+      });
     }
   }
 

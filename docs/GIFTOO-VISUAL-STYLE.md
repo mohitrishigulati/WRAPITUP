@@ -19,7 +19,7 @@ Loaded via `next/font/google` in `app/layout.tsx`.
 - `ProductCard` — Giftoo card layout: square media, hover second image, `h3` title, Giftoo rating line, sale + strikethrough MRP (`formatStorePrice`, `₹ 399`)  
 - `VideoProductCard` — trending badge + **Add to cart** (Shop by Video)  
 - `ProductCardPrice`, `ProductCardMedia`, `ProductQuickAdd` — shared card building blocks  
-- `CollectionCarousel` — `font-display` section headers with emoji in title string  
+- `HomeProductSection` — 4-column grids + pink **View all** (Giftoo homepage)  
 
 ## Page background
 

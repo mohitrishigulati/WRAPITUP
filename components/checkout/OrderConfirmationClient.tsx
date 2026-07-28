@@ -6,7 +6,7 @@ import { useCart } from "@/components/cart/CartProvider";
 import { formatUsd } from "@/lib/catalog/money";
 
 type OrderConfirmationClientProps = {
-  paymentIntentId: string;
+  paymentReference: string;
 };
 
 type OrderStatusResponse =
@@ -20,13 +20,13 @@ type OrderStatusResponse =
       };
     };
 
-export function OrderConfirmationClient({ paymentIntentId }: OrderConfirmationClientProps) {
+export function OrderConfirmationClient({ paymentReference }: OrderConfirmationClientProps) {
   const { clearCart } = useCart();
   const [data, setData] = useState<OrderStatusResponse | null>(null);
   const [timedOut, setTimedOut] = useState(false);
 
   useEffect(() => {
-    if (!paymentIntentId) return;
+    if (!paymentReference) return;
 
     let cancelled = false;
 
@@ -37,7 +37,7 @@ export function OrderConfirmationClient({ paymentIntentId }: OrderConfirmationCl
       }
 
       const response = await fetch(
-        `/api/orders/status?payment_intent=${encodeURIComponent(paymentIntentId)}`,
+        `/api/orders/status?payment_ref=${encodeURIComponent(paymentReference)}`,
       );
       const json = (await response.json()) as OrderStatusResponse;
       if (cancelled) return;
@@ -55,9 +55,9 @@ export function OrderConfirmationClient({ paymentIntentId }: OrderConfirmationCl
     return () => {
       cancelled = true;
     };
-  }, [paymentIntentId, clearCart]);
+  }, [paymentReference, clearCart]);
 
-  if (!paymentIntentId) {
+  if (!paymentReference) {
     return (
       <div className="rounded-xl border border-zinc-200 bg-white p-6">
         <p className="text-zinc-700">Missing payment reference.</p>
@@ -73,8 +73,7 @@ export function OrderConfirmationClient({ paymentIntentId }: OrderConfirmationCl
       <div className="rounded-xl border border-zinc-200 bg-white p-6">
         <h1 className="text-2xl font-semibold text-zinc-900">Confirming payment…</h1>
         <p className="mt-2 text-zinc-600">
-          Your order is created only after Stripe notifies our server. This usually takes a few
-          seconds.
+          Your order is created after payment is confirmed. This usually takes a few seconds.
         </p>
         {timedOut ? (
           <p className="mt-4 text-sm text-amber-700">

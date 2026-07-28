@@ -7,13 +7,14 @@ export const metadata: Metadata = {
 };
 
 type ConfirmationPageProps = {
-  searchParams: { payment_intent?: string };
+  searchParams: { payment_intent?: string; payment_ref?: string };
 };
 
 export default function CheckoutConfirmationPage({ searchParams }: ConfirmationPageProps) {
+  const paymentReference = searchParams.payment_ref ?? searchParams.payment_intent ?? "";
   return (
     <div className="mx-auto max-w-2xl px-4 py-8 sm:px-6">
-      <OrderConfirmationClient paymentIntentId={searchParams.payment_intent ?? ""} />
+      <OrderConfirmationClient paymentReference={paymentReference} />
     </div>
   );
 }

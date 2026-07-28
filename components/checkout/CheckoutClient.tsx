@@ -7,22 +7,39 @@ import { Elements } from "@stripe/react-stripe-js";
 import { loadStripe } from "@stripe/stripe-js";
 import { useCart } from "@/components/cart/CartProvider";
 import { CheckoutAddressForm } from "@/components/checkout/CheckoutAddressForm";
+import { RazorpayPaymentForm } from "@/components/checkout/RazorpayPaymentForm";
 import { StripePaymentForm } from "@/components/checkout/StripePaymentForm";
 import { formatUsd } from "@/lib/catalog/money";
+import type { PublicPaymentProvider } from "@/lib/payments/public-config";
 import type { AddressInput } from "@/lib/validators/checkout";
 
 type CheckoutClientProps = {
-  publishableKey: string;
+  paymentProvider: PublicPaymentProvider;
+  publishableKey?: string;
+  razorpayKeyId?: string;
   shippingFlatRate: number;
   shippingFreeThreshold: number;
 };
 
+type RazorpayCheckoutState = {
+  orderId: string;
+  amount: number;
+  currency: string;
+  keyId: string;
+  customerEmail?: string;
+  customerName?: string;
+};
+
 export function CheckoutClient({
   publishableKey,
+  razorpayKeyId,
   shippingFlatRate,
   shippingFreeThreshold,
 }: CheckoutClientProps) {
-  const stripePromise = useMemo(() => loadStripe(publishableKey), [publishableKey]);
+  const stripePromise = useMemo(
+    () => (publishableKey ? loadStripe(publishableKey) : null),
+    [publishableKey],
+  );
   const { data: session } = useSession();
   const { lines, priced, refreshQuote } = useCart();
   const router = useRouter();
@@ -30,6 +47,7 @@ export function CheckoutClient({
   const [step, setStep] = useState<"details" | "payment">("details");
   const [clientSecret, setClientSecret] = useState<string | null>(null);
   const [paymentIntentId, setPaymentIntentId] = useState<string | null>(null);
+  const [razorpayCheckout, setRazorpayCheckout] = useState<RazorpayCheckoutState | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [couponCode, setCouponCode] = useState("");
@@ -60,7 +78,7 @@ export function CheckoutClient({
     setIsSubmitting(true);
     try {
       await refreshQuote(couponCode || undefined);
-      const response = await fetch("/api/checkout/create-payment-intent", {
+      const response = await fetch("/api/checkout/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -75,8 +93,20 @@ export function CheckoutClient({
       if (!response.ok) {
         throw new Error(data.error ?? "Could not start checkout");
       }
-      setClientSecret(data.clientSecret);
-      setPaymentIntentId(data.paymentIntentId);
+
+      if (data.provider === "razorpay") {
+        setRazorpayCheckout({
+          orderId: data.razorpayOrderId,
+          amount: data.amount,
+          currency: data.currency,
+          keyId: data.keyId ?? razorpayKeyId ?? "",
+          customerEmail: form.guestEmail ?? session?.user?.email ?? undefined,
+          customerName: form.shipping.fullName,
+        });
+      } else {
+        setClientSecret(data.clientSecret);
+        setPaymentIntentId(data.paymentIntentId);
+      }
       setStep("payment");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Checkout failed");
@@ -100,7 +130,9 @@ export function CheckoutClient({
             couponError={priced?.couponError ?? null}
             onSubmit={(values) => void startPayment(values)}
           />
-        ) : clientSecret ? (
+        ) : razorpayCheckout ? (
+          <RazorpayPaymentForm {...razorpayCheckout} />
+        ) : clientSecret && stripePromise ? (
           <Elements stripe={stripePromise} options={{ clientSecret }}>
             <StripePaymentForm paymentIntentId={paymentIntentId ?? ""} />
           </Elements>

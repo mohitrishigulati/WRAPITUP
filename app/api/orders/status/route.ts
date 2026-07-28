@@ -1,8 +1,10 @@
 import { NextResponse } from "next/server";
 import { auth } from "@/lib/auth";
-import { getOrderByPaymentIntent } from "@/lib/checkout/checkout";
+import { getOrderByPaymentReference } from "@/lib/checkout/checkout";
 import { checkRateLimit, rateLimitKey } from "@/lib/rate-limit";
 import { getClientIp } from "@/lib/request-ip";
+
+const PAYMENT_REF_PATTERN = /^(pi_[a-zA-Z0-9]+|order_[a-zA-Z0-9]+)$/;
 
 export async function GET(request: Request) {
   const ip = await getClientIp();
@@ -11,13 +13,14 @@ export async function GET(request: Request) {
   }
 
   const { searchParams } = new URL(request.url);
-  const paymentIntentId = searchParams.get("payment_intent");
-  if (!paymentIntentId || !/^pi_[a-zA-Z0-9]+$/.test(paymentIntentId)) {
-    return NextResponse.json({ error: "Missing or invalid payment_intent" }, { status: 400 });
+  const paymentRef =
+    searchParams.get("payment_ref") ?? searchParams.get("payment_intent") ?? "";
+  if (!paymentRef || !PAYMENT_REF_PATTERN.test(paymentRef)) {
+    return NextResponse.json({ error: "Missing or invalid payment reference" }, { status: 400 });
   }
 
   const session = await auth();
-  const order = await getOrderByPaymentIntent(paymentIntentId);
+  const order = await getOrderByPaymentReference(paymentRef);
   if (!order) {
     return NextResponse.json({ status: "pending" });
   }

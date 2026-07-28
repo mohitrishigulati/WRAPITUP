@@ -19,7 +19,7 @@ export function ProductGrid({ products }: ProductGridProps) {
     <ul className="grid grid-cols-2 gap-x-4 gap-y-8 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-4">
       {products.map((product, index) => (
         <li key={product.id}>
-          <ProductCard product={product} priority={index < 4} />
+          <ProductCard product={product} priority={index < 4} showQuickAdd />
         </li>
       ))}
     </ul>

@@ -4,19 +4,24 @@ import { randomBytes } from "crypto";
 import { db } from "@/lib/db";
 import type { CheckoutPendingPayload } from "@/lib/validators/checkout";
 import { priceCartLines, totalsToCents } from "@/lib/checkout/pricing";
+import { getCheckoutCurrency, getPaymentProvider, type PaymentProvider } from "@/lib/payments/config";
+import { getRazorpay, verifyRazorpayPaymentSignature } from "@/lib/razorpay";
 import { getStripe } from "@/lib/stripe";
 
 const PENDING_TTL_MS = 24 * 60 * 60 * 1000;
+const MIN_CHARGE_MINOR = 100;
 
-export async function createCheckoutPaymentIntent(input: {
+type PreparedCheckout = {
+  priced: Awaited<ReturnType<typeof priceCartLines>>;
+  amountCents: number;
+};
+
+async function prepareCheckout(input: {
   userId?: string;
   guestEmail?: string;
   payload: CheckoutPendingPayload;
-}) {
-  const priced = await priceCartLines(
-    input.payload.items,
-    input.payload.couponCode,
-  );
+}): Promise<PreparedCheckout> {
+  const priced = await priceCartLines(input.payload.items, input.payload.couponCode);
 
   if (priced.couponError) {
     throw new Error(priced.couponError);
@@ -27,14 +32,25 @@ export async function createCheckoutPaymentIntent(input: {
   }
 
   const amountCents = totalsToCents(priced.totals);
-  if (amountCents < 50) {
+  if (amountCents < MIN_CHARGE_MINOR) {
     throw new Error("Order total is too small to charge");
   }
 
+  return { priced, amountCents };
+}
+
+export async function createCheckoutPaymentIntent(input: {
+  userId?: string;
+  guestEmail?: string;
+  payload: CheckoutPendingPayload;
+}) {
+  const { priced, amountCents } = await prepareCheckout(input);
+
   const stripe = getStripe();
+  const currency = getCheckoutCurrency();
   const paymentIntent = await stripe.paymentIntents.create({
     amount: amountCents,
-    currency: "usd",
+    currency,
     automatic_payment_methods: { enabled: true },
     metadata: {
       userId: input.userId ?? "",
@@ -45,6 +61,7 @@ export async function createCheckoutPaymentIntent(input: {
   await db.checkoutPending.create({
     data: {
       paymentIntentId: paymentIntent.id,
+      provider: "stripe",
       userId: input.userId,
       guestEmail: input.payload.guestEmail ?? input.guestEmail,
       payload: input.payload,
@@ -54,10 +71,65 @@ export async function createCheckoutPaymentIntent(input: {
   });
 
   return {
+    provider: "stripe" as const,
     clientSecret: paymentIntent.client_secret,
     paymentIntentId: paymentIntent.id,
     priced,
   };
+}
+
+export async function createCheckoutRazorpayOrder(input: {
+  userId?: string;
+  guestEmail?: string;
+  payload: CheckoutPendingPayload;
+}) {
+  const { priced, amountCents } = await prepareCheckout(input);
+
+  const razorpay = getRazorpay();
+  const currency = getCheckoutCurrency().toUpperCase();
+  const receipt = `wu_${Date.now().toString(36)}`.slice(0, 40);
+
+  const order = await razorpay.orders.create({
+    amount: amountCents,
+    currency,
+    receipt,
+    notes: {
+      userId: input.userId ?? "",
+      guestEmail: input.payload.guestEmail ?? input.guestEmail ?? "",
+    },
+  });
+
+  await db.checkoutPending.create({
+    data: {
+      paymentIntentId: order.id,
+      provider: "razorpay",
+      userId: input.userId,
+      guestEmail: input.payload.guestEmail ?? input.guestEmail,
+      payload: input.payload,
+      amountCents,
+      expiresAt: new Date(Date.now() + PENDING_TTL_MS),
+    },
+  });
+
+  return {
+    provider: "razorpay" as const,
+    razorpayOrderId: order.id,
+    amount: amountCents,
+    currency,
+    priced,
+  };
+}
+
+export async function createCheckoutSession(input: {
+  userId?: string;
+  guestEmail?: string;
+  payload: CheckoutPendingPayload;
+}) {
+  const provider = getPaymentProvider();
+  if (provider === "razorpay") {
+    return createCheckoutRazorpayOrder(input);
+  }
+  return createCheckoutPaymentIntent(input);
 }
 
 export function generateOrderNumber() {
@@ -65,9 +137,14 @@ export function generateOrderNumber() {
   return `WU-${Date.now().toString(36).toUpperCase()}-${suffix}`;
 }
 
-export async function getOrderByPaymentIntent(paymentIntentId: string) {
-  return db.order.findUnique({
-    where: { stripePaymentIntentId: paymentIntentId },
+export async function getOrderByPaymentReference(paymentReference: string) {
+  return db.order.findFirst({
+    where: {
+      OR: [
+        { stripePaymentIntentId: paymentReference },
+        { razorpayOrderId: paymentReference },
+      ],
+    },
     include: {
       items: true,
       shippingAddress: true,
@@ -76,41 +153,34 @@ export async function getOrderByPaymentIntent(paymentIntentId: string) {
   });
 }
 
-export async function fulfillPaidOrder(paymentIntentId: string) {
-  const existing = await db.order.findUnique({
-    where: { stripePaymentIntentId: paymentIntentId },
-  });
-  if (existing) {
-    return existing;
-  }
+/** @deprecated Use getOrderByPaymentReference */
+export async function getOrderByPaymentIntent(paymentIntentId: string) {
+  return getOrderByPaymentReference(paymentIntentId);
+}
 
-  const pending = await db.checkoutPending.findUnique({
-    where: { paymentIntentId },
-  });
-  if (!pending) {
-    throw new Error(`No pending checkout for payment intent ${paymentIntentId}`);
-  }
-
+async function createPaidOrderFromPending(
+  pending: {
+    id: string;
+    userId: string | null;
+    guestEmail: string | null;
+    amountCents: number;
+    payload: unknown;
+  },
+  payment: {
+    provider: PaymentProvider;
+    referenceId: string;
+    razorpayPaymentId?: string;
+  },
+) {
   const payload = pending.payload as CheckoutPendingPayload;
   const priced = await priceCartLines(payload.items, payload.couponCode);
-
-  const stripe = getStripe();
-  const intent = await stripe.paymentIntents.retrieve(paymentIntentId);
-  if (intent.status !== "succeeded") {
-    throw new Error(`Payment intent ${paymentIntentId} is not succeeded`);
-  }
-  if (intent.amount !== pending.amountCents) {
-    throw new Error("Payment amount mismatch");
-  }
 
   const repricedCents = totalsToCents(priced.totals);
   if (repricedCents !== pending.amountCents) {
     throw new Error("Checkout total changed since payment was initiated");
   }
 
-  const billing = payload.billingSameAsShipping
-    ? payload.shipping
-    : payload.billing!;
+  const billing = payload.billingSameAsShipping ? payload.shipping : payload.billing!;
 
   const order = await db.$transaction(async (tx) => {
     const coupon = priced.couponCode
@@ -171,7 +241,11 @@ export async function fulfillPaidOrder(paymentIntentId: string) {
         taxTotal: priced.totals.tax,
         total: priced.totals.total,
         couponId: coupon?.id,
-        stripePaymentIntentId: paymentIntentId,
+        paymentProvider: payment.provider,
+        stripePaymentIntentId:
+          payment.provider === "stripe" ? payment.referenceId : null,
+        razorpayOrderId: payment.provider === "razorpay" ? payment.referenceId : null,
+        razorpayPaymentId: payment.razorpayPaymentId ?? null,
         shippingAddressId: shippingAddress.id,
         billingAddressId: billingAddress.id,
         items: {
@@ -216,6 +290,91 @@ export async function fulfillPaidOrder(paymentIntentId: string) {
   });
 
   return order;
+}
+
+export async function fulfillPaidOrder(paymentIntentId: string) {
+  const existing = await db.order.findFirst({
+    where: {
+      OR: [
+        { stripePaymentIntentId: paymentIntentId },
+        { razorpayOrderId: paymentIntentId },
+      ],
+    },
+  });
+  if (existing) {
+    return existing;
+  }
+
+  const pending = await db.checkoutPending.findUnique({
+    where: { paymentIntentId },
+  });
+  if (!pending) {
+    throw new Error(`No pending checkout for payment ${paymentIntentId}`);
+  }
+
+  if (pending.provider === "razorpay") {
+    throw new Error("Use fulfillPaidRazorpayOrder for Razorpay checkouts");
+  }
+
+  const stripe = getStripe();
+  const intent = await stripe.paymentIntents.retrieve(paymentIntentId);
+  if (intent.status !== "succeeded") {
+    throw new Error(`Payment intent ${paymentIntentId} is not succeeded`);
+  }
+  if (intent.amount !== pending.amountCents) {
+    throw new Error("Payment amount mismatch");
+  }
+
+  return createPaidOrderFromPending(pending, {
+    provider: "stripe",
+    referenceId: paymentIntentId,
+  });
+}
+
+export async function fulfillPaidRazorpayOrder(input: {
+  razorpayOrderId: string;
+  razorpayPaymentId: string;
+  razorpaySignature?: string;
+}) {
+  if (input.razorpaySignature) {
+    verifyRazorpayPaymentSignature({
+      orderId: input.razorpayOrderId,
+      paymentId: input.razorpayPaymentId,
+      signature: input.razorpaySignature,
+    });
+  }
+
+  const existing = await db.order.findUnique({
+    where: { razorpayOrderId: input.razorpayOrderId },
+  });
+  if (existing) {
+    return existing;
+  }
+
+  const pending = await db.checkoutPending.findUnique({
+    where: { paymentIntentId: input.razorpayOrderId },
+  });
+  if (!pending || pending.provider !== "razorpay") {
+    throw new Error(`No pending Razorpay checkout for order ${input.razorpayOrderId}`);
+  }
+
+  const razorpay = getRazorpay();
+  const payment = await razorpay.payments.fetch(input.razorpayPaymentId);
+  if (payment.order_id !== input.razorpayOrderId) {
+    throw new Error("Payment does not match order");
+  }
+  if (payment.status !== "captured" && payment.status !== "authorized") {
+    throw new Error("Payment is not completed");
+  }
+  if (Number(payment.amount) !== pending.amountCents) {
+    throw new Error("Payment amount mismatch");
+  }
+
+  return createPaidOrderFromPending(pending, {
+    provider: "razorpay",
+    referenceId: input.razorpayOrderId,
+    razorpayPaymentId: input.razorpayPaymentId,
+  });
 }
 
 export type FulfilledOrderEmail = {

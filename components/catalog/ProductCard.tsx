@@ -27,7 +27,7 @@ export function ProductCard({
   product,
   priority,
   compact,
-  showQuickAdd = false,
+  showQuickAdd = true,
   showCategory = !compact,
 }: ProductCardProps) {
   const pricing = getProductCardPricing(product);

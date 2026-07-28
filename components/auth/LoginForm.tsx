@@ -23,7 +23,15 @@ function SubmitButton() {
   );
 }
 
-export function LoginForm({ callbackUrl }: { callbackUrl?: string }) {
+export function LoginForm({
+  callbackUrl,
+  authError,
+  showGoogleSignIn = true,
+}: {
+  callbackUrl?: string;
+  authError?: string;
+  showGoogleSignIn?: boolean;
+}) {
   const [state, formAction] = useFormState(loginAction, initialState);
 
   return (
@@ -41,6 +49,9 @@ export function LoginForm({ callbackUrl }: { callbackUrl?: string }) {
     >
       <form action={formAction} className="space-y-4">
         {callbackUrl ? <input type="hidden" name="callbackUrl" value={callbackUrl} /> : null}
+        {authError ? (
+          <p className="rounded-lg bg-red-50 px-3 py-2 text-sm text-red-700">{authError}</p>
+        ) : null}
         <FormField
           id="email"
           label="Email"
@@ -69,15 +80,19 @@ export function LoginForm({ callbackUrl }: { callbackUrl?: string }) {
         ) : null}
         <SubmitButton />
       </form>
-      <div className="relative py-2">
-        <div className="absolute inset-0 flex items-center">
-          <span className="w-full border-t border-zinc-200" />
-        </div>
-        <div className="relative flex justify-center text-xs uppercase text-zinc-500">
-          <span className="bg-white px-2">or</span>
-        </div>
-      </div>
-      <GoogleSignInButton />
+      {showGoogleSignIn ? (
+        <>
+          <div className="relative py-2">
+            <div className="absolute inset-0 flex items-center">
+              <span className="w-full border-t border-zinc-200" />
+            </div>
+            <div className="relative flex justify-center text-xs uppercase text-zinc-500">
+              <span className="bg-white px-2">or</span>
+            </div>
+          </div>
+          <GoogleSignInButton />
+        </>
+      ) : null}
     </AuthShell>
   );
 }

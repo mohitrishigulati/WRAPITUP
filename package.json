@@ -11,6 +11,7 @@
     "db:migrate": "prisma migrate dev",
     "db:studio": "prisma studio",
     "db:seed": "npx tsx prisma/seed.ts",
+    "vercel:env": "node scripts/sync-env-to-vercel.mjs",
     "test:account": "tsx --test tests/account-order-access.test.ts",
     "test:admin": "tsx --test tests/admin-access.test.ts",
     "test:sanitize": "tsx --test tests/sanitize.test.ts",

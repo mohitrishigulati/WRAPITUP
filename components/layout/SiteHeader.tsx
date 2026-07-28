@@ -1,13 +1,25 @@
 import Link from "next/link";
-import { auth } from "@/lib/auth";
+import { safeAuth } from "@/lib/auth/safe-session";
 import { getAllCategoriesForNav } from "@/lib/catalog/categories";
 import { logoutAction } from "@/actions/auth";
 import { CartButton } from "@/components/cart/CartButton";
+import { DeployConfigBanner } from "@/components/layout/DeployConfigBanner";
+
+async function loadNavCategories() {
+  if (!process.env.DATABASE_URL?.trim()) return [];
+  try {
+    return await getAllCategoriesForNav();
+  } catch {
+    return [];
+  }
+}
 
 export async function SiteHeader() {
-  const [session, categories] = await Promise.all([auth(), getAllCategoriesForNav()]);
+  const [session, categories] = await Promise.all([safeAuth(), loadNavCategories()]);
 
   return (
+    <>
+      <DeployConfigBanner />
     <header className="border-b border-zinc-200 bg-white">
       <div className="mx-auto flex max-w-7xl flex-wrap items-center justify-between gap-4 px-4 py-4 sm:px-6">
         <div className="flex items-center gap-8">
@@ -80,5 +92,6 @@ export async function SiteHeader() {
         </div>
       </div>
     </header>
+    </>
   );
 }

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import type { Metadata } from "next";
 import { SiteHeader } from "@/components/layout/SiteHeader";
-import { auth } from "@/lib/auth";
+import { safeAuth } from "@/lib/auth/safe-session";
 
 export const metadata: Metadata = {
   title: "Home",
@@ -9,7 +9,7 @@ export const metadata: Metadata = {
 };
 
 export default async function Home() {
-  const session = await auth();
+  const session = await safeAuth();
 
   return (
     <div className="min-h-screen bg-zinc-50">

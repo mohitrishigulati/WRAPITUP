@@ -15,6 +15,9 @@ import {
   getProductBySlug,
   getRelatedProducts,
 } from "@/lib/catalog/products";
+import { CatalogUnavailable } from "@/components/catalog/CatalogUnavailable";
+import { safeCatalogQuery } from "@/lib/catalog/safe-query";
+import { getDatabaseConfigStatus } from "@/lib/db/database-status";
 import { listProductReviews, userCanReviewProduct } from "@/lib/reviews/queries";
 import { getSiteUrl } from "@/lib/seo/site-url";
 
@@ -25,7 +28,11 @@ type ProductPageProps = {
 };
 
 export async function generateMetadata({ params }: ProductPageProps): Promise<Metadata> {
-  const product = await getProductBySlug(params.slug);
+  const dbStatus = await getDatabaseConfigStatus();
+  if (!dbStatus.reachable) {
+    return { title: "Product" };
+  }
+  const product = await safeCatalogQuery(() => getProductBySlug(params.slug), null);
   if (!product) {
     return { title: "Product not found" };
   }
@@ -49,7 +56,19 @@ export async function generateMetadata({ params }: ProductPageProps): Promise<Me
 }
 
 export default async function ProductPage({ params }: ProductPageProps) {
-  const product = await getProductBySlug(params.slug);
+  const dbStatus = await getDatabaseConfigStatus();
+  if (!dbStatus.reachable) {
+    return (
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <CatalogUnavailable
+          hint={dbStatus.hint}
+          looksLikeLocalDevUrl={dbStatus.looksLikeLocalDevUrl}
+        />
+      </div>
+    );
+  }
+
+  const product = await safeCatalogQuery(() => getProductBySlug(params.slug), null);
   if (!product) notFound();
 
   const session = await auth();

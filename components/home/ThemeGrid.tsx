@@ -1,12 +1,17 @@
 import Link from "next/link";
 import { getAllThemesWithCounts } from "@/lib/catalog/themes";
+import { safeCatalogQuery } from "@/lib/catalog/safe-query";
 
 type ThemeGridProps = {
   themes?: Awaited<ReturnType<typeof getAllThemesWithCounts>>;
 };
 
 export async function ThemeGrid({ themes: themesProp }: ThemeGridProps) {
-  const themes = themesProp ?? (await getAllThemesWithCounts());
+  const themes =
+    themesProp ??
+    (await safeCatalogQuery(() => getAllThemesWithCounts(), [] as Awaited<
+      ReturnType<typeof getAllThemesWithCounts>
+    >));
   if (themes.length === 0) return null;
 
   return (

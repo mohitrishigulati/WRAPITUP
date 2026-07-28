@@ -48,7 +48,7 @@ export function HomePageSections({ sections }: HomePageSectionsProps) {
           return <ShopByCategoryTiles key="shop-tiles" />;
         }
         if (section.type === "themes") {
-          return <ThemeGrid key="themes" />;
+          return <ThemeGrid key="themes" themes={section.themes} />;
         }
         return null;
       })}

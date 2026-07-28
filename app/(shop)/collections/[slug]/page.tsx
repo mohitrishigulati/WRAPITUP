@@ -2,20 +2,34 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ProductGrid } from "@/components/catalog/ProductGrid";
+import { CatalogUnavailable } from "@/components/catalog/CatalogUnavailable";
 import { getCollectionProducts } from "@/lib/catalog/collections";
+import { safeCatalogQuery } from "@/lib/catalog/safe-query";
+import { getDatabaseConfigStatus } from "@/lib/db/database-status";
 
 export const dynamic = "force-dynamic";
 
 type Props = { params: { slug: string } };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const data = await getCollectionProducts(params.slug, 1);
+  const dbStatus = await getDatabaseConfigStatus();
+  if (!dbStatus.reachable) return { title: "Collection" };
+  const data = await safeCatalogQuery(() => getCollectionProducts(params.slug, 1), null);
   if (!data) return { title: "Collection" };
   return { title: data.collection.title };
 }
 
 export default async function CollectionPage({ params }: Props) {
-  const data = await getCollectionProducts(params.slug, 48);
+  const dbStatus = await getDatabaseConfigStatus();
+  if (!dbStatus.reachable) {
+    return (
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <CatalogUnavailable hint={dbStatus.hint} looksLikeLocalDevUrl={dbStatus.looksLikeLocalDevUrl} />
+      </div>
+    );
+  }
+
+  const data = await safeCatalogQuery(() => getCollectionProducts(params.slug, 48), null);
   if (!data) notFound();
 
   return (

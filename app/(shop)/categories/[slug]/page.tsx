@@ -14,6 +14,9 @@ import {
 } from "@/lib/catalog/categories";
 import { parseCatalogParams } from "@/lib/catalog/params";
 import { getAllTagSlugs, listProductsForCategorySlug } from "@/lib/catalog/products";
+import { CatalogUnavailable } from "@/components/catalog/CatalogUnavailable";
+import { getDatabaseConfigStatus } from "@/lib/db/database-status";
+import { safeCatalogQuery } from "@/lib/catalog/safe-query";
 
 export const dynamic = "force-dynamic";
 
@@ -23,7 +26,11 @@ type CategoryPageProps = {
 };
 
 export async function generateMetadata({ params }: CategoryPageProps): Promise<Metadata> {
-  const category = await getCategoryBySlug(params.slug);
+  const dbStatus = await getDatabaseConfigStatus();
+  if (!dbStatus.reachable) {
+    return { title: "Category" };
+  }
+  const category = await safeCatalogQuery(() => getCategoryBySlug(params.slug), null);
   if (!category) {
     return { title: "Category not found" };
   }
@@ -36,22 +43,35 @@ export async function generateMetadata({ params }: CategoryPageProps): Promise<M
 }
 
 export default async function CategoryPage({ params, searchParams }: CategoryPageProps) {
-  const category = await getCategoryBySlug(params.slug);
+  const dbStatus = await getDatabaseConfigStatus();
+  if (!dbStatus.reachable) {
+    return (
+      <div className="mx-auto max-w-7xl px-4 py-16 sm:px-6">
+        <CatalogUnavailable hint={dbStatus.hint} looksLikeLocalDevUrl={dbStatus.looksLikeLocalDevUrl} />
+      </div>
+    );
+  }
+
+  const category = await safeCatalogQuery(() => getCategoryBySlug(params.slug), null);
   if (!category) notFound();
 
   const parsed = parseCatalogParams(searchParams);
   const [tags, categories, listing] = await Promise.all([
-    getAllTagSlugs(),
-    getFilterCategories(),
-    listProductsForCategorySlug(params.slug, {
-      q: parsed.q,
-      page: parsed.page,
-      sort: parsed.sort,
-      tagSlugs: parsed.tagSlugs,
-      minPrice: parsed.minPrice,
-      maxPrice: parsed.maxPrice,
-      inStockOnly: parsed.inStockOnly,
-    }),
+    safeCatalogQuery(() => getAllTagSlugs(), []),
+    safeCatalogQuery(() => getFilterCategories(), []),
+    safeCatalogQuery(
+      () =>
+        listProductsForCategorySlug(params.slug, {
+          q: parsed.q,
+          page: parsed.page,
+          sort: parsed.sort,
+          tagSlugs: parsed.tagSlugs,
+          minPrice: parsed.minPrice,
+          maxPrice: parsed.maxPrice,
+          inStockOnly: parsed.inStockOnly,
+        }),
+      null,
+    ),
   ]);
 
   if (!listing) notFound();

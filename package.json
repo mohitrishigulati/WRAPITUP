@@ -4,23 +4,53 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "prisma generate && next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "postinstall": "prisma generate",
+    "db:migrate": "prisma migrate dev",
+    "db:studio": "prisma studio",
+    "db:seed": "npx tsx prisma/seed.ts",
+    "test:account": "tsx --test tests/account-order-access.test.ts",
+    "test:admin": "tsx --test tests/admin-access.test.ts",
+    "test:sanitize": "tsx --test tests/sanitize.test.ts",
+    "test:review-photo": "tsx --test tests/review-photo.test.ts"
+  },
+  "prisma": {
+    "seed": "npx tsx prisma/seed.ts"
   },
   "dependencies": {
+    "@auth/prisma-adapter": "^2.11.3",
+    "@aws-sdk/client-s3": "^3.1096.0",
+    "@prisma/client": "^6.19.3",
+    "@stripe/react-stripe-js": "^6.8.0",
+    "@stripe/stripe-js": "^9.12.1",
+    "bcryptjs": "^3.0.3",
+    "dotenv": "^17.4.2",
+    "next": "14.2.35",
+    "next-auth": "^5.0.0-beta.32",
+    "nodemailer": "^8.0.11",
     "react": "^18",
     "react-dom": "^18",
-    "next": "14.2.35"
+    "recharts": "^3.10.1",
+    "resend": "^6.18.0",
+    "sanitize-html": "^2.17.6",
+    "stripe": "^22.3.2",
+    "zod": "^4.4.3"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@types/bcryptjs": "^2.4.6",
     "@types/node": "^20",
+    "@types/nodemailer": "^8.0.1",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "postcss": "^8",
-    "tailwindcss": "^3.4.1",
+    "@types/sanitize-html": "^2.16.1",
     "eslint": "^8",
-    "eslint-config-next": "14.2.35"
+    "eslint-config-next": "14.2.35",
+    "postcss": "^8",
+    "prisma": "^6.19.3",
+    "tailwindcss": "^3.4.1",
+    "tsx": "^4.23.1",
+    "typescript": "^5"
   }
 }

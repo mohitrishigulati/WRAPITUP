@@ -1,0 +1,126 @@
+"use client";
+
+import { useMemo, useState } from "react";
+import type { ProductVariantView } from "@/types/catalog";
+import { formatUsd } from "@/lib/catalog/money";
+import { useCart } from "@/components/cart/CartProvider";
+
+type ProductPurchasePanelProps = {
+  productName: string;
+  variants: ProductVariantView[];
+  inStock: boolean;
+};
+
+export function ProductPurchasePanel({
+  productName,
+  variants,
+  inStock,
+}: ProductPurchasePanelProps) {
+  const { addItem } = useCart();
+  const [isAdding, setIsAdding] = useState(false);
+
+  const attributeKeys = useMemo(() => {
+    const keys = new Set<string>();
+    for (const variant of variants) {
+      for (const key of Object.keys(variant.attributes)) keys.add(key);
+    }
+    return Array.from(keys);
+  }, [variants]);
+
+  const [selection, setSelection] = useState<Record<string, string>>(() => {
+    const initial: Record<string, string> = {};
+    const first = variants[0];
+    if (first) {
+      for (const key of Object.keys(first.attributes)) {
+        initial[key] = first.attributes[key];
+      }
+    }
+    return initial;
+  });
+
+  const selectedVariant = useMemo(() => {
+    if (!variants.length) return null;
+    return (
+      variants.find((variant) =>
+        attributeKeys.every((key) => variant.attributes[key] === selection[key]),
+      ) ?? variants[0]
+    );
+  }, [variants, attributeKeys, selection]);
+
+  const optionValues = (key: string) => {
+    const values = new Set<string>();
+    for (const variant of variants) {
+      const value = variant.attributes[key];
+      if (value) values.add(value);
+    }
+    return Array.from(values);
+  };
+
+  if (!selectedVariant) {
+    return <p className="text-sm text-zinc-600">No variants available.</p>;
+  }
+
+  return (
+    <div className="space-y-6">
+      <div>
+        <p className="text-3xl font-semibold text-zinc-900">
+          {formatUsd(selectedVariant.price)}
+        </p>
+        {selectedVariant.compareAtPrice &&
+        selectedVariant.compareAtPrice > selectedVariant.price ? (
+          <p className="text-sm text-zinc-500 line-through">
+            {formatUsd(selectedVariant.compareAtPrice)}
+          </p>
+        ) : null}
+      </div>
+
+      {attributeKeys.map((key) => (
+        <div key={key}>
+          <p className="mb-2 text-sm font-medium capitalize text-zinc-900">{key}</p>
+          <div className="flex flex-wrap gap-2">
+            {optionValues(key).map((value) => {
+              const active = selection[key] === value;
+              return (
+                <button
+                  key={value}
+                  type="button"
+                  onClick={() => setSelection((prev) => ({ ...prev, [key]: value }))}
+                  className={`rounded-lg border px-3 py-1.5 text-sm ${
+                    active
+                      ? "border-zinc-900 bg-zinc-900 text-white"
+                      : "border-zinc-300 text-zinc-800 hover:border-zinc-400"
+                  }`}
+                >
+                  {value}
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      ))}
+
+      <div className="rounded-lg border border-zinc-200 bg-zinc-50 px-4 py-3 text-sm">
+        <p className="font-medium text-zinc-900">{selectedVariant.name}</p>
+        <p className="text-zinc-600">SKU: {selectedVariant.sku}</p>
+        <p className={selectedVariant.stock > 0 ? "text-emerald-700" : "text-red-600"}>
+          {selectedVariant.stock > 0
+            ? `${selectedVariant.stock} in stock`
+            : "Out of stock"}
+        </p>
+      </div>
+
+      <button
+        type="button"
+        disabled={!inStock || selectedVariant.stock <= 0 || isAdding}
+        onClick={() => {
+          setIsAdding(true);
+          void addItem(selectedVariant.id, 1).finally(() => setIsAdding(false));
+        }}
+        className="w-full rounded-lg bg-zinc-900 px-4 py-3 text-sm font-medium text-white hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-50"
+        aria-label={`Add ${productName} to cart`}
+      >
+        {isAdding ? "Adding…" : "Add to cart"}
+      </button>
+    </div>
+  );
+}

@@ -1,0 +1,65 @@
+export type CatalogSort =
+  | "newest"
+  | "price_asc"
+  | "price_desc"
+  | "popularity"
+  | "rating"
+  | "relevance";
+
+export type CatalogProductListItem = {
+  id: string;
+  name: string;
+  slug: string;
+  imageUrl: string | null;
+  categoryName: string;
+  categorySlug: string;
+  minPrice: number;
+  maxPrice: number;
+  averageRating: number | null;
+  reviewCount: number;
+  inStock: boolean;
+  createdAt: Date;
+};
+
+export type CatalogSearchParams = {
+  q?: string;
+  page?: string;
+  sort?: string;
+  category?: string;
+  tags?: string;
+  minPrice?: string;
+  maxPrice?: string;
+  inStock?: string;
+};
+
+export type ProductVariantView = {
+  id: string;
+  sku: string;
+  name: string;
+  attributes: Record<string, string>;
+  price: number;
+  compareAtPrice: number | null;
+  stock: number;
+};
+
+export type ProductDetailView = {
+  id: string;
+  name: string;
+  slug: string;
+  description: string | null;
+  images: string[];
+  category: {
+    id: string;
+    name: string;
+    slug: string;
+    parentSlug: string | null;
+    parentName: string | null;
+  };
+  tags: { name: string; slug: string }[];
+  variants: ProductVariantView[];
+  minPrice: number;
+  maxPrice: number;
+  averageRating: number | null;
+  reviewCount: number;
+  inStock: boolean;
+};

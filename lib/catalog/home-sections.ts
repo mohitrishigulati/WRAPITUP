@@ -6,6 +6,7 @@ import { getAllThemesWithCounts } from "@/lib/catalog/themes";
 import { HOME_SECTION_SIZE } from "@/lib/catalog/params";
 import { safeCatalogQuery } from "@/lib/catalog/safe-query";
 import { isDatabaseReachable } from "@/lib/db/connectivity";
+import { getStorefrontImages } from "@/lib/store/storefront-images";
 import { db } from "@/lib/db";
 import { HOME_SECTIONS, HOME_SHOP_TILES, type HomeSectionConfig } from "@/lib/store/home-sections";
 
@@ -39,12 +40,13 @@ function staticShellSections(): RenderableHomeSection[] {
   const out: RenderableHomeSection[] = [];
   for (const config of HOME_SECTIONS) {
     if (config.type === "promo") {
+      const sf = getStorefrontImages();
       out.push({
         type: "promo",
         title: config.title,
         subtitle: config.subtitle,
         href: config.href,
-        imageUrl: config.imageUrl,
+        imageUrl: sf?.promo ?? config.imageUrl,
       });
     } else if (config.type === "shop-tiles") {
       out.push({ type: "shop-tiles" });
@@ -123,12 +125,13 @@ export async function buildHomeSections(): Promise<RenderableHomeSection[]> {
       const themes = await safeCatalogQuery(() => getAllThemesWithCounts(), []);
       sections.push({ type: "themes", themes });
     } else if (config.type === "promo") {
+      const sf = getStorefrontImages();
       sections.push({
         type: "promo",
         title: config.title,
         subtitle: config.subtitle,
         href: config.href,
-        imageUrl: config.imageUrl,
+        imageUrl: sf?.promo ?? config.imageUrl,
       });
     }
   }

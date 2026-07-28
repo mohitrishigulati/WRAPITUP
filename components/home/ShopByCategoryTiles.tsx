@@ -1,9 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
 import { HOME_SHOP_TILES } from "@/lib/store/home-sections";
+import { storefrontImageForHref } from "@/lib/store/storefront-images";
 
-function tileImage(label: string, imageUrl?: string) {
+function tileImage(label: string, href: string, imageUrl?: string) {
   return (
+    storefrontImageForHref(href) ??
     imageUrl ??
     `https://placehold.co/200x200/f5f5f5/666?text=${encodeURIComponent(label.slice(0, 8))}`
   );
@@ -22,7 +24,7 @@ export function ShopByCategoryTiles() {
               <Link href={tile.href} className="group flex flex-col items-center text-center">
                 <span className="relative h-[4.5rem] w-[4.5rem] overflow-hidden rounded-full border border-zinc-200 bg-zinc-50 shadow-sm transition group-hover:border-accent-pink group-hover:shadow-md sm:h-20 sm:w-20">
                   <Image
-                    src={tileImage(tile.label, tile.imageUrl)}
+                    src={tileImage(tile.label, tile.href, tile.imageUrl)}
                     alt=""
                     fill
                     className="object-cover transition duration-300 group-hover:scale-110"

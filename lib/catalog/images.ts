@@ -1,7 +1,10 @@
 const PLACEHOLDER = "https://placehold.co/800x800/f4f4f5/71717a?text=WrapItUp";
 
 export function productImageUrl(url: string | null | undefined) {
-  if (url && url.trim().length > 0) return url;
+  if (url && url.trim().length > 0) {
+    if (url.startsWith("/catalog/") || url.startsWith("/")) return url;
+    return url;
+  }
   return PLACEHOLDER;
 }
 

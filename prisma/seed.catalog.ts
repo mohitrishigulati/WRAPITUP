@@ -12,6 +12,7 @@ import { fileURLToPath } from "url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const CATALOG_JSON = join(__dirname, "data", "catalog-products.json");
+const PRODUCT_IMAGES_JSON = join(__dirname, "data", "product-images.json");
 
 const DEFAULT_PERSONALIZATION: Prisma.InputJsonValue = [
   { key: "name", label: "Name to print", maxLength: 20 },
@@ -144,7 +145,49 @@ type SeedProduct = {
   isPersonalizable?: boolean;
   collectionSlugs?: string[];
   videoUrl?: string;
+  imagePaths?: string[];
 };
+
+type ProductImagesFile = {
+  publicBase?: string;
+  bySlug?: Record<string, string[]>;
+};
+
+let productImagesBySlug: Record<string, string[]> | null = null;
+
+function loadProductImagesBySlug(): Record<string, string[]> {
+  if (productImagesBySlug) return productImagesBySlug;
+  productImagesBySlug = {};
+  if (!existsSync(PRODUCT_IMAGES_JSON)) return productImagesBySlug;
+  try {
+    const raw = JSON.parse(readFileSync(PRODUCT_IMAGES_JSON, "utf8")) as ProductImagesFile;
+    const base =
+      process.env.CATALOG_PUBLIC_BASE_URL?.trim()?.replace(/\/$/, "") ||
+      raw.publicBase?.replace(/\/$/, "") ||
+      "/catalog";
+    for (const [slug, files] of Object.entries(raw.bySlug ?? {})) {
+      productImagesBySlug[slug] = files.map((f) =>
+        f.startsWith("http") ? f : `${base}/${f.replace(/^\//, "")}`,
+      );
+    }
+  } catch {
+    productImagesBySlug = {};
+  }
+  return productImagesBySlug;
+}
+
+function imagesForProduct(p: SeedProduct): string[] {
+  const fromMap = loadProductImagesBySlug()[p.slug];
+  if (fromMap?.length) return fromMap;
+  if (p.imagePaths?.length) {
+    return p.imagePaths.map((f) => (f.startsWith("/") ? f : `/catalog/${f}`));
+  }
+  return [placeholderImageUrl(p.name)];
+}
+
+function placeholderImageUrl(name: string) {
+  return `https://placehold.co/600x600?text=${encodeURIComponent(name.slice(0, 40))}`;
+}
 
 function loadCatalogProducts(): SeedProduct[] {
   if (existsSync(CATALOG_JSON)) {
@@ -198,10 +241,6 @@ const FALLBACK_PRODUCTS: SeedProduct[] = [
 ];
 
 const products = loadCatalogProducts();
-
-function productImageUrl(name: string) {
-  return `https://placehold.co/600x600?text=${encodeURIComponent(name.slice(0, 40))}`;
-}
 
 export async function clearCatalog(dbClient: PrismaClient) {
   await dbClient.cartItem.deleteMany();
@@ -276,7 +315,7 @@ export async function seedCatalog(dbClient: PrismaClient) {
         categoryId,
         description: `${p.name} — sample catalog item for WrapItUp.`,
         basePrice: p.priceRupees,
-        images: [productImageUrl(p.name)],
+        images: imagesForProduct(p),
         isPublished: true,
         isPersonalizable: !!p.isPersonalizable,
         ...(p.isPersonalizable ? { personalizationFields: DEFAULT_PERSONALIZATION } : {}),

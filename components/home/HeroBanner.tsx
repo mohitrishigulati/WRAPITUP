@@ -1,9 +1,12 @@
 import Link from "next/link";
 import Image from "next/image";
 import { getHeroConfig } from "@/lib/store/storefront-config";
+import { getStorefrontImages } from "@/lib/store/storefront-images";
 
 export function HeroBanner() {
   const hero = getHeroConfig();
+  const storefront = getStorefrontImages();
+  const imageUrl = storefront?.hero ?? hero.imageUrl;
 
   return (
     <section className="border-b border-zinc-200 bg-[#7ec8c8]">
@@ -25,7 +28,7 @@ export function HeroBanner() {
           </div>
           <div className="relative h-48 lg:h-auto lg:min-h-[320px]">
             <Image
-              src={hero.imageUrl}
+              src={imageUrl}
               alt=""
               fill
               className="object-cover object-center transition duration-700 group-hover:scale-[1.02]"

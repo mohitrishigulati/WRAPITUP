@@ -11,6 +11,8 @@ export type CatalogProductListItem = {
   name: string;
   slug: string;
   imageUrl: string | null;
+  hoverImageUrl: string | null;
+  defaultVariantId: string | null;
   categoryName: string;
   categorySlug: string;
   minPrice: number;

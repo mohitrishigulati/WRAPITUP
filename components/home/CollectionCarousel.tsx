@@ -51,7 +51,7 @@ export function CollectionCarousel({
           {products.map((product, index) => (
             <li
               key={product.id}
-              className="min-w-[160px] shrink-0 snap-start sm:min-w-[200px]"
+              className="min-w-[200px] shrink-0 snap-start sm:min-w-[220px] lg:min-w-[240px]"
             >
               {variant === "video" && product.videoUrl ? (
                 <VideoProductCard product={product} videoUrl={product.videoUrl} priority={index < 4} />

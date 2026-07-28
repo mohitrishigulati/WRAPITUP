@@ -19,6 +19,7 @@ type CollectionRow = {
   total_stock: bigint;
   relevance: number;
   video_url: string | null;
+  default_variant_id: string | null;
 };
 
 const productSelectSql = Prisma.sql`
@@ -36,6 +37,7 @@ const productSelectSql = Prisma.sql`
   rv.avg_rating,
   COALESCE(rv.review_count, 0) AS review_count,
   COALESCE(st.total_stock, 0) AS total_stock,
+  dv.default_variant_id,
   0 AS relevance
 `;
 
@@ -60,6 +62,13 @@ const productJoinsSql = Prisma.sql`
     FROM "Review" r
     WHERE r."productId" = p."id"
   ) rv ON true
+  LEFT JOIN LATERAL (
+    SELECT v."id" AS default_variant_id
+    FROM "ProductVariant" v
+    WHERE v."productId" = p."id"
+    ORDER BY (v."stock" > 0) DESC, v."price" ASC
+    LIMIT 1
+  ) dv ON true
 `;
 
 function mapCollectionRow(row: CollectionRow): CatalogProductListItem & { videoUrl: string | null } {

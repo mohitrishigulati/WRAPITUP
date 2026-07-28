@@ -112,7 +112,11 @@ export default async function ProductPage({ params }: ProductPageProps) {
               {product.category.name}
             </p>
             <h1 className="text-3xl font-semibold text-zinc-900">{product.name}</h1>
-            <StarRating rating={product.averageRating} reviewCount={product.reviewCount} />
+            <StarRating
+              rating={product.averageRating}
+              reviewCount={product.reviewCount}
+              variant="giftoo"
+            />
             {product.tags.length > 0 ? (
               <ul className="flex flex-wrap gap-2 pt-2">
                 {product.tags.map((tag) => (

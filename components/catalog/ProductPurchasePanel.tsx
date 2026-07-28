@@ -3,7 +3,7 @@
 import type { PersonalizationFieldDef } from "@/lib/store/storefront-config";
 import { useMemo, useState } from "react";
 import type { ProductVariantView } from "@/types/catalog";
-import { formatUsd } from "@/lib/catalog/money";
+import { formatStorePrice } from "@/lib/catalog/money";
 import { useCart } from "@/components/cart/CartProvider";
 
 type ProductPurchasePanelProps = {
@@ -73,15 +73,19 @@ export function ProductPurchasePanel({
 
   return (
     <div className="space-y-6">
-      <div>
-        <p className="text-3xl font-semibold text-zinc-900">
-          {formatUsd(selectedVariant.price)}
+      <div className="price space-y-1">
+        <span className="sr-only">Sale price</span>
+        <p className="text-2xl font-semibold text-sale-price">
+          {formatStorePrice(selectedVariant.price)}
         </p>
         {selectedVariant.compareAtPrice &&
         selectedVariant.compareAtPrice > selectedVariant.price ? (
-          <p className="text-sm text-zinc-500 line-through">
-            {formatUsd(selectedVariant.compareAtPrice)}
-          </p>
+          <>
+            <span className="sr-only">Regular price</span>
+            <p className="text-base text-sale-strike line-through">
+              {formatStorePrice(selectedVariant.compareAtPrice)}
+            </p>
+          </>
         ) : null}
       </div>
 
@@ -168,7 +172,7 @@ export function ProductPurchasePanel({
             setIsAdding(false),
           );
         }}
-        className="w-full rounded-lg bg-zinc-900 px-4 py-3 text-sm font-medium text-white hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-50"
+        className="w-full rounded-md bg-brand-600 px-4 py-3 text-sm font-semibold uppercase tracking-wide text-white hover:bg-brand-700 disabled:cursor-not-allowed disabled:opacity-50"
         aria-label={`Add ${productName} to cart`}
       >
         {isAdding ? "Adding…" : "Add to cart"}

@@ -22,3 +22,17 @@ export function formatMoney(amount: number) {
     maximumFractionDigits: currency === "INR" ? 0 : 2,
   }).format(amount);
 }
+
+/** Giftoo-style display: space after ₹ symbol (e.g. `₹ 399`). */
+export function formatStorePrice(amount: number, options?: { from?: boolean }) {
+  const formatted = formatMoney(amount);
+  const spaced =
+    storeCurrency !== "USD" && formatted.includes("₹")
+      ? formatted.replace("₹", "₹ ")
+      : formatted;
+  if (options?.from && amount > 0) {
+    const hasRangeLabel = spaced.toLowerCase().includes("from");
+    return hasRangeLabel ? spaced : `From ${spaced}`;
+  }
+  return spaced;
+}

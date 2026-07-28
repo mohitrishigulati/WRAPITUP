@@ -34,6 +34,7 @@ type ListRow = {
   review_count: bigint;
   total_stock: bigint;
   relevance: number;
+  default_variant_id: string | null;
 };
 
 function orderClause(sort: CatalogSort, hasQuery: boolean): Prisma.Sql {
@@ -144,6 +145,13 @@ function buildListQuery(input: ListProductsInput, countOnly: boolean) {
       INNER JOIN "OrderItem" oi ON oi."productVariantId" = v."id"
       WHERE v."productId" = p."id"
     ) sl ON true
+    LEFT JOIN LATERAL (
+      SELECT v."id" AS default_variant_id
+      FROM "ProductVariant" v
+      WHERE v."productId" = p."id"
+      ORDER BY (v."stock" > 0) DESC, v."price" ASC
+      LIMIT 1
+    ) dv ON true
     ${whereSql}
   `;
 
@@ -170,6 +178,7 @@ function buildListQuery(input: ListProductsInput, countOnly: boolean) {
       rv.avg_rating,
       COALESCE(rv.review_count, 0) AS review_count,
       COALESCE(st.total_stock, 0) AS total_stock,
+      dv.default_variant_id,
       ${relevanceSql} AS relevance
     ${baseFrom}
     ORDER BY ${order}
@@ -186,6 +195,8 @@ export function mapListRow(row: ListRow): CatalogProductListItem {
     name: row.name,
     slug: row.slug,
     imageUrl: row.images[0] ?? null,
+    hoverImageUrl: row.images[1] ?? null,
+    defaultVariantId: row.default_variant_id,
     categoryName: row.category_name,
     categorySlug: row.category_slug,
     minPrice,
